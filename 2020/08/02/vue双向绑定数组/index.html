@@ -1,195 +1,458 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+    <!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+      <meta name="author" content="John Doe">
+  
+  
+  
+  
+  
+    <link rel="alternate" href="/atom.xml " title="Hexo" type="application/atom+xml">
   
 
   
+
   <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="vue双向绑定数组众所周知,vue中v-model 会忽略所有表单元素的 value、checked、selected attribute 的初始值而总是将 Vue 实例的数据作为数据来源。 大部分情况,v-model是绑定一个对象的属性，但是如果数据库中的数据是一个数组，这种情况下，如果把数组转换成对象再绑定，然后再转换回去提交到数据库显然是一件工程量很大的事情，本着程序员偷懒的原则，我发现了">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/2020/08/02/vue%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E6%95%B0%E7%BB%84/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="vue双向绑定数组众所周知,vue中v-model 会忽略所有表单元素的 value、checked、selected attribute 的初始值而总是将 Vue 实例的数据作为数据来源。 大部分情况,v-model是绑定一个对象的属性，但是如果数据库中的数据是一个数组，这种情况下，如果把数组转换成对象再绑定，然后再转换回去提交到数据库显然是一件工程量很大的事情，本着程序员偷懒的原则，我发现了">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1650e0743a644657bb90624778d79d90~tplv-k3u1fbpfcp-zoom-1.image">
-<meta property="article:published_time" content="2020-08-02T02:31:00.946Z">
-<meta property="article:modified_time" content="2020-08-02T03:51:51.764Z">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1650e0743a644657bb90624778d79d90~tplv-k3u1fbpfcp-zoom-1.image">
+
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
   
+
   
-    <link rel="icon" href="/favicon.png">
+
+
   
+
   
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    
+      <link rel="stylesheet" href="/css/style.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css">
+    
   
+
   
-<link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.1/styles/github.css">
+    
 
 <meta name="generator" content="Hexo 5.0.0"></head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
+</html>
+    
+<header class="header">
+    <div class="title animated fadeInDown">
+        
+            <div class="logo">
+                
+                    <a href="/"><img data-src="https://cdn.jsdelivr.net/gh/a2396837/CDN@latest/images/2020/07/27/baokemeng.webp" onerror=this.onerror=null,this.src="/img/loading.gif"></a>
+                    
+            </div>
+         
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
+    <div class="navbar animated fadeInDown">
+     
+    
+            <div class="social">
+                
+            </div>
+     
+   </div>
 </header>
-      <div class="outer">
-        <section id="main"><article id="post-vue双向绑定数组" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/08/02/vue%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E6%95%B0%E7%BB%84/" class="article-date">
-  <time datetime="2020-08-02T02:31:00.946Z" itemprop="datePublished">2020-08-02</time>
-</a>
+
+
+
     
-  </div>
-  <div class="article-inner">
+<div class="nav index" style="height: 60px;">
+    <div class="title animated fadeInDown">
+        <div class="layui-container">
+            
+                <div class="nav-title"><a href="/" title="Hexo">Hexo</a></div>
+               
+            <div class="nav-list">
+                <button> <span class=""></span><span style="display: block;"></span><span class=""></span> </button>
+                <ul class="layui-nav" lay-filter="">
+                    
+                    <li class="layui-nav-item">
+                        <a href="/">
+                            <i class="fab fa-fort-awesome"></i>
+                            <span class="layui-nav-item-name">Home</span>
+                        </a>
+                    </li>
+                    
+                    <li class="layui-nav-item">
+                        <a href="/archives/">
+                            <i class="fas fa-archive"></i>
+                            <span class="layui-nav-item-name">Archives</span>
+                        </a>
+                    </li>
+                    
+                    <li class="layui-nav-item">
+                        <a href="/tags/">
+                            <i class="fas fa-hashtag"></i>
+                            <span class="layui-nav-item-name">Tags</span>
+                        </a>
+                    </li>
+                    
+                    <li class="layui-nav-item">
+                        <a href="/categories/">
+                            <i class="far fa-folder-open"></i>
+                            <span class="layui-nav-item-name">Categories</span>
+                        </a>
+                    </li>
+                    
+                    <li class="layui-nav-item">
+                        <a href="/about/">
+                            <i class="fab fa-grav"></i>
+                            <span class="layui-nav-item-name">About</span>
+                        </a>
+                    </li>
+                    
+                    <li class="layui-nav-item">
+                        <a href="/guestbook/">
+                            <i class="fab fa-telegram"></i>
+                            <span class="layui-nav-item-name">Guestbook</span>
+                        </a>
+                    </li>
+                    
+                    <li class="layui-nav-item">
+                        <a href="/link/">
+                            <i class="fab fa-weixin"></i>
+                            <span class="layui-nav-item-name">Friends</span>
+                        </a>
+                    </li>
+                    
+                    <li class="layui-nav-item">
+                        <a href="/shuoshuo/">
+                            <i class="fas fa-coffee"></i>
+                            <span class="layui-nav-item-name">说说</span>
+                        </a>
+                    </li>
+                    
+                    <li class="layui-nav-item">
+                        
+                        <div id="dark" onclick="switchDarkMode()"></div>
+                        <script>
+                            if (localStorage.getItem('dark') === '1') {
+                                document.body.classList.add('dark');
+                            }
+                            document.getElementById('dark').innerHTML = document.querySelector("body").classList.contains("dark") ? "🌙" : "🌞";
+                        </script>
+                        
+                    </li>
+                    <span class="layui-nav-bar" style="left: 342px; top: 78px; width: 0px; opacity: 0;"></span>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+<article id="post">
+  <div class="post-title">(no title)</div>
+  
+<div class="post-meta">
     
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="vue双向绑定数组"><a href="#vue双向绑定数组" class="headerlink" title="vue双向绑定数组"></a>vue双向绑定数组</h2><p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1650e0743a644657bb90624778d79d90~tplv-k3u1fbpfcp-zoom-1.image"><br>众所周知,vue中<code>v-model</code> 会忽略所有表单元素的 <code>value、checked、selected attribute</code> 的初始值而总是将 Vue 实例的数据作为数据来源。</p>
+      <div class="post-meta-item date">
+        <span title="Created 2020.08.02"><i class="far fa-calendar-alt"></i> 2020.08.02</span>
+      </div>
+      <div class="post-meta-item updated">
+        <span title="Updated 2020.08.02"><i class="far fa-calendar-check"></i> 2020.08.02</span>
+      </div>
+     
+     
+    
+     <div class="post-meta-item wordcount">
+        
+          <i class="fas fa-pencil-alt"></i> <span class="post-count">528 words</span>
+           
+        
+          <i class="far fa-clock"></i> <span class="post-count">2 min</span>
+                               
+      </div>
+     
+</div>
+
+
+  
+    <div id="toc" class="toc">
+          <h1>Toc</h1>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#vue%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E6%95%B0%E7%BB%84"><span class="toc-number">1.</span> <span class="toc-text">vue双向绑定数组</span></a></li></ol>
+      </div>
+    
+  <div class="content">
+        <div><hr>
+<h2 id="vue双向绑定数组"><a href="#vue双向绑定数组" class="headerlink" title="vue双向绑定数组"></a>vue双向绑定数组</h2><p><img src= "/img/loading.gif" data-src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1650e0743a644657bb90624778d79d90~tplv-k3u1fbpfcp-zoom-1.image"><br>众所周知,vue中<code>v-model</code> 会忽略所有表单元素的 <code>value、checked、selected attribute</code> 的初始值而总是将 Vue 实例的数据作为数据来源。</p>
 <p>大部分情况,<code>v-model</code>是绑定一个对象的属性，但是如果数据库中的数据是一个数组，这种情况下，如果把数组转换成对象再绑定，然后再转换回去提交到数据库显然是一件工程量很大的事情，本着程序员偷懒的原则，我发现了一个便捷的方法，废话不多说，直接上干货。</p>
 <p>###HTML代码如下：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">&quot;https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>vue双向绑定数组<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">v-app</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 表格 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">v-for</span>=<span class="string">&quot;(item,index) in arr&quot;</span>&gt;</span></span><br><span class="line">          <span class="comment">&lt;!-- 文本框 --&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">v-text-field</span> <span class="attr">v-model</span>=<span class="string">&quot;arr[index]&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">v-text-field</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">v-for</span>=<span class="string">&quot;(item,index) in arr&quot;</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;item&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">v-app</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">```  </span><br><span class="line">###js代码如下：</span><br><span class="line"></span><br><span class="line">```javascript</span><br><span class="line"><span class="comment">&lt;!-- 引入vue --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 引入vuetify --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">    el: <span class="string">&#x27;#app&#x27;</span>,</span></span><br><span class="line"><span class="javascript">    vuetify: <span class="keyword">new</span> Vuetify(),</span></span><br><span class="line">    data () &#123;</span><br><span class="line"><span class="javascript">      <span class="keyword">return</span>&#123;</span></span><br><span class="line">        arr:[12123,134123,12]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>这里我用最简单的方法，给大家演示了一下，利用<code>item</code>遍历数组，然后利用<code>index</code>索引找到数组的下标，<code>v-model</code>绑定数组的下标即可实现上图的效果。</p>
+</div>
+        
+          <div class="post-copyright">
+                  <div class="copyright-item">
+                      <span> Author: John Doe</span>
+                  </div>
+                  <div class="copyright-item">
+                      <span> Link: <a href="http://yoursite.com/2020/08/02/vue%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E6%95%B0%E7%BB%84/">http://yoursite.com/2020/08/02/vue%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E6%95%B0%E7%BB%84/</a></span>
+                  </div>
+                  <div class="copyright-item">
+                      <span> License: 本博客所有文章除特别声明外，均采用许可协议 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> 转载请注明出处！</span>
+                  </div>
+          </div>
+        
+  </div>
 
-      
+  <div class="share-reward">
+    <div class="share">
+        
+<div class="social-share" data-sites="facebook,twitter,wechat,weibo,qq"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css">
+<script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script>
+
+
+      </div>
+        <div class="reward">
+          
+  <div style="padding: 10px 0; margin-left: 20px; width: 90%; text-align: center;">
+    <div class="reward-content">
+        <ul id="donateBox" class="list pos-a">
+          
+           <li id="PayPal"><a href="https://paypal.me" target="_blank" title="PayPal">PayPal</a></li>
+            
+          
+            <li id="AliPay" title="Alipay"><img data-img="/img/alipay.jpg" onerror=this.onerror=null,this.src="/img/loading.gif"></img></li>
+               
+                 
+            <li id="WeChat" title="Wechatpay"><img date-img="/img/wechat.jpg" onerror=this.onerror=null,this.src="/img/loading.gif"></img></li>
+                      
+          </ul>
+        <div id="QRBox" class="pos-f left-100">
+          <div id="MainBox"></div>
+        </div>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/02/vue%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E6%95%B0%E7%BB%84/" data-id="ckdckn3xi0000estzfusc8gn2" class="article-share-link">Share</a>
-      
-      
-    </footer>
   </div>
   
+        </div>
+    </div>
     
-<nav id="article-nav">
-  
-  
-    <a href="/2020/08/02/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
-    </a>
-  
-</nav>
+    <div class="post_tags">
+      
+    </div>
+    <div class="post-nav">
+      
+      
+        <div class="post-nav-next post-nav-item">
+            <a href="/2020/08/02/hello-world/" >Hello World<i class="fa fa-chevron-right"></i></a>
+        </div>
+      
+    </div>
 
-  
+
+    <div class="comments">
+      
+    <div class="comments">
+        <script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+        <div id="comment" class="vcomment" ></div>
+        <script>
+            var notify = 'false' == true ? true : false;
+            var verify = 'false' == true ? true : false;
+            var GUEST_INFO = ['nick','mail','link'];
+            var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+                return GUEST_INFO.indexOf(item) > -1
+            });
+            guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+            window.valine = new Valine({
+                el: '.vcomment',
+                notify: notify,
+                verify: verify,
+                appId: "",
+                appKey: "",
+                avatar: "mm",
+                placeholder: "Just go go",
+                guest_info: guest_info,
+                pageSize:'10',
+                recordIP: 'false',
+                serverURLs: "",
+                emojiCDN: "",
+                enableQQ: "true",
+            });
+        </script>
+    </div>
+
+    </div>
 </article>
 
-</section>
+    
+<a id="gotop" href="javascript:" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+<script>
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {console.log(121);
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("gotop").style.display = "block";
+        } else {
+            document.getElementById("gotop").style.display = "none";
+        }
+    }
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+    
+
+
+
+
+
+
+    
+<div id="bottom-outer">
+    <div id="bottom-inner">
+        © 2020 <i class="fa fa-heart" id="heart"></i> John Doe 
+        <br>
+        Powered by 
+        <a target="_blank" rel="noopener" href="http://hexo.io">hexo</a> | Theme is <a target="_blank" rel="noopener" href="https://github.com/a2396837/hexo-theme-blank/">blank</a>
         
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li></ul>
-    </div>
+          <div class="icp-info">
+            
+          <a href="" target="_blank"> </a>
+        </div>
+        
+    </div>  
   </div>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2020/08/02/vue%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E6%95%B0%E7%BB%84/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/02/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2020 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="https://www.layuicdn.com/layui-v2.5.6/layui.js"></script>
 
 
   
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
+    <script src="/js/script.js"></script>
   
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.3/build/highlight.min.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.7.0/dist/highlightjs-line-numbers.min.js"></script>
+  
+
+
+
+  <script>
+      window.lazyLoadOptions = {
+        elements_selector: 'img',
+        threshold: 0
+      }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script>
+
+
+
+  <script>
+    var images = $('img').not('.nav-logo img').not('.card img').not($('a>img')).not('.reward-content img')
+    images.each(function (i, o) {
+      var lazyloadSrc = $(o).attr('data-src') ? $(o).attr('data-src') : $(o).attr('src')
+      $(o).wrap(`<a href="${lazyloadSrc}" data-fancybox="group" data-caption="${$(o).attr('alt')}" class="fancybox"></a>`)
+    })
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script>
+  <script>
+        $().fancybox({
+      selector: '[data-fancybox]',
+      loop: true,
+      transitionEffect: 'slide',
+      protect: true,
+      buttons: ['slideShow', 'fullScreen', 'thumbs', 'close']
+    })
+  </script>
+  
+
+
+
+<script>
+  var btntop = $('#gotop');
+  btntop.on('click', function (e) {
+    e.preventDefault();
+    $('html, body').animate({ scrollTop: 0 }, '300');
+  });
+</script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@8.6.3/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({startOnLoad:true});</script>
+  <script>
+    $(document).ready(function () {
+      $('code.hljs').each(function (i, block) {
+        if ($.inArray(block.className, ['mermaid']) < 0) {
+          hljs.lineNumbersBlock(block);
+        }
+      });
+    });
+    </script>
+  
+
+
+
+<script>
+//reward
+jQuery(document).ready(function () {
+  var QRBox = $('#QRBox');
+  var MainBox = $('#MainBox');
+  var AliPayQR = '/img/alipay.jpg';
+  var WeChanQR = '/img/wechat.jpg';
+
+  function showQR(QR) {
+    if (QR) {
+      MainBox.css('background-image', 'url(' + QR + ')');
+    }
+    $('#donateBox').addClass('blur');
+    QRBox.fadeIn(300, function (argument) {
+      MainBox.addClass('showQR');
+    });
+  }
+
+  $('#donateBox>li').click(function (event) {
+    var thisID = $(this).attr('id');
+    if (thisID === 'AliPay') {
+      showQR(AliPayQR);
+    } else if (thisID === 'WeChat') {
+      showQR(WeChanQR);
+    }
+  });
+
+  MainBox.click(function (event) {
+    MainBox.removeClass('showQR').addClass('hideQR');
+    setTimeout(function (a) {
+      QRBox.fadeOut(300, function (argument) {
+        MainBox.removeClass('hideQR');
+      });
+      $('#DonateText,#donateBox,#github').removeClass('blur');
+    }, 600);
+
+  });
+});
+</script>
+
+
+<script>
+  var $table = $('.content table').not($('figure.highlight > table'))
+  $table.each(function () {
+    $(this).wrap('<div class="table-wrap"></div>')
+  })
+</script>
 
 
 
 
-<script src="/js/script.js"></script>
 
-
-
-
-  </div>
-</body>
 </html>
