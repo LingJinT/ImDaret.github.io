@@ -1,491 +1,413 @@
 
+
 <!DOCTYPE html>
-<html lang="en">
-    <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  
-    <link rel="icon" href="/img/favicon.ico">
-  
-  
-      <meta name="author" content="John Doe">
-  
-  
-  
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue组件之间传值 - Hexo</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+
   
   
-    <link rel="alternate" href="/atom.xml " title="Hexo" type="application/atom+xml">
+  <meta name="description" content="目录一、父组件向子组件传值二、子组件向父组件传值三、兄..."> 
+  
+  <meta name="author" content="John Doe"> 
+
+  
+    <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  
+  
+    <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  
+  
+    <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  
+  
+    <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
   
 
   
+<link rel="stylesheet" href="/css/style.css">
 
-  <title>Hexo</title>
+
+  
+  
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1445822_hhodbqn7tit.css">
 
   
 
   
+  
+  
+<link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css">
 
   
 
+  
+  
+  
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css">
 
   
 
   
-    
-      <link rel="stylesheet" href="/css/style.css">
-    
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
-    
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css">
-    
+  
+  
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/justifiedGallery/3.7.0/css/justifiedGallery.min.css">
+
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      fancybox: true,
+      pjax: false,
+      lazyload: {
+        enable: true,
+        loadingImage: '/images/theme/loading.gif',
+      },
+      donate: {
+        enable: true,
+        alipay: '/images/theme/zhifubao.jpg',
+        wechat: '/images/theme/weixin.jpg'
+      },
+      motto: {
+        api: '',
+        default: 'I love you more than three thousands years'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        alwaysShow: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: true
+      }
+    }
+  </script>
+
   
 
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.1/styles/github.css">
-    
-
 <meta name="generator" content="Hexo 5.0.0"></head>
-</html>
-    
-<header class="header">
-    <div class="title animated fadeInDown">
-        
-            <div class="logo">
-                
-                    <a href="/"><img data-src="https://cdn.jsdelivr.net/gh/a2396837/CDN@latest/images/2020/07/27/baokemeng.webp" onerror=this.onerror=null,this.src="/img/loading.gif"></a>
-                    
-            </div>
-         
-    </div>
-    <div class="navbar animated fadeInDown">
-     
-    
-            <div class="social">
-                
-            </div>
-     
-   </div>
-</header>
-
-
-
-    
-<div class="nav index" style="height: 60px;">
-    <div class="title animated fadeInDown">
-        <div class="layui-container">
-            
-                <div class="nav-title"><a href="/" title="Hexo">Hexo</a></div>
-               
-            <div class="nav-list">
-                <button> <span class=""></span><span style="display: block;"></span><span class=""></span> </button>
-                <ul class="layui-nav" lay-filter="">
-                    
-                    <li class="layui-nav-item">
-                        <a href="/">
-                            <i class="fab fa-fort-awesome"></i>
-                            <span class="layui-nav-item-name">Home</span>
-                        </a>
-                    </li>
-                    
-                    <li class="layui-nav-item">
-                        <a href="/archives/">
-                            <i class="fas fa-archive"></i>
-                            <span class="layui-nav-item-name">Archives</span>
-                        </a>
-                    </li>
-                    
-                    <li class="layui-nav-item">
-                        <a href="/tags/">
-                            <i class="fas fa-hashtag"></i>
-                            <span class="layui-nav-item-name">Tags</span>
-                        </a>
-                    </li>
-                    
-                    <li class="layui-nav-item">
-                        <a href="/categories/">
-                            <i class="far fa-folder-open"></i>
-                            <span class="layui-nav-item-name">Categories</span>
-                        </a>
-                    </li>
-                    
-                    <li class="layui-nav-item">
-                        <a href="/about/">
-                            <i class="fab fa-grav"></i>
-                            <span class="layui-nav-item-name">About</span>
-                        </a>
-                    </li>
-                    
-                    <li class="layui-nav-item">
-                        <a href="/guestbook/">
-                            <i class="fab fa-telegram"></i>
-                            <span class="layui-nav-item-name">Guestbook</span>
-                        </a>
-                    </li>
-                    
-                    <li class="layui-nav-item">
-                        <a href="/link/">
-                            <i class="fab fa-weixin"></i>
-                            <span class="layui-nav-item-name">Friends</span>
-                        </a>
-                    </li>
-                    
-                    <li class="layui-nav-item">
-                        <a href="/shuoshuo/">
-                            <i class="fas fa-coffee"></i>
-                            <span class="layui-nav-item-name">说说</span>
-                        </a>
-                    </li>
-                    
-                    <li class="layui-nav-item">
-                        
-                        <div id="dark" onclick="switchDarkMode()"></div>
-                        <script>
-                            if (localStorage.getItem('dark') === '1') {
-                                document.body.classList.add('dark');
-                            }
-                            document.getElementById('dark').innerHTML = document.querySelector("body").classList.contains("dark") ? "🌙" : "🌞";
-                        </script>
-                        
-                    </li>
-                    <span class="layui-nav-bar" style="left: 342px; top: 78px; width: 0px; opacity: 0;"></span>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-
-    
-<article id="post">
-  <div class="post-title">(no title)</div>
+<body class="lock-screen">
+  <div class="loading"></div>
   
-<div class="post-meta">
-    
-    
-      <div class="post-meta-item date">
-        <span title="Created 2020.08.08"><i class="far fa-calendar-alt"></i> 2020.08.08</span>
-      </div>
-      <div class="post-meta-item updated">
-        <span title="Updated 2020.08.08"><i class="far fa-calendar-check"></i> 2020.08.08</span>
-      </div>
-     
-     
-    
-     <div class="post-meta-item wordcount">
-        
-          <i class="fas fa-pencil-alt"></i> <span class="post-count">1.4k words</span>
-           
-        
-          <i class="far fa-clock"></i> <span class="post-count">6 min</span>
-                               
-      </div>
-     
-</div>
 
 
-  
-    <div id="toc" class="toc">
-          <h1>Toc</h1>
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#vue%E7%BB%84%E4%BB%B6%E4%B8%8E%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E4%BC%A0%E5%80%BC"><span class="toc-number">1.</span> <span class="toc-text">vue组件与组件之间传值</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-number"></span> <span class="toc-text">目录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%88%B6%E7%BB%84%E4%BB%B6%E5%90%91%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC"><span class="toc-number">0.1.</span> <span class="toc-text">一、父组件向子组件传值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%AD%90%E7%BB%84%E4%BB%B6%E5%90%91%E7%88%B6%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC"><span class="toc-number">0.2.</span> <span class="toc-text">二、子组件向父组件传值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%85%84%E5%BC%9F%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E4%BC%A0%E5%80%BC"><span class="toc-number">0.3.</span> <span class="toc-text">三、兄弟组件之间的传值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%88%B6%E7%BB%84%E4%BB%B6%E5%90%91%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC%EF%BC%9A"><span class="toc-number">0.4.</span> <span class="toc-text">一、父组件向子组件传值：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%AD%90%E7%BB%84%E4%BB%B6%E5%90%91%E7%88%B6%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC-1"><span class="toc-number">0.5.</span> <span class="toc-text">二、子组件向父组件传值:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%85%84%E5%BC%9F%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E4%BC%A0%E5%80%BC-1"><span class="toc-number">0.6.</span> <span class="toc-text">三、兄弟组件之间的传值:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E5%90%8E%E9%99%84%E4%B8%8A%E6%95%88%E6%9E%9C"><span class="toc-number">0.7.</span> <span class="toc-text">最后附上效果:</span></a></li></ol></li></ol>
-      </div>
-    
-  <div class="content">
-        <div><hr>
-<h2 id="vue组件与组件之间传值"><a href="#vue组件与组件之间传值" class="headerlink" title="vue组件与组件之间传值"></a>vue组件与组件之间传值</h2><h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h3 id="一、父组件向子组件传值"><a href="#一、父组件向子组件传值" class="headerlink" title="一、父组件向子组件传值"></a>一、父组件向子组件传值</h3><h3 id="二、子组件向父组件传值"><a href="#二、子组件向父组件传值" class="headerlink" title="二、子组件向父组件传值"></a>二、子组件向父组件传值</h3><h3 id="三、兄弟组件之间的传值"><a href="#三、兄弟组件之间的传值" class="headerlink" title="三、兄弟组件之间的传值"></a>三、兄弟组件之间的传值</h3><p><img src= "/img/loading.gif" data-src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/07545cbece4246eeb432bd82e47f7578~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<nav class="navbar">
+  <div class="left"></div>
+  <div class="center">Vue组件之间传值</div>
+  <div class="right">
+    <i class="iconfont iconmenu j-navbar-menu"></i>
+  </div>
+</nav>
+
+  <nav class="menu">
+  <div class="menu-wrap">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content">
+      
+      
+      
+      
+      <li class="menu-item"><a href="/ " class="underline"> 首页</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/galleries " class="underline"> 摄影</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/archives " class="underline"> 归档</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/tags " class="underline"> 标签</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/categories " class="underline"> 分类</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/about " class="underline"> 关于</a></li>
+      
+    </ul>
+    <div class="menu-copyright"><p>Copyright© 2019-2020 | <a target="_blank" href="https://www.001f3.cn">平常心</a> .AllRightsReserved</p></div>
+  </div>
+</nav>
+  <main id="main">
+  <div class="container" id="container">
+    <article class="article">
+  <section class="head">
+  <img   class="lazyload" data-original="/image/8.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">Vue组件之间传值</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>Aug 08, 2020</span
+        class="post-info-item">
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>5499</span>
+    </div>
+  </div>
+</section>
+  <section class="main">
+    <section class="content">
+      <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h3 id="一、父组件向子组件传值"><a href="#一、父组件向子组件传值" class="headerlink" title="一、父组件向子组件传值"></a>一、父组件向子组件传值</h3><h3 id="二、子组件向父组件传值"><a href="#二、子组件向父组件传值" class="headerlink" title="二、子组件向父组件传值"></a>二、子组件向父组件传值</h3><h3 id="三、兄弟组件之间的传值"><a href="#三、兄弟组件之间的传值" class="headerlink" title="三、兄弟组件之间的传值"></a>三、兄弟组件之间的传值</h3><p><img   class="lazyload" data-original="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/07545cbece4246eeb432bd82e47f7578~tplv-k3u1fbpfcp-zoom-1.image" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" ></p>
 <p>如上图所示，2是1的子组件，1是3的父组件，2和3是兄弟组件</p>
 <h3 id="一、父组件向子组件传值："><a href="#一、父组件向子组件传值：" class="headerlink" title="一、父组件向子组件传值："></a>一、父组件向子组件传值：</h3><p>html代码:</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">v-app</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 用:xxxx=&quot;xxxx&quot;绑定父组件的数据 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">list-group</span> <span class="attr">:listgroup</span>=<span class="string">&quot;listgroup&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">list-group</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">v-app</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">v-app</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- 用:xxxx=&quot;xxxx&quot;绑定父组件的数据 --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">list-group</span> <span class="hljs-attr">:listgroup</span>=<span class="hljs-string">&quot;listgroup&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">list-group</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">v-app</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <p>子组件注册代码:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">&#x27;list-group&#x27;</span>, &#123;</span><br><span class="line">    <span class="comment">// 接收父组件的数据</span></span><br><span class="line">    props:[<span class="string">&#x27;listgroup&#x27;</span>],</span><br><span class="line">    template:<span class="string">`</span></span><br><span class="line"><span class="string">      &lt;v-card</span></span><br><span class="line"><span class="string">        max-width=&quot;300&quot;</span></span><br><span class="line"><span class="string">        tile</span></span><br><span class="line"><span class="string">      &gt;</span></span><br><span class="line"><span class="string">        &lt;v-list rounded&gt;</span></span><br><span class="line"><span class="string">          &lt;v-list-item-group v-model=&quot;listgroup.item&quot; color=&quot;primary&quot;&gt;</span></span><br><span class="line"><span class="string">            &lt;v-list-item</span></span><br><span class="line"><span class="string">              v-for=&quot;(item, index) in listgroup.items&quot;</span></span><br><span class="line"><span class="string">              :key=&quot;index&quot; v-text=&quot;item.text&quot;&quot;</span></span><br><span class="line"><span class="string">            &gt;</span></span><br><span class="line"><span class="string">            &lt;/v-list-item&gt;</span></span><br><span class="line"><span class="string">          &lt;/v-list-item-group&gt;</span></span><br><span class="line"><span class="string">        &lt;/v-list&gt;</span></span><br><span class="line"><span class="string">      &lt;/v-card&gt;</span></span><br><span class="line"><span class="string">    `</span></span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs javascript">Vue.component(<span class="hljs-string">&#x27;list-group&#x27;</span>, &#123;<br>    <span class="hljs-comment">// 接收父组件的数据</span><br>    props:[<span class="hljs-string">&#x27;listgroup&#x27;</span>],<br>    template:<span class="hljs-string">`</span><br><span class="hljs-string">      &lt;v-card</span><br><span class="hljs-string">        max-width=&quot;300&quot;</span><br><span class="hljs-string">        tile</span><br><span class="hljs-string">      &gt;</span><br><span class="hljs-string">        &lt;v-list rounded&gt;</span><br><span class="hljs-string">          &lt;v-list-item-group v-model=&quot;listgroup.item&quot; color=&quot;primary&quot;&gt;</span><br><span class="hljs-string">            &lt;v-list-item</span><br><span class="hljs-string">              v-for=&quot;(item, index) in listgroup.items&quot;</span><br><span class="hljs-string">              :key=&quot;index&quot; v-text=&quot;item.text&quot;&quot;</span><br><span class="hljs-string">            &gt;</span><br><span class="hljs-string">            &lt;/v-list-item&gt;</span><br><span class="hljs-string">          &lt;/v-list-item-group&gt;</span><br><span class="hljs-string">        &lt;/v-list&gt;</span><br><span class="hljs-string">      &lt;/v-card&gt;</span><br><span class="hljs-string">    `</span><br>  &#125;)<br></code></pre></td></tr></table></figure>
 <p>父组件代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">    vuetify: <span class="keyword">new</span> Vuetify(),</span><br><span class="line">    data: &#123;</span><br><span class="line">      <span class="comment">// 父组件中的数据</span></span><br><span class="line">      listgroup:&#123;</span><br><span class="line">        item: <span class="number">1</span>,</span><br><span class="line">        items: [</span><br><span class="line">          &#123; <span class="attr">id</span>:<span class="number">1</span>, <span class="attr">text</span>: <span class="string">&#x27;Real-Time&#x27;</span>, <span class="attr">icon</span>: <span class="string">&#x27;mdi-clock&#x27;</span> &#125;,</span><br><span class="line">          &#123; <span class="attr">id</span>:<span class="number">2</span>, <span class="attr">text</span>: <span class="string">&#x27;Audience&#x27;</span>, <span class="attr">icon</span>: <span class="string">&#x27;mdi-account&#x27;</span> &#125;,</span><br><span class="line">          &#123; <span class="attr">id</span>:<span class="number">3</span>, <span class="attr">text</span>: <span class="string">&#x27;Conversions&#x27;</span>, <span class="attr">icon</span>: <span class="string">&#x27;mdi-flag&#x27;</span> &#125;,</span><br><span class="line">        ],</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">new</span> Vue(&#123;<br>    el: <span class="hljs-string">&#x27;#app&#x27;</span>,<br>    vuetify: <span class="hljs-keyword">new</span> Vuetify(),<br>    data: &#123;<br>      <span class="hljs-comment">// 父组件中的数据</span><br>      listgroup:&#123;<br>        item: <span class="hljs-number">1</span>,<br>        items: [<br>          &#123; <span class="hljs-attr">id</span>:<span class="hljs-number">1</span>, <span class="hljs-attr">text</span>: <span class="hljs-string">&#x27;Real-Time&#x27;</span>, <span class="hljs-attr">icon</span>: <span class="hljs-string">&#x27;mdi-clock&#x27;</span> &#125;,<br>          &#123; <span class="hljs-attr">id</span>:<span class="hljs-number">2</span>, <span class="hljs-attr">text</span>: <span class="hljs-string">&#x27;Audience&#x27;</span>, <span class="hljs-attr">icon</span>: <span class="hljs-string">&#x27;mdi-account&#x27;</span> &#125;,<br>          &#123; <span class="hljs-attr">id</span>:<span class="hljs-number">3</span>, <span class="hljs-attr">text</span>: <span class="hljs-string">&#x27;Conversions&#x27;</span>, <span class="hljs-attr">icon</span>: <span class="hljs-string">&#x27;mdi-flag&#x27;</span> &#125;,<br>        ],<br>      &#125;,<br>    &#125;,<br>  &#125;)<br></code></pre></td></tr></table></figure>
 <p>综上所述，父组件向子组件传值需要三步：</p>
 <p>1、首先在父组件中创建数据</p>
 <p>2、然后再html代码中用<code>:</code>绑定数据</p>
 <p>3、最后在子组件注册的代码中用<code>props</code>接收数据</p>
 <h3 id="二、子组件向父组件传值-1"><a href="#二、子组件向父组件传值-1" class="headerlink" title="二、子组件向父组件传值:"></a>二、子组件向父组件传值:</h3><p>我们在上面代码的基础上略作调整,加一个index传值</p>
 <p>html代码：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">v-app</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- @xxxx(xxxx要与子组件中的方法名对应) =后面跟父组件中的函数名($event接收子组件的值) --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">list-group</span> <span class="attr">:listgroup</span>=<span class="string">&quot;listgroup&quot;</span> @<span class="attr">handleindex</span>=<span class="string">&quot;handle($event)&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">list-group</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">v-app</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">v-app</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- @xxxx(xxxx要与子组件中的方法名对应) =后面跟父组件中的函数名($event接收子组件的值) --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">list-group</span> <span class="hljs-attr">:listgroup</span>=<span class="hljs-string">&quot;listgroup&quot;</span> @<span class="hljs-attr">handleindex</span>=<span class="hljs-string">&quot;handle($event)&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">list-group</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">v-app</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <p>子组件代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">&#x27;list-group&#x27;</span>, &#123;</span><br><span class="line">    props:[<span class="string">&#x27;listgroup&#x27;</span>],</span><br><span class="line">    template:<span class="string">`</span></span><br><span class="line"><span class="string">      &lt;v-card</span></span><br><span class="line"><span class="string">        max-width=&quot;300&quot;</span></span><br><span class="line"><span class="string">        tile</span></span><br><span class="line"><span class="string">      &gt;</span></span><br><span class="line"><span class="string">        &lt;v-list rounded&gt;</span></span><br><span class="line"><span class="string">          &lt;v-list-item-group v-model=&quot;listgroup.item&quot; color=&quot;primary&quot;&gt;</span></span><br><span class="line"><span class="string">            &lt;v-list-item</span></span><br><span class="line"><span class="string">              v-for=&quot;(item, index) in listgroup.items&quot;</span></span><br><span class="line"><span class="string">              :key=&quot;index&quot; v-text=&quot;item.text&quot; @click=&quot;$emit(&#x27;handleindex&#x27;,index)&quot; //这里$emit就是子组件传值给父组件的方法，handleindex是方法名，index是数据</span></span><br><span class="line"><span class="string">            &gt;</span></span><br><span class="line"><span class="string">            &lt;/v-list-item&gt;</span></span><br><span class="line"><span class="string">          &lt;/v-list-item-group&gt;</span></span><br><span class="line"><span class="string">        &lt;/v-list&gt;</span></span><br><span class="line"><span class="string">      &lt;/v-card&gt;</span></span><br><span class="line"><span class="string">    `</span></span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs javascript">Vue.component(<span class="hljs-string">&#x27;list-group&#x27;</span>, &#123;<br>    props:[<span class="hljs-string">&#x27;listgroup&#x27;</span>],<br>    template:<span class="hljs-string">`</span><br><span class="hljs-string">      &lt;v-card</span><br><span class="hljs-string">        max-width=&quot;300&quot;</span><br><span class="hljs-string">        tile</span><br><span class="hljs-string">      &gt;</span><br><span class="hljs-string">        &lt;v-list rounded&gt;</span><br><span class="hljs-string">          &lt;v-list-item-group v-model=&quot;listgroup.item&quot; color=&quot;primary&quot;&gt;</span><br><span class="hljs-string">            &lt;v-list-item</span><br><span class="hljs-string">              v-for=&quot;(item, index) in listgroup.items&quot;</span><br><span class="hljs-string">              :key=&quot;index&quot; v-text=&quot;item.text&quot; @click=&quot;$emit(&#x27;handleindex&#x27;,index)&quot; //这里$emit就是子组件传值给父组件的方法，handleindex是方法名，index是数据</span><br><span class="hljs-string">            &gt;</span><br><span class="hljs-string">            &lt;/v-list-item&gt;</span><br><span class="hljs-string">          &lt;/v-list-item-group&gt;</span><br><span class="hljs-string">        &lt;/v-list&gt;</span><br><span class="hljs-string">      &lt;/v-card&gt;</span><br><span class="hljs-string">    `</span><br>  &#125;)<br></code></pre></td></tr></table></figure>
 <p>父组件代码:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">    vuetify: <span class="keyword">new</span> Vuetify(),</span><br><span class="line">    data: &#123;</span><br><span class="line">      listgroup:&#123;</span><br><span class="line">        item: <span class="number">1</span>,</span><br><span class="line">        items: [</span><br><span class="line">          &#123; <span class="attr">id</span>:<span class="number">1</span>, <span class="attr">text</span>: <span class="string">&#x27;Real-Time&#x27;</span>, <span class="attr">icon</span>: <span class="string">&#x27;mdi-clock&#x27;</span> &#125;,</span><br><span class="line">          &#123; <span class="attr">id</span>:<span class="number">2</span>, <span class="attr">text</span>: <span class="string">&#x27;Audience&#x27;</span>, <span class="attr">icon</span>: <span class="string">&#x27;mdi-account&#x27;</span> &#125;,</span><br><span class="line">          &#123; <span class="attr">id</span>:<span class="number">3</span>, <span class="attr">text</span>: <span class="string">&#x27;Conversions&#x27;</span>, <span class="attr">icon</span>: <span class="string">&#x27;mdi-flag&#x27;</span> &#125;,</span><br><span class="line">        ],</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="comment">// 父组件中的值</span></span><br><span class="line">      index:<span class="number">-1</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    methods:&#123;</span><br><span class="line">      <span class="comment">// 父组件中的函数，val接收子组件传过来的值，然后相应的修改自身的index变量</span></span><br><span class="line">      handle: <span class="function"><span class="keyword">function</span>(<span class="params">val</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.index = val</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="built_in">this</span>.index) <span class="comment">//打印index</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">new</span> Vue(&#123;<br>    el: <span class="hljs-string">&#x27;#app&#x27;</span>,<br>    vuetify: <span class="hljs-keyword">new</span> Vuetify(),<br>    data: &#123;<br>      listgroup:&#123;<br>        item: <span class="hljs-number">1</span>,<br>        items: [<br>          &#123; <span class="hljs-attr">id</span>:<span class="hljs-number">1</span>, <span class="hljs-attr">text</span>: <span class="hljs-string">&#x27;Real-Time&#x27;</span>, <span class="hljs-attr">icon</span>: <span class="hljs-string">&#x27;mdi-clock&#x27;</span> &#125;,<br>          &#123; <span class="hljs-attr">id</span>:<span class="hljs-number">2</span>, <span class="hljs-attr">text</span>: <span class="hljs-string">&#x27;Audience&#x27;</span>, <span class="hljs-attr">icon</span>: <span class="hljs-string">&#x27;mdi-account&#x27;</span> &#125;,<br>          &#123; <span class="hljs-attr">id</span>:<span class="hljs-number">3</span>, <span class="hljs-attr">text</span>: <span class="hljs-string">&#x27;Conversions&#x27;</span>, <span class="hljs-attr">icon</span>: <span class="hljs-string">&#x27;mdi-flag&#x27;</span> &#125;,<br>        ],<br>      &#125;,<br>      <span class="hljs-comment">// 父组件中的值</span><br>      index:<span class="hljs-number">-1</span>,<br>    &#125;,<br>    methods:&#123;<br>      <span class="hljs-comment">// 父组件中的函数，val接收子组件传过来的值，然后相应的修改自身的index变量</span><br>      handle: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">val</span>)</span>&#123;<br>        <span class="hljs-built_in">this</span>.index = val<br>        <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.index) <span class="hljs-comment">//打印index</span><br>      &#125;<br>    &#125;<br>  &#125;)<br></code></pre></td></tr></table></figure>
 <p>综上，子组件向父组件传值也是三步：</p>
 <p>1、在子组件中准备想传的那个值，然后用<code>$emit</code>方法携带一个方法名</p>
 <p>2、在html代码中用<code>@</code>绑定子组件中的方法名，然后用<code>$event</code>接收子组件中的值</p>
 <p>3、父组件中随便找个参数接收即可</p>
 <h3 id="三、兄弟组件之间的传值-1"><a href="#三、兄弟组件之间的传值-1" class="headerlink" title="三、兄弟组件之间的传值:"></a>三、兄弟组件之间的传值:</h3><p>之前我学习到的是创建事件中心的方法来实现，但是我想了一想发现，兄弟组件共同的父组件不就是事件中心吗，所以我们在上面的代码再略作修改看看能否实现效果(其实就是在上面的基础上再注册一个组件接收index的值就可测试)</p>
 <p>html代码：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">v-app</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 列表组件绑定父组件中的函数 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">list-group</span> <span class="attr">:listgroup</span>=<span class="string">&quot;listgroup&quot;</span> @<span class="attr">handleindex</span>=<span class="string">&quot;handle($event)&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">list-group</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 测试组件绑定父组件中的index值 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">test-box</span> <span class="attr">:index</span>=<span class="string">&quot;index&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">test-box</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">v-app</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">v-app</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- 列表组件绑定父组件中的函数 --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">list-group</span> <span class="hljs-attr">:listgroup</span>=<span class="hljs-string">&quot;listgroup&quot;</span> @<span class="hljs-attr">handleindex</span>=<span class="hljs-string">&quot;handle($event)&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">list-group</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- 测试组件绑定父组件中的index值 --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">test-box</span> <span class="hljs-attr">:index</span>=<span class="hljs-string">&quot;index&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">test-box</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">v-app</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <p>兄弟组件代码:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 测试组件</span></span><br><span class="line">Vue.component(<span class="string">&#x27;test-box&#x27;</span>,&#123;</span><br><span class="line">  props:[<span class="string">&#x27;index&#x27;</span>],</span><br><span class="line">  template:<span class="string">`</span></span><br><span class="line"><span class="string">    &lt;div&gt;&#123;&#123;index&#125;&#125;&lt;/div&gt;</span></span><br><span class="line"><span class="string">  `</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 列表组件</span></span><br><span class="line">Vue.component(<span class="string">&#x27;list-group&#x27;</span>, &#123;</span><br><span class="line">  props:[<span class="string">&#x27;listgroup&#x27;</span>],</span><br><span class="line">  template:<span class="string">`</span></span><br><span class="line"><span class="string">    &lt;v-card</span></span><br><span class="line"><span class="string">      max-width=&quot;300&quot;</span></span><br><span class="line"><span class="string">      tile</span></span><br><span class="line"><span class="string">    &gt;</span></span><br><span class="line"><span class="string">      &lt;v-list rounded&gt;</span></span><br><span class="line"><span class="string">        &lt;v-list-item-group v-model=&quot;listgroup.item&quot; color=&quot;primary&quot;&gt;</span></span><br><span class="line"><span class="string">          &lt;v-list-item</span></span><br><span class="line"><span class="string">            v-for=&quot;(item, index) in listgroup.items&quot;</span></span><br><span class="line"><span class="string">            :key=&quot;index&quot; v-text=&quot;item.text&quot; @click=&quot;$emit(&#x27;handleindex&#x27;,index)&quot;</span></span><br><span class="line"><span class="string">          &gt;</span></span><br><span class="line"><span class="string">          &lt;/v-list-item&gt;</span></span><br><span class="line"><span class="string">        &lt;/v-list-item-group&gt;</span></span><br><span class="line"><span class="string">      &lt;/v-list&gt;</span></span><br><span class="line"><span class="string">    &lt;/v-card&gt;</span></span><br><span class="line"><span class="string">  `</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 测试组件</span><br>Vue.component(<span class="hljs-string">&#x27;test-box&#x27;</span>,&#123;<br>  props:[<span class="hljs-string">&#x27;index&#x27;</span>],<br>  template:<span class="hljs-string">`</span><br><span class="hljs-string">    &lt;div&gt;&#123;&#123;index&#125;&#125;&lt;/div&gt;</span><br><span class="hljs-string">  `</span><br>&#125;)<br><span class="hljs-comment">// 列表组件</span><br>Vue.component(<span class="hljs-string">&#x27;list-group&#x27;</span>, &#123;<br>  props:[<span class="hljs-string">&#x27;listgroup&#x27;</span>],<br>  template:<span class="hljs-string">`</span><br><span class="hljs-string">    &lt;v-card</span><br><span class="hljs-string">      max-width=&quot;300&quot;</span><br><span class="hljs-string">      tile</span><br><span class="hljs-string">    &gt;</span><br><span class="hljs-string">      &lt;v-list rounded&gt;</span><br><span class="hljs-string">        &lt;v-list-item-group v-model=&quot;listgroup.item&quot; color=&quot;primary&quot;&gt;</span><br><span class="hljs-string">          &lt;v-list-item</span><br><span class="hljs-string">            v-for=&quot;(item, index) in listgroup.items&quot;</span><br><span class="hljs-string">            :key=&quot;index&quot; v-text=&quot;item.text&quot; @click=&quot;$emit(&#x27;handleindex&#x27;,index)&quot;</span><br><span class="hljs-string">          &gt;</span><br><span class="hljs-string">          &lt;/v-list-item&gt;</span><br><span class="hljs-string">        &lt;/v-list-item-group&gt;</span><br><span class="hljs-string">      &lt;/v-list&gt;</span><br><span class="hljs-string">    &lt;/v-card&gt;</span><br><span class="hljs-string">  `</span><br>&#125;)<br></code></pre></td></tr></table></figure>
 
 <p>父组件代码:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">    vuetify: <span class="keyword">new</span> Vuetify(),</span><br><span class="line">    data: &#123;</span><br><span class="line">      listgroup:&#123;</span><br><span class="line">        item: <span class="number">1</span>,</span><br><span class="line">        items: [</span><br><span class="line">          &#123; <span class="attr">id</span>:<span class="number">1</span>, <span class="attr">text</span>: <span class="string">&#x27;Real-Time&#x27;</span>, <span class="attr">icon</span>: <span class="string">&#x27;mdi-clock&#x27;</span> &#125;,</span><br><span class="line">          &#123; <span class="attr">id</span>:<span class="number">2</span>, <span class="attr">text</span>: <span class="string">&#x27;Audience&#x27;</span>, <span class="attr">icon</span>: <span class="string">&#x27;mdi-account&#x27;</span> &#125;,</span><br><span class="line">          &#123; <span class="attr">id</span>:<span class="number">3</span>, <span class="attr">text</span>: <span class="string">&#x27;Conversions&#x27;</span>, <span class="attr">icon</span>: <span class="string">&#x27;mdi-flag&#x27;</span> &#125;,</span><br><span class="line">        ],</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="comment">// 父组件中的值</span></span><br><span class="line">      index:<span class="number">-1</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    methods:&#123;</span><br><span class="line">      <span class="comment">// 父组件中的函数，val接收子组件传过来的值，然后相应的修改自身的index变量</span></span><br><span class="line">      handle: <span class="function"><span class="keyword">function</span>(<span class="params">val</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.index = val</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="built_in">this</span>.index) <span class="comment">//打印index</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">new</span> Vue(&#123;<br>    el: <span class="hljs-string">&#x27;#app&#x27;</span>,<br>    vuetify: <span class="hljs-keyword">new</span> Vuetify(),<br>    data: &#123;<br>      listgroup:&#123;<br>        item: <span class="hljs-number">1</span>,<br>        items: [<br>          &#123; <span class="hljs-attr">id</span>:<span class="hljs-number">1</span>, <span class="hljs-attr">text</span>: <span class="hljs-string">&#x27;Real-Time&#x27;</span>, <span class="hljs-attr">icon</span>: <span class="hljs-string">&#x27;mdi-clock&#x27;</span> &#125;,<br>          &#123; <span class="hljs-attr">id</span>:<span class="hljs-number">2</span>, <span class="hljs-attr">text</span>: <span class="hljs-string">&#x27;Audience&#x27;</span>, <span class="hljs-attr">icon</span>: <span class="hljs-string">&#x27;mdi-account&#x27;</span> &#125;,<br>          &#123; <span class="hljs-attr">id</span>:<span class="hljs-number">3</span>, <span class="hljs-attr">text</span>: <span class="hljs-string">&#x27;Conversions&#x27;</span>, <span class="hljs-attr">icon</span>: <span class="hljs-string">&#x27;mdi-flag&#x27;</span> &#125;,<br>        ],<br>      &#125;,<br>      <span class="hljs-comment">// 父组件中的值</span><br>      index:<span class="hljs-number">-1</span>,<br>    &#125;,<br>    methods:&#123;<br>      <span class="hljs-comment">// 父组件中的函数，val接收子组件传过来的值，然后相应的修改自身的index变量</span><br>      handle: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">val</span>)</span>&#123;<br>        <span class="hljs-built_in">this</span>.index = val<br>        <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.index) <span class="hljs-comment">//打印index</span><br>      &#125;<br>    &#125;<br>  &#125;)<br></code></pre></td></tr></table></figure>
 <p>这是最后的完整版代码，包括了父组件向子组件传值，子组件向父组件传值，兄弟组件之间的传值</p>
 <p>综上，兄弟组件之间的传值包括以下三步(这里的测试组件和列表组件是兄弟组件关系):</p>
 <p>1、列表组件给父组件传值</p>
 <p>2、父组件接收列表组件的值，并且利用函数的方式修改了自身的<code>index</code>的值</p>
 <p>3、父组件向测试组件传<code>index</code>的值</p>
-<h3 id="最后附上效果"><a href="#最后附上效果" class="headerlink" title="最后附上效果:"></a>最后附上效果:</h3><p><img src= "/img/loading.gif" data-src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cc0716f9081a48d7809b4b6046843ff9~tplv-k3u1fbpfcp-zoom-1.image"></p>
-</div>
-        
-          <div class="post-copyright">
-                  <div class="copyright-item">
-                      <span> Author: John Doe</span>
-                  </div>
-                  <div class="copyright-item">
-                      <span> Link: <a href="http://yoursite.com/2020/08/08/vue%E7%BB%84%E4%BB%B6%E4%B8%8E%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E4%BC%A0%E5%80%BC/">http://yoursite.com/2020/08/08/vue%E7%BB%84%E4%BB%B6%E4%B8%8E%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E4%BC%A0%E5%80%BC/</a></span>
-                  </div>
-                  <div class="copyright-item">
-                      <span> License: 本博客所有文章除特别声明外，均采用许可协议 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> 转载请注明出处！</span>
-                  </div>
-          </div>
-        
-  </div>
+<h3 id="最后附上效果"><a href="#最后附上效果" class="headerlink" title="最后附上效果:"></a>最后附上效果:</h3><p><img   class="lazyload" data-original="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cc0716f9081a48d7809b4b6046843ff9~tplv-k3u1fbpfcp-zoom-1.image" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" ></p>
 
-  <div class="share-reward">
-    <div class="share">
-        
-<div class="social-share" data-sites="facebook,twitter,wechat,weibo,qq"></div>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css">
-<script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script>
-
-
-      </div>
-        <div class="reward">
-          
-  <div style="padding: 10px 0; margin-left: 20px; width: 90%; text-align: center;">
-    <div class="reward-content">
-        <ul id="donateBox" class="list pos-a">
-          
-           <li id="PayPal"><a href="https://paypal.me" target="_blank" title="PayPal">PayPal</a></li>
-            
-          
-            <li id="AliPay" title="Alipay"><img data-img="/img/alipay.jpg" onerror=this.onerror=null,this.src="/img/loading.gif"></img></li>
-               
-                 
-            <li id="WeChat" title="Wechatpay"><img date-img="/img/wechat.jpg" onerror=this.onerror=null,this.src="/img/loading.gif"></img></li>
-                      
-          </ul>
-        <div id="QRBox" class="pos-f left-100">
-          <div id="MainBox"></div>
-        </div>
-    </div>
-  </div>
+    </section>
+    <section class="extra">
+      
+        <ul class="copyright">
   
-        </div>
-    </div>
+  <li><strong>版权声明：</strong>本博客所有文章均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"
+      rel="external nofollow" target="_blank"> BY-NC-SA </a>许可协议，转载请注明出处！</li>
+  
+</ul>
+      
+      
+        <section class="donate">
+  <div class="qrcode">
+    <img   class="lazyload" data-original="/images/theme/zhifubao.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
+  </div>
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
+</section>
+      
+      
+      
+<nav class="nav">
+  
+    <a href="/2020/08/08/js%E4%B8%AD%E7%9A%84%E5%B8%B8%E7%94%A8%E5%A5%97%E8%B7%AF1/"><i class="iconfont iconleft"></i>JS中的常用套路</a>
+  
+  
+    <a href="/2020/08/08/vue+vuetify%E5%AE%9E%E7%8E%B0%E5%8F%AF%E7%BC%96%E8%BE%91%E8%A1%A8%E6%A0%BC/">可编辑表格<i class="iconfont iconright"></i></a>
+  
+</nav>
+
+    </section>
     
-    <div class="post_tags">
-      
-    </div>
-    <div class="post-nav">
-      
-        <div class="post-nav-prev post-nav-item">
-            <a href="/2020/08/08/js%E4%B8%AD%E7%9A%84%E5%B8%B8%E7%94%A8%E5%A5%97%E8%B7%AF1/" ><i class="fa fa-chevron-left"></i></a>
-        </div>
-      
-      
-        <div class="post-nav-next post-nav-item">
-            <a href="/2020/08/08/vue+vuetify%E5%AE%9E%E7%8E%B0%E5%8F%AF%E7%BC%96%E8%BE%91%E8%A1%A8%E6%A0%BC/" ><i class="fa fa-chevron-right"></i></a>
-        </div>
-      
-    </div>
-
-
-    <div class="comments">
-      
-    <div class="comments">
-        <script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
-        <div id="comment" class="vcomment" ></div>
-        <script>
-            var notify = 'false' == true ? true : false;
-            var verify = 'false' == true ? true : false;
-            var GUEST_INFO = ['nick','mail','link'];
-            var guest_info = 'nick,mail,link'.split(',').filter(function(item){
-                return GUEST_INFO.indexOf(item) > -1
-            });
-            guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
-            window.valine = new Valine({
-                el: '.vcomment',
-                notify: notify,
-                verify: verify,
-                appId: "",
-                appKey: "",
-                avatar: "mm",
-                placeholder: "Just go go",
-                guest_info: guest_info,
-                pageSize:'10',
-                recordIP: 'false',
-                serverURLs: "",
-                emojiCDN: "",
-                enableQQ: "true",
-            });
-        </script>
-    </div>
-
-    </div>
+      <section class="comments">
+        
+          <div class="btn" id="comments-btn">查看评论</div>
+        
+        
+      </section>
+    
+  </section>
 </article>
-
-    
-<a id="gotop" href="javascript:" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
-<script>
-    window.onscroll = function() {scrollFunction()};
-    function scrollFunction() {console.log(121);
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            document.getElementById("gotop").style.display = "block";
-        } else {
-            document.getElementById("gotop").style.display = "none";
-        }
-    }
-    function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-    }
-</script>
-    
-
-
-
-
-
-
-    
-<div id="bottom-outer">
-    <div id="bottom-inner">
-        © 2020 <i class="fa fa-heart" id="heart"></i> John Doe 
-        <br>
-        Powered by 
-        <a target="_blank" rel="noopener" href="http://hexo.io">hexo</a> | Theme is <a target="_blank" rel="noopener" href="https://github.com/a2396837/hexo-theme-blank/">blank</a>
-        
-          <div class="icp-info">
-            
-          <a href="" target="_blank"> </a>
-        </div>
-        
-    </div>  
   </div>
-
-
-<script src="https://www.layuicdn.com/layui-v2.5.6/layui.js"></script>
-
-
+</main>
+  <footer class="footer">
+  <div class="footer-social">
+    
+    
+    
+    
+    
+    <a href="tencent://message/?Menu=yes&uin=969122484 " target="_blank" onMouseOver="this.style.color= '#12B7F5'"
+      onMouseOut="this.style.color='#33333D'">
+      <i class="iconfont footer-social-item  iconQQ "></i>
+    </a>
+    
+    
+    
+    
+    
+    <a href="javascript:; " target="_blank" onMouseOver="this.style.color= '#09BB07'"
+      onMouseOut="this.style.color='#33333D'">
+      <i class="iconfont footer-social-item  iconwechat-fill "></i>
+    </a>
+    
+    
+    
+    
+    
+    <a href="https://github.com/ImDaret " target="_blank" onMouseOver="this.style.color= '#24292E'"
+      onMouseOut="this.style.color='#33333D'">
+      <i class="iconfont footer-social-item  icongithub-fill "></i>
+    </a>
+    
+    
+    
+    
+    
+    <a href="ling_jintao@163.com " target="_blank" onMouseOver="this.style.color='#FFBE5B'"
+      onMouseOut="this.style.color='#33333D'">
+      <i class="iconfont footer-social-item  iconmail"></i>
+    </a>
+    
+  </div>
+  <div class="footer-copyright"><p>Copyright© 2019-2020 | <a target="_blank" href="https://www.001f3.cn">平常心</a> .AllRightsReserved</p></div>
+</footer>
   
-    <script src="/js/script.js"></script>
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
   
-    <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+  <div class="fab fab-daovoice">
+    <i class="iconfont iconcomment"></i>
+  </div>
   
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.3/build/highlight.min.js"></script>
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
   
-    <script src="https://cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.7.0/dist/highlightjs-line-numbers.min.js"></script>
-  
+</body>
+
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
 
 
 
-  <script>
-      window.lazyLoadOptions = {
-        elements_selector: 'img',
-        threshold: 0
-      }
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script>
 
 
 
-  <script>
-    var images = $('img').not('.nav-logo img').not('.card img').not($('a>img')).not('.reward-content img')
-    images.each(function (i, o) {
-      var lazyloadSrc = $(o).attr('data-src') ? $(o).attr('data-src') : $(o).attr('src')
-      $(o).wrap(`<a href="${lazyloadSrc}" data-fancybox="group" data-caption="${$(o).attr('alt')}" class="fancybox"></a>`)
-    })
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script>
-  <script>
-        $().fancybox({
-      selector: '[data-fancybox]',
-      loop: true,
-      transitionEffect: 'slide',
-      protect: true,
-      buttons: ['slideShow', 'fullScreen', 'thumbs', 'close']
-    })
-  </script>
-  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/justifiedGallery/3.7.0/js/jquery.justifiedGallery.min.js"></script>
+
+
+
+
+
+
+<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/modules.js"></script>
+<script src="/js/zui.js"></script>
+<script src="/js/script.js"></script>
+
+
 
 
 
 <script>
-  var btntop = $('#gotop');
-  btntop.on('click', function (e) {
-    e.preventDefault();
-    $('html, body').animate({ scrollTop: 0 }, '300');
+  (function (i, s, o, g, r, a, m) {
+    i["DaoVoiceObject"] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    a.charset = "utf-8";
+    m.parentNode.insertBefore(a, m)
+  })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
+    "//widget.daovoice.io/widget/0f81ff2f.js", "daovoice")
+  daovoice('init', {
+    app_id: "abcdefg"
+  }, {
+    launcher: {
+      disableLauncherIcon: true,
+    },
   });
+  daovoice('update');
 </script>
 
 
-  <script src="https://cdn.jsdelivr.net/npm/mermaid@8.6.3/dist/mermaid.min.js"></script>
-  <script>mermaid.initialize({startOnLoad:true});</script>
-  <script>
-    $(document).ready(function () {
-      $('code.hljs').each(function (i, block) {
-        if ($.inArray(block.className, ['mermaid']) < 0) {
-          hljs.lineNumbersBlock(block);
-        }
-      });
-    });
-    </script>
-  
-
-
 
 <script>
-//reward
-jQuery(document).ready(function () {
-  var QRBox = $('#QRBox');
-  var MainBox = $('#MainBox');
-  var AliPayQR = '/img/alipay.jpg';
-  var WeChanQR = '/img/wechat.jpg';
-
-  function showQR(QR) {
-    if (QR) {
-      MainBox.css('background-image', 'url(' + QR + ')');
+  (function () {
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
     }
-    $('#donateBox').addClass('blur');
-    QRBox.fadeIn(300, function (argument) {
-      MainBox.addClass('showQR');
-    });
-  }
-
-  $('#donateBox>li').click(function (event) {
-    var thisID = $(this).attr('id');
-    if (thisID === 'AliPay') {
-      showQR(AliPayQR);
-    } else if (thisID === 'WeChat') {
-      showQR(WeChanQR);
-    }
-  });
-
-  MainBox.click(function (event) {
-    MainBox.removeClass('showQR').addClass('hideQR');
-    setTimeout(function (a) {
-      QRBox.fadeOut(300, function (argument) {
-        MainBox.removeClass('hideQR');
-      });
-      $('#DonateText,#donateBox,#github').removeClass('blur');
-    }, 600);
-
-  });
-});
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
 </script>
 
 
 <script>
-  var $table = $('.content table').not($('figure.highlight > table'))
-  $table.each(function () {
-    $(this).wrap('<div class="table-wrap"></div>')
-  })
+  var _hmt = _hmt || [];
+  (function () {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?4c204d8bc027a0455b5fc642ac334ca8";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
 </script>
+
+
+
+
+
 
 
 

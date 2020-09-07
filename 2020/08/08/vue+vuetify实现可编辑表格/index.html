@@ -1,460 +1,382 @@
 
+
 <!DOCTYPE html>
-<html lang="en">
-    <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  
-    <link rel="icon" href="/img/favicon.ico">
-  
-  
-      <meta name="author" content="John Doe">
-  
-  
-  
-  
-  
-    <link rel="alternate" href="/atom.xml " title="Hexo" type="application/atom+xml">
-  
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>可编辑表格 - Hexo</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
 
   
-
-  <title>Hexo</title>
+  
+  <meta name="description" content="我查遍整个vuetify官网，里面只有弹出对话框的可编..."> 
+  
+  <meta name="author" content="John Doe"> 
 
   
-
+    <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
   
-
   
-
-
+    <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
   
-
   
-    
-      <link rel="stylesheet" href="/css/style.css">
-    
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
-    
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css">
-    
+    <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  
+  
+    <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
   
 
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.1/styles/github.css">
-    
-
-<meta name="generator" content="Hexo 5.0.0"></head>
-</html>
-    
-<header class="header">
-    <div class="title animated fadeInDown">
-        
-            <div class="logo">
-                
-                    <a href="/"><img data-src="https://cdn.jsdelivr.net/gh/a2396837/CDN@latest/images/2020/07/27/baokemeng.webp" onerror=this.onerror=null,this.src="/img/loading.gif"></a>
-                    
-            </div>
-         
-    </div>
-    <div class="navbar animated fadeInDown">
-     
-    
-            <div class="social">
-                
-            </div>
-     
-   </div>
-</header>
-
-
-
-    
-<div class="nav index" style="height: 60px;">
-    <div class="title animated fadeInDown">
-        <div class="layui-container">
-            
-                <div class="nav-title"><a href="/" title="Hexo">Hexo</a></div>
-               
-            <div class="nav-list">
-                <button> <span class=""></span><span style="display: block;"></span><span class=""></span> </button>
-                <ul class="layui-nav" lay-filter="">
-                    
-                    <li class="layui-nav-item">
-                        <a href="/">
-                            <i class="fab fa-fort-awesome"></i>
-                            <span class="layui-nav-item-name">Home</span>
-                        </a>
-                    </li>
-                    
-                    <li class="layui-nav-item">
-                        <a href="/archives/">
-                            <i class="fas fa-archive"></i>
-                            <span class="layui-nav-item-name">Archives</span>
-                        </a>
-                    </li>
-                    
-                    <li class="layui-nav-item">
-                        <a href="/tags/">
-                            <i class="fas fa-hashtag"></i>
-                            <span class="layui-nav-item-name">Tags</span>
-                        </a>
-                    </li>
-                    
-                    <li class="layui-nav-item">
-                        <a href="/categories/">
-                            <i class="far fa-folder-open"></i>
-                            <span class="layui-nav-item-name">Categories</span>
-                        </a>
-                    </li>
-                    
-                    <li class="layui-nav-item">
-                        <a href="/about/">
-                            <i class="fab fa-grav"></i>
-                            <span class="layui-nav-item-name">About</span>
-                        </a>
-                    </li>
-                    
-                    <li class="layui-nav-item">
-                        <a href="/guestbook/">
-                            <i class="fab fa-telegram"></i>
-                            <span class="layui-nav-item-name">Guestbook</span>
-                        </a>
-                    </li>
-                    
-                    <li class="layui-nav-item">
-                        <a href="/link/">
-                            <i class="fab fa-weixin"></i>
-                            <span class="layui-nav-item-name">Friends</span>
-                        </a>
-                    </li>
-                    
-                    <li class="layui-nav-item">
-                        <a href="/shuoshuo/">
-                            <i class="fas fa-coffee"></i>
-                            <span class="layui-nav-item-name">说说</span>
-                        </a>
-                    </li>
-                    
-                    <li class="layui-nav-item">
-                        
-                        <div id="dark" onclick="switchDarkMode()"></div>
-                        <script>
-                            if (localStorage.getItem('dark') === '1') {
-                                document.body.classList.add('dark');
-                            }
-                            document.getElementById('dark').innerHTML = document.querySelector("body").classList.contains("dark") ? "🌙" : "🌞";
-                        </script>
-                        
-                    </li>
-                    <span class="layui-nav-bar" style="left: 342px; top: 78px; width: 0px; opacity: 0;"></span>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-
-    
-<article id="post">
-  <div class="post-title">(no title)</div>
-  
-<div class="post-meta">
-    
-    
-      <div class="post-meta-item date">
-        <span title="Created 2020.08.08"><i class="far fa-calendar-alt"></i> 2020.08.08</span>
-      </div>
-      <div class="post-meta-item updated">
-        <span title="Updated 2020.08.08"><i class="far fa-calendar-check"></i> 2020.08.08</span>
-      </div>
-     
-     
-    
-     <div class="post-meta-item wordcount">
-        
-          <i class="fas fa-pencil-alt"></i> <span class="post-count">1.3k words</span>
-           
-        
-          <i class="far fa-clock"></i> <span class="post-count">6 min</span>
-                               
-      </div>
-     
-</div>
+<link rel="stylesheet" href="/css/style.css">
 
 
   
-    <div id="toc" class="toc">
-          <h1>Toc</h1>
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#vue-vuetify%E5%AE%9E%E7%8E%B0%E5%8F%AF%E7%BC%96%E8%BE%91%E8%A1%A8%E6%A0%BC"><span class="toc-number">1.</span> <span class="toc-text">vue+vuetify实现可编辑表格</span></a></li></ol>
-      </div>
-    
-  <div class="content">
-        <div><hr>
-<h2 id="vue-vuetify实现可编辑表格"><a href="#vue-vuetify实现可编辑表格" class="headerlink" title="vue+vuetify实现可编辑表格"></a>vue+vuetify实现可编辑表格</h2><p><img src= "/img/loading.gif" data-src="https://user-gold-cdn.xitu.io/2020/7/26/1738b463bfb83bc3?w=1903&h=563&f=gif&s=355009"><br>我查遍整个vuetify官网，里面只有弹出对话框的可编辑表格，并没有这种在表格内就可编辑的功能，所以写了这篇文章，以便大家备一手，学会这招你可以秒天秒地秒空气，防老师防领导防项目经理。</p>
-<p>HTML代码如下:</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">v-app</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">v-card</span> <span class="attr">style</span>=<span class="string">&quot;width:70%; margin: 200px auto;&quot;</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">v-card-title</span>&gt;</span></span><br><span class="line">            可编辑表格</span><br><span class="line">          <span class="tag">&lt;/<span class="name">v-card-title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">v-simple-table</span> <span class="attr">id</span>=<span class="string">&quot;tab&quot;</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">template</span> <span class="attr">v-slot:default</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">thead</span>&gt;</span></span><br><span class="line">              <span class="comment">&lt;!--  表头 --&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">th</span> <span class="attr">class</span>=<span class="string">&quot;text-left&quot;</span>&gt;</span>Name<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">th</span> <span class="attr">class</span>=<span class="string">&quot;text-left&quot;</span>&gt;</span>Calories<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">th</span> <span class="attr">class</span>=<span class="string">&quot;text-left&quot;</span>&gt;</span>fat<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">th</span> <span class="attr">class</span>=<span class="string">&quot;text-left&quot;</span>&gt;</span>carbs<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">th</span> <span class="attr">class</span>=<span class="string">&quot;text-left&quot;</span>&gt;</span>protein<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">th</span> <span class="attr">class</span>=<span class="string">&quot;text-left&quot;</span>&gt;</span>iron<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">th</span> <span class="attr">class</span>=<span class="string">&quot;text-left&quot;</span>&gt;</span>actions<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">              <span class="comment">&lt;!-- 表格内容 --&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">tr</span> <span class="attr">v-for</span>=<span class="string">&quot;item in desserts&quot;</span> <span class="attr">:key</span>=<span class="string">&quot;item.id&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">v-text-field</span></span></span><br><span class="line"><span class="tag">                  <span class="attr">v-model</span>=<span class="string">&quot;item.name&quot;</span></span></span><br><span class="line"><span class="tag">                  <span class="attr">:readonly</span>=<span class="string">&quot;item.readonly&quot;</span></span></span><br><span class="line"><span class="tag">                  <span class="attr">autofocus</span></span></span><br><span class="line"><span class="tag">                &gt;</span><span class="tag">&lt;/<span class="name">v-text-field</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">                  <span class="tag">&lt;<span class="name">v-text-field</span></span></span><br><span class="line"><span class="tag">                  <span class="attr">v-model</span>=<span class="string">&quot;item.calories&quot;</span></span></span><br><span class="line"><span class="tag">                  <span class="attr">:readonly</span>=<span class="string">&quot;item.readonly&quot;</span></span></span><br><span class="line"><span class="tag">                  <span class="attr">autofocus</span></span></span><br><span class="line"><span class="tag">                &gt;</span><span class="tag">&lt;/<span class="name">v-text-field</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">                  <span class="tag">&lt;<span class="name">v-text-field</span></span></span><br><span class="line"><span class="tag">                  <span class="attr">v-model</span>=<span class="string">&quot;item.fat&quot;</span></span></span><br><span class="line"><span class="tag">                  <span class="attr">:readonly</span>=<span class="string">&quot;item.readonly&quot;</span></span></span><br><span class="line"><span class="tag">                  <span class="attr">autofocus</span></span></span><br><span class="line"><span class="tag">                &gt;</span><span class="tag">&lt;/<span class="name">v-text-field</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">v-text-field</span></span></span><br><span class="line"><span class="tag">                  <span class="attr">v-model</span>=<span class="string">&quot;item.carbs&quot;</span></span></span><br><span class="line"><span class="tag">                  <span class="attr">:readonly</span>=<span class="string">&quot;item.readonly&quot;</span></span></span><br><span class="line"><span class="tag">                  <span class="attr">autofocus</span></span></span><br><span class="line"><span class="tag">                &gt;</span><span class="tag">&lt;/<span class="name">v-text-field</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">v-text-field</span></span></span><br><span class="line"><span class="tag">                  <span class="attr">v-model</span>=<span class="string">&quot;item.protein&quot;</span></span></span><br><span class="line"><span class="tag">                  <span class="attr">:readonly</span>=<span class="string">&quot;item.readonly&quot;</span></span></span><br><span class="line"><span class="tag">                  <span class="attr">autofocus</span></span></span><br><span class="line"><span class="tag">                &gt;</span><span class="tag">&lt;/<span class="name">v-text-field</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">v-text-field</span></span></span><br><span class="line"><span class="tag">                  <span class="attr">v-model</span>=<span class="string">&quot;item.iron&quot;</span></span></span><br><span class="line"><span class="tag">                  <span class="attr">:readonly</span>=<span class="string">&quot;item.readonly&quot;</span></span></span><br><span class="line"><span class="tag">                  <span class="attr">autofocus</span></span></span><br><span class="line"><span class="tag">                &gt;</span><span class="tag">&lt;/<span class="name">v-text-field</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">                  <span class="comment">&lt;!-- 按钮区域 --&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">                  <span class="comment">&lt;!-- 非修改界面显示修改，修改界面显示保存 --&gt;</span></span><br><span class="line">                  <span class="tag">&lt;<span class="name">v-btn</span> <span class="attr">rounded</span> <span class="attr">color</span>=<span class="string">&quot;primary&quot;</span> <span class="attr">dark</span> @<span class="attr">click</span>=<span class="string">&quot;editItem(item)&quot;</span> <span class="attr">small</span> <span class="attr">style</span>=<span class="string">&quot;margin-right: 15px;&quot;</span>&gt;</span>&#123;&#123; item.readonly? &quot;修改&quot;:&quot;保存&quot; &#125;&#125;<span class="tag">&lt;/<span class="name">v-btn</span>&gt;</span></span><br><span class="line">                  <span class="comment">&lt;!-- 非修改界面显示删除 --&gt;</span></span><br><span class="line">                  <span class="tag">&lt;<span class="name">v-btn</span> <span class="attr">rounded</span> <span class="attr">color</span>=<span class="string">&quot;error&quot;</span> <span class="attr">dark</span> <span class="attr">small</span> <span class="attr">v-if</span>=<span class="string">&quot;item.readonly&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;delItem(item)&quot;</span>&gt;</span>删除<span class="tag">&lt;/<span class="name">v-btn</span>&gt;</span></span><br><span class="line">                  <span class="comment">&lt;!-- 修改界面显示取消 --&gt;</span></span><br><span class="line">                  <span class="tag">&lt;<span class="name">v-btn</span> <span class="attr">rounded</span> <span class="attr">color</span>=<span class="string">&quot;success&quot;</span> <span class="attr">dark</span> <span class="attr">small</span> <span class="attr">v-if</span>=<span class="string">&quot;!item.readonly&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;cancelItem(item)&quot;</span>&gt;</span>取消<span class="tag">&lt;/<span class="name">v-btn</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">v-simple-table</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">v-card</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">v-app</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>JS代码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 引入vue --&gt;</span><br><span class="line">  &lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;vue@2.x&#x2F;dist&#x2F;vue.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">  &lt;!-- 引入vuetify --&gt;</span><br><span class="line">  &lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;vuetify@2.x&#x2F;dist&#x2F;vuetify.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    new Vue(&#123;</span><br><span class="line">      el: &#39;#app&#39;,</span><br><span class="line">      vuetify: new Vuetify(),</span><br><span class="line">      data () &#123;</span><br><span class="line">      return &#123;</span><br><span class="line">        &#x2F;&#x2F; 表格数据</span><br><span class="line">        desserts: [</span><br><span class="line">          &#123;</span><br><span class="line">            id: 1,</span><br><span class="line">            name: &#39;Frozen Yogurt&#39;,</span><br><span class="line">            calories: 159,</span><br><span class="line">            fat: 6.0,</span><br><span class="line">            carbs: 24,</span><br><span class="line">            protein: 4.0,</span><br><span class="line">            iron: &#39;1%&#39;,</span><br><span class="line">            readonly: true</span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            id: 2,</span><br><span class="line">            name: &#39;Ice cream sandwich&#39;,</span><br><span class="line">            calories: 237,</span><br><span class="line">            fat: 9.0,</span><br><span class="line">            carbs: 37,</span><br><span class="line">            protein: 4.3,</span><br><span class="line">            iron: &#39;1%&#39;,</span><br><span class="line">            readonly: true</span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            id: 3,</span><br><span class="line">            name: &#39;Eclair&#39;,</span><br><span class="line">            calories: 262,</span><br><span class="line">            fat: 16.0,</span><br><span class="line">            carbs: 23,</span><br><span class="line">            protein: 6.0,</span><br><span class="line">            iron: &#39;7%&#39;,</span><br><span class="line">            readonly: true</span><br><span class="line">          &#125;,</span><br><span class="line">        ],</span><br><span class="line">        editedItem: &#123;</span><br><span class="line">          id: 0,</span><br><span class="line">          name: &#39;&#39;,</span><br><span class="line">          calories: 0,</span><br><span class="line">          fat: 0,</span><br><span class="line">          carbs: 0,</span><br><span class="line">          protein: 0,</span><br><span class="line">          iron: &#39;&#39;,</span><br><span class="line">          readonly: true</span><br><span class="line">        &#125;,</span><br><span class="line">        editedIndex: -1,</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">      &#x2F;&#x2F; 修改数据（保存数据)</span><br><span class="line">      editItem(item) &#123;</span><br><span class="line">        this.editedIndex &#x3D; this.desserts.indexOf(item);&#x2F;&#x2F;先找到desserts数组里面对应的索引，通俗点说就是确定修改哪一行数据</span><br><span class="line">        this.editedItem &#x3D; Object.assign(&#123;&#125;, item);&#x2F;&#x2F;把未修改之前的值存到editedItem对象里面，方便用户取消修改</span><br><span class="line">        &#x2F;&#x2F;以上两行主要是为取消修改服务，要实现修改其实只需下面一行就够了，因为html中本身的标签为&lt;v-text-field&gt;,也就是说只需控制它的只读和非只读来回切换即可做到修改保存</span><br><span class="line">        item.readonly &#x3D; !item.readonly;</span><br><span class="line">      &#125;,</span><br><span class="line">      &#x2F;&#x2F; 删除数据</span><br><span class="line">      delItem(item) &#123;</span><br><span class="line">        const index &#x3D; this.desserts.indexOf(item);&#x2F;&#x2F;找到desserts数组里面对应的索引，通俗点说就是确定删除哪一行数据</span><br><span class="line">        confirm(&#39;Are you sure you want to delete this item?&#39;) &amp;&amp; this.desserts.splice(index, 1);&#x2F;&#x2F;系统弹出确认框，点击确定就是删除这一行数据</span><br><span class="line">      &#125;,</span><br><span class="line">      &#x2F;&#x2F; 取消</span><br><span class="line">      cancelItem(item) &#123;</span><br><span class="line">        item.readonly &#x3D; !item.readonly;&#x2F;&#x2F;切换文本框的读写状态</span><br><span class="line">        this.$nextTick(() &#x3D;&gt;&#123;</span><br><span class="line">        Object.assign(this.desserts[this.editedIndex], this.editedItem);&#x2F;&#x2F;点击取消之后，把未修改之前的数据还原到desserts数组</span><br><span class="line">        this.editedIndex &#x3D; -1;&#x2F;&#x2F;把索引标志置空</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;,</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
-<p>总结：这是我能想到的最最最简单的可编辑表格实现了，萌新小白仔细看我的注释，细细品估计也能看懂，在实际开发中，为了总体更加美观 ，大家大可不必像我一样控制文本框的编辑功能，而是可以用一个<code>span</code>标签和<code>v-text-field</code>标签来回切换他们的显示状态即可，原理跟这个一样，我就懒得改了（狗头保命），有问题或者想要了解更多前端知识欢迎下方留言讨论。<br>​</p>
-</div>
-        
-          <div class="post-copyright">
-                  <div class="copyright-item">
-                      <span> Author: John Doe</span>
-                  </div>
-                  <div class="copyright-item">
-                      <span> Link: <a href="http://yoursite.com/2020/08/08/vue+vuetify%E5%AE%9E%E7%8E%B0%E5%8F%AF%E7%BC%96%E8%BE%91%E8%A1%A8%E6%A0%BC/">http://yoursite.com/2020/08/08/vue+vuetify%E5%AE%9E%E7%8E%B0%E5%8F%AF%E7%BC%96%E8%BE%91%E8%A1%A8%E6%A0%BC/</a></span>
-                  </div>
-                  <div class="copyright-item">
-                      <span> License: 本博客所有文章除特别声明外，均采用许可协议 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> 转载请注明出处！</span>
-                  </div>
-          </div>
-        
-  </div>
-
-  <div class="share-reward">
-    <div class="share">
-        
-<div class="social-share" data-sites="facebook,twitter,wechat,weibo,qq"></div>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css">
-<script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script>
-
-
-      </div>
-        <div class="reward">
-          
-  <div style="padding: 10px 0; margin-left: 20px; width: 90%; text-align: center;">
-    <div class="reward-content">
-        <ul id="donateBox" class="list pos-a">
-          
-           <li id="PayPal"><a href="https://paypal.me" target="_blank" title="PayPal">PayPal</a></li>
-            
-          
-            <li id="AliPay" title="Alipay"><img data-img="/img/alipay.jpg" onerror=this.onerror=null,this.src="/img/loading.gif"></img></li>
-               
-                 
-            <li id="WeChat" title="Wechatpay"><img date-img="/img/wechat.jpg" onerror=this.onerror=null,this.src="/img/loading.gif"></img></li>
-                      
-          </ul>
-        <div id="QRBox" class="pos-f left-100">
-          <div id="MainBox"></div>
-        </div>
-    </div>
-  </div>
   
-        </div>
-    </div>
-    
-    <div class="post_tags">
-      
-    </div>
-    <div class="post-nav">
-      
-        <div class="post-nav-prev post-nav-item">
-            <a href="/2020/08/08/vue%E7%BB%84%E4%BB%B6%E4%B8%8E%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E4%BC%A0%E5%80%BC/" ><i class="fa fa-chevron-left"></i></a>
-        </div>
-      
-      
-        <div class="post-nav-next post-nav-item">
-            <a href="/2020/08/02/vue%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E6%95%B0%E7%BB%84/" ><i class="fa fa-chevron-right"></i></a>
-        </div>
-      
-    </div>
-
-
-    <div class="comments">
-      
-    <div class="comments">
-        <script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
-        <div id="comment" class="vcomment" ></div>
-        <script>
-            var notify = 'false' == true ? true : false;
-            var verify = 'false' == true ? true : false;
-            var GUEST_INFO = ['nick','mail','link'];
-            var guest_info = 'nick,mail,link'.split(',').filter(function(item){
-                return GUEST_INFO.indexOf(item) > -1
-            });
-            guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
-            window.valine = new Valine({
-                el: '.vcomment',
-                notify: notify,
-                verify: verify,
-                appId: "",
-                appKey: "",
-                avatar: "mm",
-                placeholder: "Just go go",
-                guest_info: guest_info,
-                pageSize:'10',
-                recordIP: 'false',
-                serverURLs: "",
-                emojiCDN: "",
-                enableQQ: "true",
-            });
-        </script>
-    </div>
-
-    </div>
-</article>
-
-    
-<a id="gotop" href="javascript:" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
-<script>
-    window.onscroll = function() {scrollFunction()};
-    function scrollFunction() {console.log(121);
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            document.getElementById("gotop").style.display = "block";
-        } else {
-            document.getElementById("gotop").style.display = "none";
-        }
-    }
-    function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-    }
-</script>
-    
-
-
-
-
-
-
-    
-<div id="bottom-outer">
-    <div id="bottom-inner">
-        © 2020 <i class="fa fa-heart" id="heart"></i> John Doe 
-        <br>
-        Powered by 
-        <a target="_blank" rel="noopener" href="http://hexo.io">hexo</a> | Theme is <a target="_blank" rel="noopener" href="https://github.com/a2396837/hexo-theme-blank/">blank</a>
-        
-          <div class="icp-info">
-            
-          <a href="" target="_blank"> </a>
-        </div>
-        
-    </div>  
-  </div>
-
-
-<script src="https://www.layuicdn.com/layui-v2.5.6/layui.js"></script>
-
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1445822_hhodbqn7tit.css">
 
   
-    <script src="/js/script.js"></script>
+
   
-    <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
   
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.3/build/highlight.min.js"></script>
   
-    <script src="https://cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.7.0/dist/highlightjs-line-numbers.min.js"></script>
+<link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css">
+
   
 
+  
+  
+  
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css">
 
+  
+
+  
+  
+  
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/justifiedGallery/3.7.0/css/justifiedGallery.min.css">
+
+  
 
   <script>
-      window.lazyLoadOptions = {
-        elements_selector: 'img',
-        threshold: 0
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      fancybox: true,
+      pjax: false,
+      lazyload: {
+        enable: true,
+        loadingImage: '/images/theme/loading.gif',
+      },
+      donate: {
+        enable: true,
+        alipay: '/images/theme/zhifubao.jpg',
+        wechat: '/images/theme/weixin.jpg'
+      },
+      motto: {
+        api: '',
+        default: 'I love you more than three thousands years'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        alwaysShow: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: true
       }
+    }
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script>
 
+  
 
-
-  <script>
-    var images = $('img').not('.nav-logo img').not('.card img').not($('a>img')).not('.reward-content img')
-    images.each(function (i, o) {
-      var lazyloadSrc = $(o).attr('data-src') ? $(o).attr('data-src') : $(o).attr('src')
-      $(o).wrap(`<a href="${lazyloadSrc}" data-fancybox="group" data-caption="${$(o).attr('alt')}" class="fancybox"></a>`)
-    })
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script>
-  <script>
-        $().fancybox({
-      selector: '[data-fancybox]',
-      loop: true,
-      transitionEffect: 'slide',
-      protect: true,
-      buttons: ['slideShow', 'fullScreen', 'thumbs', 'close']
-    })
-  </script>
+  
+<meta name="generator" content="Hexo 5.0.0"></head>
+<body class="lock-screen">
+  <div class="loading"></div>
   
 
 
+<nav class="navbar">
+  <div class="left"></div>
+  <div class="center">可编辑表格</div>
+  <div class="right">
+    <i class="iconfont iconmenu j-navbar-menu"></i>
+  </div>
+</nav>
 
-<script>
-  var btntop = $('#gotop');
-  btntop.on('click', function (e) {
-    e.preventDefault();
-    $('html, body').animate({ scrollTop: 0 }, '300');
-  });
-</script>
+  <nav class="menu">
+  <div class="menu-wrap">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content">
+      
+      
+      
+      
+      <li class="menu-item"><a href="/ " class="underline"> 首页</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/galleries " class="underline"> 摄影</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/archives " class="underline"> 归档</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/tags " class="underline"> 标签</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/categories " class="underline"> 分类</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/about " class="underline"> 关于</a></li>
+      
+    </ul>
+    <div class="menu-copyright"><p>Copyright© 2019-2020 | <a target="_blank" href="https://www.001f3.cn">平常心</a> .AllRightsReserved</p></div>
+  </div>
+</nav>
+  <main id="main">
+  <div class="container" id="container">
+    <article class="article">
+  <section class="head">
+  <img   class="lazyload" data-original="/image/9.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">可编辑表格</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>Aug 08, 2020</span
+        class="post-info-item">
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>6493</span>
+    </div>
+  </div>
+</section>
+  <section class="main">
+    <section class="content">
+      <p><img   class="lazyload" data-original="https://user-gold-cdn.xitu.io/2020/7/26/1738b463bfb83bc3?w=1903&h=563&f=gif&s=355009" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" ><br>我查遍整个vuetify官网，里面只有弹出对话框的可编辑表格，并没有这种在表格内就可编辑的功能，所以写了这篇文章，以便大家备一手，学会这招你可以秒天秒地秒空气，防老师防领导防项目经理。</p>
+<p>HTML代码如下:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">v-app</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">v-card</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width:70%; margin: 200px auto;&quot;</span>&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">v-card-title</span>&gt;</span><br>            可编辑表格<br>          <span class="hljs-tag">&lt;/<span class="hljs-name">v-card-title</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">v-simple-table</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;tab&quot;</span>&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:default</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">thead</span>&gt;</span><br>              <span class="hljs-comment">&lt;!--  表头 --&gt;</span><br>              <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">th</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;text-left&quot;</span>&gt;</span>Name<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">th</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;text-left&quot;</span>&gt;</span>Calories<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">th</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;text-left&quot;</span>&gt;</span>fat<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">th</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;text-left&quot;</span>&gt;</span>carbs<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">th</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;text-left&quot;</span>&gt;</span>protein<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">th</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;text-left&quot;</span>&gt;</span>iron<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">th</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;text-left&quot;</span>&gt;</span>actions<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br>              <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br>            <span class="hljs-tag">&lt;/<span class="hljs-name">thead</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">tbody</span>&gt;</span><br>              <span class="hljs-comment">&lt;!-- 表格内容 --&gt;</span><br>              <span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;item in desserts&quot;</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;item.id&quot;</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">v-text-field</span></span><br><span class="hljs-tag">                  <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;item.name&quot;</span></span><br><span class="hljs-tag">                  <span class="hljs-attr">:readonly</span>=<span class="hljs-string">&quot;item.readonly&quot;</span></span><br><span class="hljs-tag">                  <span class="hljs-attr">autofocus</span></span><br><span class="hljs-tag">                &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">v-text-field</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><br>                  <span class="hljs-tag">&lt;<span class="hljs-name">v-text-field</span></span><br><span class="hljs-tag">                  <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;item.calories&quot;</span></span><br><span class="hljs-tag">                  <span class="hljs-attr">:readonly</span>=<span class="hljs-string">&quot;item.readonly&quot;</span></span><br><span class="hljs-tag">                  <span class="hljs-attr">autofocus</span></span><br><span class="hljs-tag">                &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">v-text-field</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><br>                  <span class="hljs-tag">&lt;<span class="hljs-name">v-text-field</span></span><br><span class="hljs-tag">                  <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;item.fat&quot;</span></span><br><span class="hljs-tag">                  <span class="hljs-attr">:readonly</span>=<span class="hljs-string">&quot;item.readonly&quot;</span></span><br><span class="hljs-tag">                  <span class="hljs-attr">autofocus</span></span><br><span class="hljs-tag">                &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">v-text-field</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">v-text-field</span></span><br><span class="hljs-tag">                  <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;item.carbs&quot;</span></span><br><span class="hljs-tag">                  <span class="hljs-attr">:readonly</span>=<span class="hljs-string">&quot;item.readonly&quot;</span></span><br><span class="hljs-tag">                  <span class="hljs-attr">autofocus</span></span><br><span class="hljs-tag">                &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">v-text-field</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">v-text-field</span></span><br><span class="hljs-tag">                  <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;item.protein&quot;</span></span><br><span class="hljs-tag">                  <span class="hljs-attr">:readonly</span>=<span class="hljs-string">&quot;item.readonly&quot;</span></span><br><span class="hljs-tag">                  <span class="hljs-attr">autofocus</span></span><br><span class="hljs-tag">                &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">v-text-field</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">v-text-field</span></span><br><span class="hljs-tag">                  <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;item.iron&quot;</span></span><br><span class="hljs-tag">                  <span class="hljs-attr">:readonly</span>=<span class="hljs-string">&quot;item.readonly&quot;</span></span><br><span class="hljs-tag">                  <span class="hljs-attr">autofocus</span></span><br><span class="hljs-tag">                &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">v-text-field</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>                  <span class="hljs-comment">&lt;!-- 按钮区域 --&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><br>                  <span class="hljs-comment">&lt;!-- 非修改界面显示修改，修改界面显示保存 --&gt;</span><br>                  <span class="hljs-tag">&lt;<span class="hljs-name">v-btn</span> <span class="hljs-attr">rounded</span> <span class="hljs-attr">color</span>=<span class="hljs-string">&quot;primary&quot;</span> <span class="hljs-attr">dark</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;editItem(item)&quot;</span> <span class="hljs-attr">small</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;margin-right: 15px;&quot;</span>&gt;</span>&#123;&#123; item.readonly? &quot;修改&quot;:&quot;保存&quot; &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">v-btn</span>&gt;</span><br>                  <span class="hljs-comment">&lt;!-- 非修改界面显示删除 --&gt;</span><br>                  <span class="hljs-tag">&lt;<span class="hljs-name">v-btn</span> <span class="hljs-attr">rounded</span> <span class="hljs-attr">color</span>=<span class="hljs-string">&quot;error&quot;</span> <span class="hljs-attr">dark</span> <span class="hljs-attr">small</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&quot;item.readonly&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;delItem(item)&quot;</span>&gt;</span>删除<span class="hljs-tag">&lt;/<span class="hljs-name">v-btn</span>&gt;</span><br>                  <span class="hljs-comment">&lt;!-- 修改界面显示取消 --&gt;</span><br>                  <span class="hljs-tag">&lt;<span class="hljs-name">v-btn</span> <span class="hljs-attr">rounded</span> <span class="hljs-attr">color</span>=<span class="hljs-string">&quot;success&quot;</span> <span class="hljs-attr">dark</span> <span class="hljs-attr">small</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&quot;!item.readonly&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;cancelItem(item)&quot;</span>&gt;</span>取消<span class="hljs-tag">&lt;/<span class="hljs-name">v-btn</span>&gt;</span><br>                <span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>              <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br>              <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br>            <span class="hljs-tag">&lt;/<span class="hljs-name">tbody</span>&gt;</span><br>          <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">v-simple-table</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">v-card</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">v-app</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p>JS代码如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!-- 引入vue --&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>  <span class="hljs-comment">&lt;!-- 引入vuetify --&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><br><span class="javascript">    <span class="hljs-keyword">new</span> Vue(&#123;</span><br><span class="javascript">      el: <span class="hljs-string">&#x27;#app&#x27;</span>,</span><br><span class="javascript">      vuetify: <span class="hljs-keyword">new</span> Vuetify(),</span><br>      data () &#123;<br><span class="javascript">      <span class="hljs-keyword">return</span> &#123;</span><br><span class="javascript">        <span class="hljs-comment">// 表格数据</span></span><br>        desserts: [<br>          &#123;<br>            id: 1,<br><span class="javascript">            name: <span class="hljs-string">&#x27;Frozen Yogurt&#x27;</span>,</span><br>            calories: 159,<br>            fat: 6.0,<br>            carbs: 24,<br>            protein: 4.0,<br><span class="javascript">            iron: <span class="hljs-string">&#x27;1%&#x27;</span>,</span><br><span class="javascript">            readonly: <span class="hljs-literal">true</span></span><br>          &#125;,<br>          &#123;<br>            id: 2,<br><span class="javascript">            name: <span class="hljs-string">&#x27;Ice cream sandwich&#x27;</span>,</span><br>            calories: 237,<br>            fat: 9.0,<br>            carbs: 37,<br>            protein: 4.3,<br><span class="javascript">            iron: <span class="hljs-string">&#x27;1%&#x27;</span>,</span><br><span class="javascript">            readonly: <span class="hljs-literal">true</span></span><br>          &#125;,<br>          &#123;<br>            id: 3,<br><span class="javascript">            name: <span class="hljs-string">&#x27;Eclair&#x27;</span>,</span><br>            calories: 262,<br>            fat: 16.0,<br>            carbs: 23,<br>            protein: 6.0,<br><span class="javascript">            iron: <span class="hljs-string">&#x27;7%&#x27;</span>,</span><br><span class="javascript">            readonly: <span class="hljs-literal">true</span></span><br>          &#125;,<br>        ],<br>        editedItem: &#123;<br>          id: 0,<br><span class="javascript">          name: <span class="hljs-string">&#x27;&#x27;</span>,</span><br>          calories: 0,<br>          fat: 0,<br>          carbs: 0,<br>          protein: 0,<br><span class="javascript">          iron: <span class="hljs-string">&#x27;&#x27;</span>,</span><br><span class="javascript">          readonly: <span class="hljs-literal">true</span></span><br>        &#125;,<br>        editedIndex: -1,<br>      &#125;<br>    &#125;,<br>    methods: &#123;<br><span class="javascript">      <span class="hljs-comment">// 修改数据（保存数据)</span></span><br>      editItem(item) &#123;<br><span class="javascript">        <span class="hljs-built_in">this</span>.editedIndex = <span class="hljs-built_in">this</span>.desserts.indexOf(item);<span class="hljs-comment">//先找到desserts数组里面对应的索引，通俗点说就是确定修改哪一行数据</span></span><br><span class="javascript">        <span class="hljs-built_in">this</span>.editedItem = <span class="hljs-built_in">Object</span>.assign(&#123;&#125;, item);<span class="hljs-comment">//把未修改之前的值存到editedItem对象里面，方便用户取消修改</span></span><br><span class="javascript">        <span class="hljs-comment">//以上两行主要是为取消修改服务，要实现修改其实只需下面一行就够了，因为html中本身的标签为&lt;v-text-field&gt;,也就是说只需控制它的只读和非只读来回切换即可做到修改保存</span></span><br>        item.readonly = !item.readonly;<br>      &#125;,<br><span class="javascript">      <span class="hljs-comment">// 删除数据</span></span><br>      delItem(item) &#123;<br><span class="javascript">        <span class="hljs-keyword">const</span> index = <span class="hljs-built_in">this</span>.desserts.indexOf(item);<span class="hljs-comment">//找到desserts数组里面对应的索引，通俗点说就是确定删除哪一行数据</span></span><br><span class="javascript">        confirm(<span class="hljs-string">&#x27;Are you sure you want to delete this item?&#x27;</span>) &amp;&amp; <span class="hljs-built_in">this</span>.desserts.splice(index, <span class="hljs-number">1</span>);<span class="hljs-comment">//系统弹出确认框，点击确定就是删除这一行数据</span></span><br>      &#125;,<br><span class="javascript">      <span class="hljs-comment">// 取消</span></span><br>      cancelItem(item) &#123;<br><span class="javascript">        item.readonly = !item.readonly;<span class="hljs-comment">//切换文本框的读写状态</span></span><br><span class="javascript">        <span class="hljs-built_in">this</span>.$nextTick(<span class="hljs-function">() =&gt;</span>&#123;</span><br><span class="javascript">        <span class="hljs-built_in">Object</span>.assign(<span class="hljs-built_in">this</span>.desserts[<span class="hljs-built_in">this</span>.editedIndex], <span class="hljs-built_in">this</span>.editedItem);<span class="hljs-comment">//点击取消之后，把未修改之前的数据还原到desserts数组</span></span><br><span class="javascript">        <span class="hljs-built_in">this</span>.editedIndex = <span class="hljs-number">-1</span>;<span class="hljs-comment">//把索引标志置空</span></span><br>        &#125;)<br>      &#125;,<br>      &#125;<br>    &#125;)<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p>总结：这是我能想到的最最最简单的可编辑表格实现了，萌新小白仔细看我的注释，细细品估计也能看懂，在实际开发中，为了总体更加美观 ，大家大可不必像我一样控制文本框的编辑功能，而是可以用一个<code>span</code>标签和<code>v-text-field</code>标签来回切换他们的显示状态即可，原理跟这个一样，我就懒得改了（狗头保命），有问题或者想要了解更多前端知识欢迎下方留言讨论。<br>​</p>
 
-
-  <script src="https://cdn.jsdelivr.net/npm/mermaid@8.6.3/dist/mermaid.min.js"></script>
-  <script>mermaid.initialize({startOnLoad:true});</script>
-  <script>
-    $(document).ready(function () {
-      $('code.hljs').each(function (i, block) {
-        if ($.inArray(block.className, ['mermaid']) < 0) {
-          hljs.lineNumbersBlock(block);
-        }
-      });
-    });
-    </script>
+    </section>
+    <section class="extra">
+      
+        <ul class="copyright">
   
+  <li><strong>版权声明：</strong>本博客所有文章均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"
+      rel="external nofollow" target="_blank"> BY-NC-SA </a>许可协议，转载请注明出处！</li>
+  
+</ul>
+      
+      
+        <section class="donate">
+  <div class="qrcode">
+    <img   class="lazyload" data-original="/images/theme/zhifubao.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
+  </div>
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
+</section>
+      
+      
+      
+<nav class="nav">
+  
+    <a href="/2020/08/08/vue%E7%BB%84%E4%BB%B6%E4%B8%8E%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E4%BC%A0%E5%80%BC/"><i class="iconfont iconleft"></i>Vue组件之间传值</a>
+  
+  
+    <a href="/2020/08/02/vue%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E6%95%B0%E7%BB%84/">Vue双向绑定数组<i class="iconfont iconright"></i></a>
+  
+</nav>
+
+    </section>
+    
+      <section class="comments">
+        
+          <div class="btn" id="comments-btn">查看评论</div>
+        
+        
+      </section>
+    
+  </section>
+</article>
+  </div>
+</main>
+  <footer class="footer">
+  <div class="footer-social">
+    
+    
+    
+    
+    
+    <a href="tencent://message/?Menu=yes&uin=969122484 " target="_blank" onMouseOver="this.style.color= '#12B7F5'"
+      onMouseOut="this.style.color='#33333D'">
+      <i class="iconfont footer-social-item  iconQQ "></i>
+    </a>
+    
+    
+    
+    
+    
+    <a href="javascript:; " target="_blank" onMouseOver="this.style.color= '#09BB07'"
+      onMouseOut="this.style.color='#33333D'">
+      <i class="iconfont footer-social-item  iconwechat-fill "></i>
+    </a>
+    
+    
+    
+    
+    
+    <a href="https://github.com/ImDaret " target="_blank" onMouseOver="this.style.color= '#24292E'"
+      onMouseOut="this.style.color='#33333D'">
+      <i class="iconfont footer-social-item  icongithub-fill "></i>
+    </a>
+    
+    
+    
+    
+    
+    <a href="ling_jintao@163.com " target="_blank" onMouseOver="this.style.color='#FFBE5B'"
+      onMouseOut="this.style.color='#33333D'">
+      <i class="iconfont footer-social-item  iconmail"></i>
+    </a>
+    
+  </div>
+  <div class="footer-copyright"><p>Copyright© 2019-2020 | <a target="_blank" href="https://www.001f3.cn">平常心</a> .AllRightsReserved</p></div>
+</footer>
+  
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
+  
+  <div class="fab fab-daovoice">
+    <i class="iconfont iconcomment"></i>
+  </div>
+  
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+  
+</body>
+
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/justifiedGallery/3.7.0/js/jquery.justifiedGallery.min.js"></script>
+
+
+
+
+
+
+<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/modules.js"></script>
+<script src="/js/zui.js"></script>
+<script src="/js/script.js"></script>
+
+
 
 
 
 <script>
-//reward
-jQuery(document).ready(function () {
-  var QRBox = $('#QRBox');
-  var MainBox = $('#MainBox');
-  var AliPayQR = '/img/alipay.jpg';
-  var WeChanQR = '/img/wechat.jpg';
-
-  function showQR(QR) {
-    if (QR) {
-      MainBox.css('background-image', 'url(' + QR + ')');
-    }
-    $('#donateBox').addClass('blur');
-    QRBox.fadeIn(300, function (argument) {
-      MainBox.addClass('showQR');
-    });
-  }
-
-  $('#donateBox>li').click(function (event) {
-    var thisID = $(this).attr('id');
-    if (thisID === 'AliPay') {
-      showQR(AliPayQR);
-    } else if (thisID === 'WeChat') {
-      showQR(WeChanQR);
-    }
+  (function (i, s, o, g, r, a, m) {
+    i["DaoVoiceObject"] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    a.charset = "utf-8";
+    m.parentNode.insertBefore(a, m)
+  })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
+    "//widget.daovoice.io/widget/0f81ff2f.js", "daovoice")
+  daovoice('init', {
+    app_id: "abcdefg"
+  }, {
+    launcher: {
+      disableLauncherIcon: true,
+    },
   });
+  daovoice('update');
+</script>
 
-  MainBox.click(function (event) {
-    MainBox.removeClass('showQR').addClass('hideQR');
-    setTimeout(function (a) {
-      QRBox.fadeOut(300, function (argument) {
-        MainBox.removeClass('hideQR');
-      });
-      $('#DonateText,#donateBox,#github').removeClass('blur');
-    }, 600);
 
-  });
-});
+
+<script>
+  (function () {
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
 </script>
 
 
 <script>
-  var $table = $('.content table').not($('figure.highlight > table'))
-  $table.each(function () {
-    $(this).wrap('<div class="table-wrap"></div>')
-  })
+  var _hmt = _hmt || [];
+  (function () {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?4c204d8bc027a0455b5fc642ac334ca8";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
 </script>
+
+
+
+
+
 
 
 

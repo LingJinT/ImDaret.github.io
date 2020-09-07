@@ -1,615 +1,543 @@
 
+
 <!DOCTYPE html>
-<html lang="en">
-    <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  
-    <link rel="icon" href="/img/favicon.ico">
-  
-  
-      <meta name="author" content="John Doe">
-  
-  
-  
-  
-  
-    <link rel="alternate" href="/atom.xml " title="Hexo" type="application/atom+xml">
-  
-
-  
-
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Hexo</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+
+  
+  
+  
+  <meta name="author" content="John Doe"> 
+
+  
+    <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  
+  
+    <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  
+  
+    <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  
+  
+    <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+  
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1445822_hhodbqn7tit.css">
 
   
 
   
+  
+  
+<link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css">
 
   
 
+  
+  
+  
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css">
 
   
 
   
-    
-      <link rel="stylesheet" href="/css/style.css">
-    
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
-    
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css">
-    
   
+  
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/justifiedGallery/3.7.0/css/justifiedGallery.min.css">
 
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.1/styles/github.css">
-    
-
-<meta name="generator" content="Hexo 5.0.0"></head>
-</html>
-    
-<header class="header">
-    <div class="title animated fadeInDown">
-        
-            <div class="logo">
-                
-                    <a href="/"><img data-src="https://cdn.jsdelivr.net/gh/a2396837/CDN@latest/images/2020/07/27/baokemeng.webp" onerror=this.onerror=null,this.src="/img/loading.gif"></a>
-                    
-            </div>
-         
-    </div>
-    <div class="navbar animated fadeInDown">
-     
-    
-            <div class="social">
-                
-            </div>
-     
-   </div>
-</header>
-
-
-
-    
-<div class="nav index" style="height: 60px;">
-    <div class="title animated fadeInDown">
-        <div class="layui-container">
-            
-                <div class="nav-title"><a href="/" title="Hexo">Hexo</a></div>
-               
-            <div class="nav-list">
-                <button> <span class=""></span><span style="display: block;"></span><span class=""></span> </button>
-                <ul class="layui-nav" lay-filter="">
-                    
-                    <li class="layui-nav-item">
-                        <a href="/">
-                            <i class="fab fa-fort-awesome"></i>
-                            <span class="layui-nav-item-name">Home</span>
-                        </a>
-                    </li>
-                    
-                    <li class="layui-nav-item">
-                        <a href="/archives/">
-                            <i class="fas fa-archive"></i>
-                            <span class="layui-nav-item-name">Archives</span>
-                        </a>
-                    </li>
-                    
-                    <li class="layui-nav-item">
-                        <a href="/tags/">
-                            <i class="fas fa-hashtag"></i>
-                            <span class="layui-nav-item-name">Tags</span>
-                        </a>
-                    </li>
-                    
-                    <li class="layui-nav-item">
-                        <a href="/categories/">
-                            <i class="far fa-folder-open"></i>
-                            <span class="layui-nav-item-name">Categories</span>
-                        </a>
-                    </li>
-                    
-                    <li class="layui-nav-item">
-                        <a href="/about/">
-                            <i class="fab fa-grav"></i>
-                            <span class="layui-nav-item-name">About</span>
-                        </a>
-                    </li>
-                    
-                    <li class="layui-nav-item">
-                        <a href="/guestbook/">
-                            <i class="fab fa-telegram"></i>
-                            <span class="layui-nav-item-name">Guestbook</span>
-                        </a>
-                    </li>
-                    
-                    <li class="layui-nav-item">
-                        <a href="/link/">
-                            <i class="fab fa-weixin"></i>
-                            <span class="layui-nav-item-name">Friends</span>
-                        </a>
-                    </li>
-                    
-                    <li class="layui-nav-item">
-                        <a href="/shuoshuo/">
-                            <i class="fas fa-coffee"></i>
-                            <span class="layui-nav-item-name">说说</span>
-                        </a>
-                    </li>
-                    
-                    <li class="layui-nav-item">
-                        
-                        <div id="dark" onclick="switchDarkMode()"></div>
-                        <script>
-                            if (localStorage.getItem('dark') === '1') {
-                                document.body.classList.add('dark');
-                            }
-                            document.getElementById('dark').innerHTML = document.querySelector("body").classList.contains("dark") ? "🌙" : "🌞";
-                        </script>
-                        
-                    </li>
-                    <span class="layui-nav-bar" style="left: 342px; top: 78px; width: 0px; opacity: 0;"></span>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-
-    
-
-  <div id="recent-posts">
-    
-      <div class="recent-post-item">
-          <div class="post-title ">
-            <a href="/2020/08/16/vue%E6%8F%92%E6%A7%BD/"></a>
-          </div>
-          <div class="post-meta">
-            
-            
-              <div class="post-meta-item date">
-                <span title="Created 2020.08.16"><i class="far fa-calendar-alt"></i> 2020.08.16</span>
-              </div>
-              <div class="post-meta-item updated">
-                <span title="Updated 2020.08.16"><i class="far fa-calendar-check"></i> 2020.08.16</span>
-              </div>
-             
-             
-            
-             <div class="post-meta-item wordcount">
-                
-                  <i class="fas fa-pencil-alt"></i> <span class="post-count">632 words</span>
-                   
-                
-                  <i class="far fa-clock"></i> <span class="post-count">3 min</span>
-                                       
-              </div>
-             
-        </div>
-          <div class="content">
-            
-                  <p>vue中<code>&lt;slot&gt;&lt;/slot&gt;</code>标签代表插槽</p>
-<h3 id="一、内容插槽"><a href="#一、内容插槽" class="headerlink" title="一、内容插槽"></a>一、内容插槽</h3><p>顾名思义，插槽的作用就是存放内容</p>
-<p>html代码如下：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">test-man</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">v-card</span> <span class="attr">dark</span>&gt;</span></span><br><span class="line">        is handsome</span><br><span class="line">      <span class="tag">&lt;/<span class="name">v-card</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">test-man</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>javascript代码如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">&#x27;test-man&#x27;</span>, &#123;</span><br><span class="line">    template:<span class="string">`</span></span><br><span class="line"><span class="string">    &lt;v-card&gt;</span></span><br><span class="line"><span class="string">      &lt;div&gt;</span></span><br><span class="line"><span class="string">      pingchangxin</span></span><br><span class="line"><span class="string">      &lt;/div&gt;</span></span><br><span class="line"><span class="string">      &lt;slot&gt;</span></span><br><span class="line"><span class="string">      &lt;/slot&gt;</span></span><br><span class="line"><span class="string">    &lt;/v-card&gt;</span></span><br><span class="line"><span class="string">    `</span></span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
-<p>效果如下：<img src= "/img/loading.gif" data-src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9f8bd71c3d0c4521a89fcaef1f8c6fd7~tplv-k3u1fbpfcp-zoom-1.image"></p>
-<h3 id="二、后备插槽"><a href="#二、后备插槽" class="headerlink" title="二、后备插槽"></a>二、后备插槽</h3><p>在组件模板的<code>&lt;slot&gt;&lt;/slot&gt;</code>中添加内容，如果html利用的这个组件中没有内容的话，就是默认显示插槽里面的内容，如果有内容则覆盖插槽中的内容<br>html代码如下：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">test-man</span>&gt;</span><span class="tag">&lt;/<span class="name">test-man</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">test-man</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">v-btn</span>&gt;</span>保存<span class="tag">&lt;/<span class="name">v-btn</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">test-man</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>javascript代码如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">&#x27;test-man&#x27;</span>, &#123;</span><br><span class="line">    template:<span class="string">`</span></span><br><span class="line"><span class="string">    &lt;v-card&gt;</span></span><br><span class="line"><span class="string">      &lt;div&gt;</span></span><br><span class="line"><span class="string">      pingchangxin</span></span><br><span class="line"><span class="string">      &lt;/div&gt;</span></span><br><span class="line"><span class="string">      &lt;slot&gt;</span></span><br><span class="line"><span class="string">      &lt;v-btn&gt;提交&lt;/v-btn&gt;</span></span><br><span class="line"><span class="string">      &lt;/slot&gt;</span></span><br><span class="line"><span class="string">    &lt;/v-card&gt;</span></span><br><span class="line"><span class="string">    `</span></span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
-<p>效果如下：<br><img src= "/img/loading.gif" data-src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a34a55742c2e4fa6b9b62447c9d435df~tplv-k3u1fbpfcp-zoom-1.image"></p>
-<h3 id="三、作用域插槽"><a href="#三、作用域插槽" class="headerlink" title="三、作用域插槽"></a>三、作用域插槽</h3><p>这类插槽可以让父组件使用子组件的数据，只需子组件在插槽中用<code>v-bind</code>绑定自身的数据，然后父组件在使用组件时就可以用<code>v-slot=&quot;slotProps&quot;</code>接收，注意：这里的<code>slotProps</code>可以自定义。</p>
-<p>html代码如下：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">test-man</span> <span class="attr">v-slot</span>=<span class="string">&quot;slotProps&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">v-btn</span> &gt;</span>&#123;&#123;slotProps.obj2.name&#125;&#125;<span class="tag">&lt;/<span class="name">v-btn</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">test-man</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>javascript代码如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">&#x27;test-man&#x27;</span>, &#123;</span><br><span class="line">    data()&#123;</span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        obj2:&#123;</span><br><span class="line">        name:<span class="string">&#x27;zhubajie&#x27;</span>,</span><br><span class="line">        age:<span class="number">3</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    template:<span class="string">`</span></span><br><span class="line"><span class="string">    &lt;v-card&gt;</span></span><br><span class="line"><span class="string">      &lt;div&gt;</span></span><br><span class="line"><span class="string">      pingchangxin</span></span><br><span class="line"><span class="string">      &lt;/div&gt;</span></span><br><span class="line"><span class="string">      &lt;slot v-bind:obj2=&quot;obj2&quot;&gt;</span></span><br><span class="line"><span class="string">      &lt;/slot&gt;</span></span><br><span class="line"><span class="string">    &lt;/v-card&gt;</span></span><br><span class="line"><span class="string">    `</span></span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
-<p>效果如下：<img src= "/img/loading.gif" data-src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3454aa7cb62a43029ddbaa65a2d2e01e~tplv-k3u1fbpfcp-zoom-1.image"></p>
-<h3 id="四、具名插槽"><a href="#四、具名插槽" class="headerlink" title="四、具名插槽"></a>四、具名插槽</h3><p>这类插槽可以有多个，每个都用<code>name</code>属性绑定一个不同的名字，在接收内容时避免发生混乱，在组件使用时用<code>v-slot：名字</code>的方式进行绑定。</p>
-<p>html代码如下:</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">test-man</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">template</span> <span class="attr">v-slot:second</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>这是第二个插槽的内容<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">template</span> <span class="attr">v-slot:first</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>这是第一个插槽的内容<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">test-man</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>javascript代码如下</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">&#x27;test-man&#x27;</span>, &#123;</span><br><span class="line">    data()&#123;</span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        obj2:&#123;</span><br><span class="line">        name:<span class="string">&#x27;zhubajie&#x27;</span>,</span><br><span class="line">        age:<span class="number">3</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    template:<span class="string">`</span></span><br><span class="line"><span class="string">    &lt;v-card&gt;</span></span><br><span class="line"><span class="string">      &lt;div&gt;</span></span><br><span class="line"><span class="string">      pingchangxin</span></span><br><span class="line"><span class="string">      &lt;/div&gt;</span></span><br><span class="line"><span class="string">      &lt;div&gt;</span></span><br><span class="line"><span class="string">      &lt;slot name=&quot;first&quot;&gt;</span></span><br><span class="line"><span class="string">      &lt;/slot&gt;</span></span><br><span class="line"><span class="string">      &lt;/div&gt;</span></span><br><span class="line"><span class="string">      &lt;span&gt;-----这是一条分界线-----&lt;/span&gt;</span></span><br><span class="line"><span class="string">      &lt;div&gt;</span></span><br><span class="line"><span class="string">      &lt;slot name=&quot;second&quot;&gt;</span></span><br><span class="line"><span class="string">      &lt;/slot&gt;</span></span><br><span class="line"><span class="string">      &lt;/div&gt;</span></span><br><span class="line"><span class="string">    &lt;/v-card&gt;</span></span><br><span class="line"><span class="string">    `</span></span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
-<p>效果如下：<br><img src= "/img/loading.gif" data-src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c7ab071b2d8842bcb03ecd7e0f4f8610~tplv-k3u1fbpfcp-zoom-1.image"></p>
-
-             
-          </div>
-      </div>
-      <div class="post-footer">
-        
-    </div>
-    
-      <div class="recent-post-item">
-          <div class="post-title ">
-            <a href="/2020/08/08/js%E4%B8%AD%E7%9A%84%E5%B8%B8%E7%94%A8%E5%A5%97%E8%B7%AF1/"></a>
-          </div>
-          <div class="post-meta">
-            
-            
-              <div class="post-meta-item date">
-                <span title="Created 2020.08.08"><i class="far fa-calendar-alt"></i> 2020.08.08</span>
-              </div>
-              <div class="post-meta-item updated">
-                <span title="Updated 2020.08.08"><i class="far fa-calendar-check"></i> 2020.08.08</span>
-              </div>
-             
-             
-            
-             <div class="post-meta-item wordcount">
-                
-                  <i class="fas fa-pencil-alt"></i> <span class="post-count">911 words</span>
-                   
-                
-                  <i class="far fa-clock"></i> <span class="post-count">3 min</span>
-                                       
-              </div>
-             
-        </div>
-          <div class="content">
-            
-                  <hr>
-<h2 id="js中的常用套路"><a href="#js中的常用套路" class="headerlink" title="js中的常用套路"></a>js中的常用套路</h2><h3 id="一、接收图片资源"><a href="#一、接收图片资源" class="headerlink" title="一、接收图片资源"></a>一、接收图片资源</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(result.resultid == <span class="number">0</span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> a = result &amp;&amp; result.name &amp;&amp; result.data.imgurl || <span class="string">&#x27;sky.jpg&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>当前端调用一个接口后，返回一个result对象，我们用变量a来接受result里的图片资源，如果，返回的结果中没有<code>result.data.imgurl</code>这个字段，就用’sky.jpg’作为兜底图片</p>
-<h3 id="二、短路运算的巧妙之处"><a href="#二、短路运算的巧妙之处" class="headerlink" title="二、短路运算的巧妙之处"></a>二、短路运算的巧妙之处</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a1 = <span class="string">&#x27;pingchangxint&#x27;</span>;</span><br><span class="line"><span class="comment">//第一个值是true，会接着执行后面的内容</span></span><br><span class="line">a1 &amp;&amp; alert(<span class="string">&#x27;是否出现a1&#x27;</span>);</span><br><span class="line"><span class="comment">//会弹出alert框</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> a2 = <span class="literal">undefined</span>;</span><br><span class="line"><span class="comment">//第一个值是false，不会继续执行后面的内容</span></span><br><span class="line">a2 &amp;&amp; alert(<span class="string">&#x27;是否出现a2&#x27;</span>);</span><br><span class="line"><span class="comment">//不会弹出alert框</span></span><br></pre></td></tr></table></figure>
-
-<p>js中的<code>&amp;&amp;</code>属于<strong>短路</strong>的与，如果第一个值是false，则不会执行后面的内容。如果第一个值是true，则继续执行第二条语句，并返回第二个值。</p>
-<p>同理：<code>||</code>属于<strong>短路</strong>的或，如果第一个值是true，则不会执行后面的内容。如果第一个值是false，则会继续执行第二条语句，并返回第二个值。</p>
-<h3 id="三、比较字符串（大坑）"><a href="#三、比较字符串（大坑）" class="headerlink" title="三、比较字符串（大坑）"></a>三、比较字符串（大坑）</h3><p>这是一种特殊情况：当符号两侧都是字符串时，<strong>不会</strong>转换成数字进行比较，而是比较<strong>Unicode编码</strong> 比如当你比较<code>&quot;1234&quot;</code>和<code>&quot;567&quot;</code>这两个字符串时，你会发现<code>&quot;567&quot;</code>更大（因为5比1大）</p>
-<h3 id="四、对象的属性值"><a href="#四、对象的属性值" class="headerlink" title="四、对象的属性值"></a>四、对象的属性值</h3><p>常见的属性值这里就不说了，主要说一下，对象的属性值可以是一个函数。  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">obj.name = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;pingchangxin-t&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>也可以是一个对象.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">obj1.testname = <span class="literal">undefined</span>;</span><br><span class="line"><span class="keyword">var</span> obj2 = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">obj2.name = <span class="string">&quot;pingchangxin-t&quot;</span></span><br><span class="line"><span class="comment">//将整个obj2对象，作为obj1的属性</span></span><br><span class="line">obj1.testname = obj2</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj1.testname.name);<span class="comment">//打印结果：pingchangxin-t</span></span><br></pre></td></tr></table></figure>
-<h3 id="五、对象之间传值和传址的区别"><a href="#五、对象之间传值和传址的区别" class="headerlink" title="五、对象之间传值和传址的区别"></a>五、对象之间传值和传址的区别</h3><p>这里要说明一点，对象的值是保存在<strong>堆内存</strong>中，而对象的引用（即变量）是保存在<strong>栈内存</strong>中的。<br>js代码 ：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">obj1.name = <span class="string">&quot;李白&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> obj2 = obj1; <span class="comment">// 将 obj1 的地址赋值给 obj2。从此， obj1 和 obj2 指向了同一个堆内存空间</span></span><br><span class="line">obj2.name = <span class="string">&quot;韩信&quot;</span>;<span class="comment">//修改obj2的name属性</span></span><br><span class="line"><span class="built_in">console</span>.log(obj1.name);<span class="comment">//打印结果：韩信</span></span><br></pre></td></tr></table></figure>
-<p>所以如果你打算把引用类型 A 的值赋值给 B，让A和B相互不受影响的话，可以通过 Object.assign() 来复制对象,比如用下面的方法：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = &#123;<span class="attr">name</span>: <span class="string">&#x27;韩信&#x27;</span>&#125;;<span class="comment">// 复制对象：把 obj1 赋值给 obj3。两者之间互不影响</span></span><br><span class="line"><span class="keyword">var</span> obj3 = <span class="built_in">Object</span>.assign(&#123;&#125;, obj1);</span><br></pre></td></tr></table></figure>
-<h3 id="六、split-方法"><a href="#六、split-方法" class="headerlink" title="六、split()方法"></a>六、split()方法</h3><p>解释：通过指定的分隔符，将一个字符串拆分成一个<strong>数组</strong>。不会改变原字符串。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//split()方法：字符串变数组</span></span><br><span class="line"><span class="keyword">var</span> str3 = <span class="string">&#x27;平常心|pingchangxin|周杰伦&#x27;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str3.split()); <span class="comment">// [&quot;平常心|pingchangxin|周杰伦&quot;]</span></span><br><span class="line"><span class="built_in">console</span>.log(str3.split(<span class="string">&#x27;&#x27;</span>)); <span class="comment">// [&quot;平&quot;,&quot;常&quot;,&quot;心&quot;,&quot;|&quot;,&quot;p&quot;,&quot;i&quot;,&quot;n&quot;,&quot;g&quot;,&quot;c&quot;,&quot;h&quot;,&quot;a&quot;,&quot;n&quot;,&quot;g&quot;,&quot;x&quot;,&quot;i&quot;,&quot;n&quot;,&quot;|&quot;,&quot;周&quot;,&quot;杰&quot;,&quot;伦&quot;]</span></span><br><span class="line"><span class="built_in">console</span>.log(str3.split(<span class="string">&#x27;|&#x27;</span>)); <span class="comment">// [&quot;平常心&quot;,&quot;pingchangxin&quot;,&quot;周杰伦&quot;]</span></span><br><span class="line"><span class="built_in">console</span>.log(str3.split(<span class="string">&#x27;周&#x27;</span>)); <span class="comment">// [&quot;平常心|pingchangxin|&quot;,&quot;杰伦&quot;]</span></span><br></pre></td></tr></table></figure>
-<h3 id="七、生成两个整数之间的随机整数，并且要包含这两个整数"><a href="#七、生成两个整数之间的随机整数，并且要包含这两个整数" class="headerlink" title="七、生成两个整数之间的随机整数，并且要包含这两个整数"></a>七、生成两个整数之间的随机整数，并且要包含这两个整数</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getRandom</span>(<span class="params">min, max</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * (max - min + <span class="number">1</span>)) + min;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> arr = [<span class="string">&#x27;周杰伦&#x27;</span>, <span class="string">&#x27;陈奕迅&#x27;</span>, <span class="string">&#x27;隔壁老樊&#x27;</span>, <span class="string">&#x27;林俊杰&#x27;</span>];</span><br><span class="line">    <span class="keyword">const</span> index = getRandom(<span class="number">0</span>, arr.length - <span class="number">1</span>); <span class="comment">// 生成随机的index</span></span><br><span class="line">    <span class="built_in">console</span>.log(arr[index]); <span class="comment">// 随机点名</span></span><br></pre></td></tr></table></figure>
-
-             
-          </div>
-      </div>
-      <div class="post-footer">
-        
-    </div>
-    
-      <div class="recent-post-item">
-          <div class="post-title ">
-            <a href="/2020/08/08/vue%E7%BB%84%E4%BB%B6%E4%B8%8E%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E4%BC%A0%E5%80%BC/"></a>
-          </div>
-          <div class="post-meta">
-            
-            
-              <div class="post-meta-item date">
-                <span title="Created 2020.08.08"><i class="far fa-calendar-alt"></i> 2020.08.08</span>
-              </div>
-              <div class="post-meta-item updated">
-                <span title="Updated 2020.08.08"><i class="far fa-calendar-check"></i> 2020.08.08</span>
-              </div>
-             
-             
-            
-             <div class="post-meta-item wordcount">
-                
-                  <i class="fas fa-pencil-alt"></i> <span class="post-count">1.4k words</span>
-                   
-                
-                  <i class="far fa-clock"></i> <span class="post-count">6 min</span>
-                                       
-              </div>
-             
-        </div>
-          <div class="content">
-            
-                  <hr>
-<h2 id="vue组件与组件之间传值"><a href="#vue组件与组件之间传值" class="headerlink" title="vue组件与组件之间传值"></a>vue组件与组件之间传值</h2><h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h3 id="一、父组件向子组件传值"><a href="#一、父组件向子组件传值" class="headerlink" title="一、父组件向子组件传值"></a>一、父组件向子组件传值</h3><h3 id="二、子组件向父组件传值"><a href="#二、子组件向父组件传值" class="headerlink" title="二、子组件向父组件传值"></a>二、子组件向父组件传值</h3><h3 id="三、兄弟组件之间的传值"><a href="#三、兄弟组件之间的传值" class="headerlink" title="三、兄弟组件之间的传值"></a>三、兄弟组件之间的传值</h3><p><img src= "/img/loading.gif" data-src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/07545cbece4246eeb432bd82e47f7578~tplv-k3u1fbpfcp-zoom-1.image"></p>
-<p>如上图所示，2是1的子组件，1是3的父组件，2和3是兄弟组件</p>
-<h3 id="一、父组件向子组件传值："><a href="#一、父组件向子组件传值：" class="headerlink" title="一、父组件向子组件传值："></a>一、父组件向子组件传值：</h3><p>html代码:</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">v-app</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 用:xxxx=&quot;xxxx&quot;绑定父组件的数据 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">list-group</span> <span class="attr">:listgroup</span>=<span class="string">&quot;listgroup&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">list-group</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">v-app</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>子组件注册代码:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">&#x27;list-group&#x27;</span>, &#123;</span><br><span class="line">    <span class="comment">// 接收父组件的数据</span></span><br><span class="line">    props:[<span class="string">&#x27;listgroup&#x27;</span>],</span><br><span class="line">    template:<span class="string">`</span></span><br><span class="line"><span class="string">      &lt;v-card</span></span><br><span class="line"><span class="string">        max-width=&quot;300&quot;</span></span><br><span class="line"><span class="string">        tile</span></span><br><span class="line"><span class="string">      &gt;</span></span><br><span class="line"><span class="string">        &lt;v-list rounded&gt;</span></span><br><span class="line"><span class="string">          &lt;v-list-item-group v-model=&quot;listgroup.item&quot; color=&quot;primary&quot;&gt;</span></span><br><span class="line"><span class="string">            &lt;v-list-item</span></span><br><span class="line"><span class="string">              v-for=&quot;(item, index) in listgroup.items&quot;</span></span><br><span class="line"><span class="string">              :key=&quot;index&quot; v-text=&quot;item.text&quot;&quot;</span></span><br><span class="line"><span class="string">            &gt;</span></span><br><span class="line"><span class="string">            &lt;/v-list-item&gt;</span></span><br><span class="line"><span class="string">          &lt;/v-list-item-group&gt;</span></span><br><span class="line"><span class="string">        &lt;/v-list&gt;</span></span><br><span class="line"><span class="string">      &lt;/v-card&gt;</span></span><br><span class="line"><span class="string">    `</span></span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
-<p>父组件代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">    vuetify: <span class="keyword">new</span> Vuetify(),</span><br><span class="line">    data: &#123;</span><br><span class="line">      <span class="comment">// 父组件中的数据</span></span><br><span class="line">      listgroup:&#123;</span><br><span class="line">        item: <span class="number">1</span>,</span><br><span class="line">        items: [</span><br><span class="line">          &#123; <span class="attr">id</span>:<span class="number">1</span>, <span class="attr">text</span>: <span class="string">&#x27;Real-Time&#x27;</span>, <span class="attr">icon</span>: <span class="string">&#x27;mdi-clock&#x27;</span> &#125;,</span><br><span class="line">          &#123; <span class="attr">id</span>:<span class="number">2</span>, <span class="attr">text</span>: <span class="string">&#x27;Audience&#x27;</span>, <span class="attr">icon</span>: <span class="string">&#x27;mdi-account&#x27;</span> &#125;,</span><br><span class="line">          &#123; <span class="attr">id</span>:<span class="number">3</span>, <span class="attr">text</span>: <span class="string">&#x27;Conversions&#x27;</span>, <span class="attr">icon</span>: <span class="string">&#x27;mdi-flag&#x27;</span> &#125;,</span><br><span class="line">        ],</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
-<p>综上所述，父组件向子组件传值需要三步：</p>
-<p>1、首先在父组件中创建数据</p>
-<p>2、然后再html代码中用<code>:</code>绑定数据</p>
-<p>3、最后在子组件注册的代码中用<code>props</code>接收数据</p>
-<h3 id="二、子组件向父组件传值-1"><a href="#二、子组件向父组件传值-1" class="headerlink" title="二、子组件向父组件传值:"></a>二、子组件向父组件传值:</h3><p>我们在上面代码的基础上略作调整,加一个index传值</p>
-<p>html代码：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">v-app</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- @xxxx(xxxx要与子组件中的方法名对应) =后面跟父组件中的函数名($event接收子组件的值) --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">list-group</span> <span class="attr">:listgroup</span>=<span class="string">&quot;listgroup&quot;</span> @<span class="attr">handleindex</span>=<span class="string">&quot;handle($event)&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">list-group</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">v-app</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>子组件代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">&#x27;list-group&#x27;</span>, &#123;</span><br><span class="line">    props:[<span class="string">&#x27;listgroup&#x27;</span>],</span><br><span class="line">    template:<span class="string">`</span></span><br><span class="line"><span class="string">      &lt;v-card</span></span><br><span class="line"><span class="string">        max-width=&quot;300&quot;</span></span><br><span class="line"><span class="string">        tile</span></span><br><span class="line"><span class="string">      &gt;</span></span><br><span class="line"><span class="string">        &lt;v-list rounded&gt;</span></span><br><span class="line"><span class="string">          &lt;v-list-item-group v-model=&quot;listgroup.item&quot; color=&quot;primary&quot;&gt;</span></span><br><span class="line"><span class="string">            &lt;v-list-item</span></span><br><span class="line"><span class="string">              v-for=&quot;(item, index) in listgroup.items&quot;</span></span><br><span class="line"><span class="string">              :key=&quot;index&quot; v-text=&quot;item.text&quot; @click=&quot;$emit(&#x27;handleindex&#x27;,index)&quot; //这里$emit就是子组件传值给父组件的方法，handleindex是方法名，index是数据</span></span><br><span class="line"><span class="string">            &gt;</span></span><br><span class="line"><span class="string">            &lt;/v-list-item&gt;</span></span><br><span class="line"><span class="string">          &lt;/v-list-item-group&gt;</span></span><br><span class="line"><span class="string">        &lt;/v-list&gt;</span></span><br><span class="line"><span class="string">      &lt;/v-card&gt;</span></span><br><span class="line"><span class="string">    `</span></span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
-<p>父组件代码:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">    vuetify: <span class="keyword">new</span> Vuetify(),</span><br><span class="line">    data: &#123;</span><br><span class="line">      listgroup:&#123;</span><br><span class="line">        item: <span class="number">1</span>,</span><br><span class="line">        items: [</span><br><span class="line">          &#123; <span class="attr">id</span>:<span class="number">1</span>, <span class="attr">text</span>: <span class="string">&#x27;Real-Time&#x27;</span>, <span class="attr">icon</span>: <span class="string">&#x27;mdi-clock&#x27;</span> &#125;,</span><br><span class="line">          &#123; <span class="attr">id</span>:<span class="number">2</span>, <span class="attr">text</span>: <span class="string">&#x27;Audience&#x27;</span>, <span class="attr">icon</span>: <span class="string">&#x27;mdi-account&#x27;</span> &#125;,</span><br><span class="line">          &#123; <span class="attr">id</span>:<span class="number">3</span>, <span class="attr">text</span>: <span class="string">&#x27;Conversions&#x27;</span>, <span class="attr">icon</span>: <span class="string">&#x27;mdi-flag&#x27;</span> &#125;,</span><br><span class="line">        ],</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="comment">// 父组件中的值</span></span><br><span class="line">      index:<span class="number">-1</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    methods:&#123;</span><br><span class="line">      <span class="comment">// 父组件中的函数，val接收子组件传过来的值，然后相应的修改自身的index变量</span></span><br><span class="line">      handle: <span class="function"><span class="keyword">function</span>(<span class="params">val</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.index = val</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="built_in">this</span>.index) <span class="comment">//打印index</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
-<p>综上，子组件向父组件传值也是三步：</p>
-<p>1、在子组件中准备想传的那个值，然后用<code>$emit</code>方法携带一个方法名</p>
-<p>2、在html代码中用<code>@</code>绑定子组件中的方法名，然后用<code>$event</code>接收子组件中的值</p>
-<p>3、父组件中随便找个参数接收即可</p>
-<h3 id="三、兄弟组件之间的传值-1"><a href="#三、兄弟组件之间的传值-1" class="headerlink" title="三、兄弟组件之间的传值:"></a>三、兄弟组件之间的传值:</h3><p>之前我学习到的是创建事件中心的方法来实现，但是我想了一想发现，兄弟组件共同的父组件不就是事件中心吗，所以我们在上面的代码再略作修改看看能否实现效果(其实就是在上面的基础上再注册一个组件接收index的值就可测试)</p>
-<p>html代码：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">v-app</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 列表组件绑定父组件中的函数 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">list-group</span> <span class="attr">:listgroup</span>=<span class="string">&quot;listgroup&quot;</span> @<span class="attr">handleindex</span>=<span class="string">&quot;handle($event)&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">list-group</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 测试组件绑定父组件中的index值 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">test-box</span> <span class="attr">:index</span>=<span class="string">&quot;index&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">test-box</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">v-app</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>兄弟组件代码:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 测试组件</span></span><br><span class="line">Vue.component(<span class="string">&#x27;test-box&#x27;</span>,&#123;</span><br><span class="line">  props:[<span class="string">&#x27;index&#x27;</span>],</span><br><span class="line">  template:<span class="string">`</span></span><br><span class="line"><span class="string">    &lt;div&gt;&#123;&#123;index&#125;&#125;&lt;/div&gt;</span></span><br><span class="line"><span class="string">  `</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 列表组件</span></span><br><span class="line">Vue.component(<span class="string">&#x27;list-group&#x27;</span>, &#123;</span><br><span class="line">  props:[<span class="string">&#x27;listgroup&#x27;</span>],</span><br><span class="line">  template:<span class="string">`</span></span><br><span class="line"><span class="string">    &lt;v-card</span></span><br><span class="line"><span class="string">      max-width=&quot;300&quot;</span></span><br><span class="line"><span class="string">      tile</span></span><br><span class="line"><span class="string">    &gt;</span></span><br><span class="line"><span class="string">      &lt;v-list rounded&gt;</span></span><br><span class="line"><span class="string">        &lt;v-list-item-group v-model=&quot;listgroup.item&quot; color=&quot;primary&quot;&gt;</span></span><br><span class="line"><span class="string">          &lt;v-list-item</span></span><br><span class="line"><span class="string">            v-for=&quot;(item, index) in listgroup.items&quot;</span></span><br><span class="line"><span class="string">            :key=&quot;index&quot; v-text=&quot;item.text&quot; @click=&quot;$emit(&#x27;handleindex&#x27;,index)&quot;</span></span><br><span class="line"><span class="string">          &gt;</span></span><br><span class="line"><span class="string">          &lt;/v-list-item&gt;</span></span><br><span class="line"><span class="string">        &lt;/v-list-item-group&gt;</span></span><br><span class="line"><span class="string">      &lt;/v-list&gt;</span></span><br><span class="line"><span class="string">    &lt;/v-card&gt;</span></span><br><span class="line"><span class="string">  `</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>父组件代码:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">    vuetify: <span class="keyword">new</span> Vuetify(),</span><br><span class="line">    data: &#123;</span><br><span class="line">      listgroup:&#123;</span><br><span class="line">        item: <span class="number">1</span>,</span><br><span class="line">        items: [</span><br><span class="line">          &#123; <span class="attr">id</span>:<span class="number">1</span>, <span class="attr">text</span>: <span class="string">&#x27;Real-Time&#x27;</span>, <span class="attr">icon</span>: <span class="string">&#x27;mdi-clock&#x27;</span> &#125;,</span><br><span class="line">          &#123; <span class="attr">id</span>:<span class="number">2</span>, <span class="attr">text</span>: <span class="string">&#x27;Audience&#x27;</span>, <span class="attr">icon</span>: <span class="string">&#x27;mdi-account&#x27;</span> &#125;,</span><br><span class="line">          &#123; <span class="attr">id</span>:<span class="number">3</span>, <span class="attr">text</span>: <span class="string">&#x27;Conversions&#x27;</span>, <span class="attr">icon</span>: <span class="string">&#x27;mdi-flag&#x27;</span> &#125;,</span><br><span class="line">        ],</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="comment">// 父组件中的值</span></span><br><span class="line">      index:<span class="number">-1</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    methods:&#123;</span><br><span class="line">      <span class="comment">// 父组件中的函数，val接收子组件传过来的值，然后相应的修改自身的index变量</span></span><br><span class="line">      handle: <span class="function"><span class="keyword">function</span>(<span class="params">val</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.index = val</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="built_in">this</span>.index) <span class="comment">//打印index</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
-<p>这是最后的完整版代码，包括了父组件向子组件传值，子组件向父组件传值，兄弟组件之间的传值</p>
-<p>综上，兄弟组件之间的传值包括以下三步(这里的测试组件和列表组件是兄弟组件关系):</p>
-<p>1、列表组件给父组件传值</p>
-<p>2、父组件接收列表组件的值，并且利用函数的方式修改了自身的<code>index</code>的值</p>
-<p>3、父组件向测试组件传<code>index</code>的值</p>
-<h3 id="最后附上效果"><a href="#最后附上效果" class="headerlink" title="最后附上效果:"></a>最后附上效果:</h3><p><img src= "/img/loading.gif" data-src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cc0716f9081a48d7809b4b6046843ff9~tplv-k3u1fbpfcp-zoom-1.image"></p>
-
-             
-          </div>
-      </div>
-      <div class="post-footer">
-        
-    </div>
-    
-      <div class="recent-post-item">
-          <div class="post-title ">
-            <a href="/2020/08/08/vue+vuetify%E5%AE%9E%E7%8E%B0%E5%8F%AF%E7%BC%96%E8%BE%91%E8%A1%A8%E6%A0%BC/"></a>
-          </div>
-          <div class="post-meta">
-            
-            
-              <div class="post-meta-item date">
-                <span title="Created 2020.08.08"><i class="far fa-calendar-alt"></i> 2020.08.08</span>
-              </div>
-              <div class="post-meta-item updated">
-                <span title="Updated 2020.08.08"><i class="far fa-calendar-check"></i> 2020.08.08</span>
-              </div>
-             
-             
-            
-             <div class="post-meta-item wordcount">
-                
-                  <i class="fas fa-pencil-alt"></i> <span class="post-count">1.3k words</span>
-                   
-                
-                  <i class="far fa-clock"></i> <span class="post-count">6 min</span>
-                                       
-              </div>
-             
-        </div>
-          <div class="content">
-            
-                  <hr>
-<h2 id="vue-vuetify实现可编辑表格"><a href="#vue-vuetify实现可编辑表格" class="headerlink" title="vue+vuetify实现可编辑表格"></a>vue+vuetify实现可编辑表格</h2><p><img src= "/img/loading.gif" data-src="https://user-gold-cdn.xitu.io/2020/7/26/1738b463bfb83bc3?w=1903&h=563&f=gif&s=355009"><br>我查遍整个vuetify官网，里面只有弹出对话框的可编辑表格，并没有这种在表格内就可编辑的功能，所以写了这篇文章，以便大家备一手，学会这招你可以秒天秒地秒空气，防老师防领导防项目经理。</p>
-<p>HTML代码如下:</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">v-app</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">v-card</span> <span class="attr">style</span>=<span class="string">&quot;width:70%; margin: 200px auto;&quot;</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">v-card-title</span>&gt;</span></span><br><span class="line">            可编辑表格</span><br><span class="line">          <span class="tag">&lt;/<span class="name">v-card-title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">v-simple-table</span> <span class="attr">id</span>=<span class="string">&quot;tab&quot;</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">template</span> <span class="attr">v-slot:default</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">thead</span>&gt;</span></span><br><span class="line">              <span class="comment">&lt;!--  表头 --&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">th</span> <span class="attr">class</span>=<span class="string">&quot;text-left&quot;</span>&gt;</span>Name<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">th</span> <span class="attr">class</span>=<span class="string">&quot;text-left&quot;</span>&gt;</span>Calories<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">th</span> <span class="attr">class</span>=<span class="string">&quot;text-left&quot;</span>&gt;</span>fat<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">th</span> <span class="attr">class</span>=<span class="string">&quot;text-left&quot;</span>&gt;</span>carbs<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">th</span> <span class="attr">class</span>=<span class="string">&quot;text-left&quot;</span>&gt;</span>protein<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">th</span> <span class="attr">class</span>=<span class="string">&quot;text-left&quot;</span>&gt;</span>iron<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">th</span> <span class="attr">class</span>=<span class="string">&quot;text-left&quot;</span>&gt;</span>actions<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">              <span class="comment">&lt;!-- 表格内容 --&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">tr</span> <span class="attr">v-for</span>=<span class="string">&quot;item in desserts&quot;</span> <span class="attr">:key</span>=<span class="string">&quot;item.id&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">v-text-field</span></span></span><br><span class="line"><span class="tag">                  <span class="attr">v-model</span>=<span class="string">&quot;item.name&quot;</span></span></span><br><span class="line"><span class="tag">                  <span class="attr">:readonly</span>=<span class="string">&quot;item.readonly&quot;</span></span></span><br><span class="line"><span class="tag">                  <span class="attr">autofocus</span></span></span><br><span class="line"><span class="tag">                &gt;</span><span class="tag">&lt;/<span class="name">v-text-field</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">                  <span class="tag">&lt;<span class="name">v-text-field</span></span></span><br><span class="line"><span class="tag">                  <span class="attr">v-model</span>=<span class="string">&quot;item.calories&quot;</span></span></span><br><span class="line"><span class="tag">                  <span class="attr">:readonly</span>=<span class="string">&quot;item.readonly&quot;</span></span></span><br><span class="line"><span class="tag">                  <span class="attr">autofocus</span></span></span><br><span class="line"><span class="tag">                &gt;</span><span class="tag">&lt;/<span class="name">v-text-field</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">                  <span class="tag">&lt;<span class="name">v-text-field</span></span></span><br><span class="line"><span class="tag">                  <span class="attr">v-model</span>=<span class="string">&quot;item.fat&quot;</span></span></span><br><span class="line"><span class="tag">                  <span class="attr">:readonly</span>=<span class="string">&quot;item.readonly&quot;</span></span></span><br><span class="line"><span class="tag">                  <span class="attr">autofocus</span></span></span><br><span class="line"><span class="tag">                &gt;</span><span class="tag">&lt;/<span class="name">v-text-field</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">v-text-field</span></span></span><br><span class="line"><span class="tag">                  <span class="attr">v-model</span>=<span class="string">&quot;item.carbs&quot;</span></span></span><br><span class="line"><span class="tag">                  <span class="attr">:readonly</span>=<span class="string">&quot;item.readonly&quot;</span></span></span><br><span class="line"><span class="tag">                  <span class="attr">autofocus</span></span></span><br><span class="line"><span class="tag">                &gt;</span><span class="tag">&lt;/<span class="name">v-text-field</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">v-text-field</span></span></span><br><span class="line"><span class="tag">                  <span class="attr">v-model</span>=<span class="string">&quot;item.protein&quot;</span></span></span><br><span class="line"><span class="tag">                  <span class="attr">:readonly</span>=<span class="string">&quot;item.readonly&quot;</span></span></span><br><span class="line"><span class="tag">                  <span class="attr">autofocus</span></span></span><br><span class="line"><span class="tag">                &gt;</span><span class="tag">&lt;/<span class="name">v-text-field</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">v-text-field</span></span></span><br><span class="line"><span class="tag">                  <span class="attr">v-model</span>=<span class="string">&quot;item.iron&quot;</span></span></span><br><span class="line"><span class="tag">                  <span class="attr">:readonly</span>=<span class="string">&quot;item.readonly&quot;</span></span></span><br><span class="line"><span class="tag">                  <span class="attr">autofocus</span></span></span><br><span class="line"><span class="tag">                &gt;</span><span class="tag">&lt;/<span class="name">v-text-field</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">                  <span class="comment">&lt;!-- 按钮区域 --&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">                  <span class="comment">&lt;!-- 非修改界面显示修改，修改界面显示保存 --&gt;</span></span><br><span class="line">                  <span class="tag">&lt;<span class="name">v-btn</span> <span class="attr">rounded</span> <span class="attr">color</span>=<span class="string">&quot;primary&quot;</span> <span class="attr">dark</span> @<span class="attr">click</span>=<span class="string">&quot;editItem(item)&quot;</span> <span class="attr">small</span> <span class="attr">style</span>=<span class="string">&quot;margin-right: 15px;&quot;</span>&gt;</span>&#123;&#123; item.readonly? &quot;修改&quot;:&quot;保存&quot; &#125;&#125;<span class="tag">&lt;/<span class="name">v-btn</span>&gt;</span></span><br><span class="line">                  <span class="comment">&lt;!-- 非修改界面显示删除 --&gt;</span></span><br><span class="line">                  <span class="tag">&lt;<span class="name">v-btn</span> <span class="attr">rounded</span> <span class="attr">color</span>=<span class="string">&quot;error&quot;</span> <span class="attr">dark</span> <span class="attr">small</span> <span class="attr">v-if</span>=<span class="string">&quot;item.readonly&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;delItem(item)&quot;</span>&gt;</span>删除<span class="tag">&lt;/<span class="name">v-btn</span>&gt;</span></span><br><span class="line">                  <span class="comment">&lt;!-- 修改界面显示取消 --&gt;</span></span><br><span class="line">                  <span class="tag">&lt;<span class="name">v-btn</span> <span class="attr">rounded</span> <span class="attr">color</span>=<span class="string">&quot;success&quot;</span> <span class="attr">dark</span> <span class="attr">small</span> <span class="attr">v-if</span>=<span class="string">&quot;!item.readonly&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;cancelItem(item)&quot;</span>&gt;</span>取消<span class="tag">&lt;/<span class="name">v-btn</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">v-simple-table</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">v-card</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">v-app</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>JS代码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 引入vue --&gt;</span><br><span class="line">  &lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;vue@2.x&#x2F;dist&#x2F;vue.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">  &lt;!-- 引入vuetify --&gt;</span><br><span class="line">  &lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;vuetify@2.x&#x2F;dist&#x2F;vuetify.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    new Vue(&#123;</span><br><span class="line">      el: &#39;#app&#39;,</span><br><span class="line">      vuetify: new Vuetify(),</span><br><span class="line">      data () &#123;</span><br><span class="line">      return &#123;</span><br><span class="line">        &#x2F;&#x2F; 表格数据</span><br><span class="line">        desserts: [</span><br><span class="line">          &#123;</span><br><span class="line">            id: 1,</span><br><span class="line">            name: &#39;Frozen Yogurt&#39;,</span><br><span class="line">            calories: 159,</span><br><span class="line">            fat: 6.0,</span><br><span class="line">            carbs: 24,</span><br><span class="line">            protein: 4.0,</span><br><span class="line">            iron: &#39;1%&#39;,</span><br><span class="line">            readonly: true</span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            id: 2,</span><br><span class="line">            name: &#39;Ice cream sandwich&#39;,</span><br><span class="line">            calories: 237,</span><br><span class="line">            fat: 9.0,</span><br><span class="line">            carbs: 37,</span><br><span class="line">            protein: 4.3,</span><br><span class="line">            iron: &#39;1%&#39;,</span><br><span class="line">            readonly: true</span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            id: 3,</span><br><span class="line">            name: &#39;Eclair&#39;,</span><br><span class="line">            calories: 262,</span><br><span class="line">            fat: 16.0,</span><br><span class="line">            carbs: 23,</span><br><span class="line">            protein: 6.0,</span><br><span class="line">            iron: &#39;7%&#39;,</span><br><span class="line">            readonly: true</span><br><span class="line">          &#125;,</span><br><span class="line">        ],</span><br><span class="line">        editedItem: &#123;</span><br><span class="line">          id: 0,</span><br><span class="line">          name: &#39;&#39;,</span><br><span class="line">          calories: 0,</span><br><span class="line">          fat: 0,</span><br><span class="line">          carbs: 0,</span><br><span class="line">          protein: 0,</span><br><span class="line">          iron: &#39;&#39;,</span><br><span class="line">          readonly: true</span><br><span class="line">        &#125;,</span><br><span class="line">        editedIndex: -1,</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">      &#x2F;&#x2F; 修改数据（保存数据)</span><br><span class="line">      editItem(item) &#123;</span><br><span class="line">        this.editedIndex &#x3D; this.desserts.indexOf(item);&#x2F;&#x2F;先找到desserts数组里面对应的索引，通俗点说就是确定修改哪一行数据</span><br><span class="line">        this.editedItem &#x3D; Object.assign(&#123;&#125;, item);&#x2F;&#x2F;把未修改之前的值存到editedItem对象里面，方便用户取消修改</span><br><span class="line">        &#x2F;&#x2F;以上两行主要是为取消修改服务，要实现修改其实只需下面一行就够了，因为html中本身的标签为&lt;v-text-field&gt;,也就是说只需控制它的只读和非只读来回切换即可做到修改保存</span><br><span class="line">        item.readonly &#x3D; !item.readonly;</span><br><span class="line">      &#125;,</span><br><span class="line">      &#x2F;&#x2F; 删除数据</span><br><span class="line">      delItem(item) &#123;</span><br><span class="line">        const index &#x3D; this.desserts.indexOf(item);&#x2F;&#x2F;找到desserts数组里面对应的索引，通俗点说就是确定删除哪一行数据</span><br><span class="line">        confirm(&#39;Are you sure you want to delete this item?&#39;) &amp;&amp; this.desserts.splice(index, 1);&#x2F;&#x2F;系统弹出确认框，点击确定就是删除这一行数据</span><br><span class="line">      &#125;,</span><br><span class="line">      &#x2F;&#x2F; 取消</span><br><span class="line">      cancelItem(item) &#123;</span><br><span class="line">        item.readonly &#x3D; !item.readonly;&#x2F;&#x2F;切换文本框的读写状态</span><br><span class="line">        this.$nextTick(() &#x3D;&gt;&#123;</span><br><span class="line">        Object.assign(this.desserts[this.editedIndex], this.editedItem);&#x2F;&#x2F;点击取消之后，把未修改之前的数据还原到desserts数组</span><br><span class="line">        this.editedIndex &#x3D; -1;&#x2F;&#x2F;把索引标志置空</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;,</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
-<p>总结：这是我能想到的最最最简单的可编辑表格实现了，萌新小白仔细看我的注释，细细品估计也能看懂，在实际开发中，为了总体更加美观 ，大家大可不必像我一样控制文本框的编辑功能，而是可以用一个<code>span</code>标签和<code>v-text-field</code>标签来回切换他们的显示状态即可，原理跟这个一样，我就懒得改了（狗头保命），有问题或者想要了解更多前端知识欢迎下方留言讨论。<br>​</p>
-
-             
-          </div>
-      </div>
-      <div class="post-footer">
-        
-    </div>
-    
-      <div class="recent-post-item">
-          <div class="post-title ">
-            <a href="/2020/08/02/vue%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E6%95%B0%E7%BB%84/"></a>
-          </div>
-          <div class="post-meta">
-            
-            
-              <div class="post-meta-item date">
-                <span title="Created 2020.08.02"><i class="far fa-calendar-alt"></i> 2020.08.02</span>
-              </div>
-              <div class="post-meta-item updated">
-                <span title="Updated 2020.08.02"><i class="far fa-calendar-check"></i> 2020.08.02</span>
-              </div>
-             
-             
-            
-             <div class="post-meta-item wordcount">
-                
-                  <i class="fas fa-pencil-alt"></i> <span class="post-count">528 words</span>
-                   
-                
-                  <i class="far fa-clock"></i> <span class="post-count">2 min</span>
-                                       
-              </div>
-             
-        </div>
-          <div class="content">
-            
-                  <hr>
-<h2 id="vue双向绑定数组"><a href="#vue双向绑定数组" class="headerlink" title="vue双向绑定数组"></a>vue双向绑定数组</h2><p><img src= "/img/loading.gif" data-src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1650e0743a644657bb90624778d79d90~tplv-k3u1fbpfcp-zoom-1.image"><br>众所周知,vue中<code>v-model</code> 会忽略所有表单元素的 <code>value、checked、selected attribute</code> 的初始值而总是将 Vue 实例的数据作为数据来源。</p>
-<p>大部分情况,<code>v-model</code>是绑定一个对象的属性，但是如果数据库中的数据是一个数组，这种情况下，如果把数组转换成对象再绑定，然后再转换回去提交到数据库显然是一件工程量很大的事情，本着程序员偷懒的原则，我发现了一个便捷的方法，废话不多说，直接上干货。</p>
-<p>###HTML代码如下：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">&quot;https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>vue双向绑定数组<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">v-app</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 表格 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">v-for</span>=<span class="string">&quot;(item,index) in arr&quot;</span>&gt;</span></span><br><span class="line">          <span class="comment">&lt;!-- 文本框 --&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">v-text-field</span> <span class="attr">v-model</span>=<span class="string">&quot;arr[index]&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">v-text-field</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">v-for</span>=<span class="string">&quot;(item,index) in arr&quot;</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;item&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">v-app</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">```  </span><br><span class="line">###js代码如下：</span><br><span class="line"></span><br><span class="line">```javascript</span><br><span class="line"><span class="comment">&lt;!-- 引入vue --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 引入vuetify --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">    el: <span class="string">&#x27;#app&#x27;</span>,</span></span><br><span class="line"><span class="javascript">    vuetify: <span class="keyword">new</span> Vuetify(),</span></span><br><span class="line">    data () &#123;</span><br><span class="line"><span class="javascript">      <span class="keyword">return</span>&#123;</span></span><br><span class="line">        arr:[12123,134123,12]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>这里我用最简单的方法，给大家演示了一下，利用<code>item</code>遍历数组，然后利用<code>index</code>索引找到数组的下标，<code>v-model</code>绑定数组的下标即可实现上图的效果。</p>
-
-             
-          </div>
-      </div>
-      <div class="post-footer">
-        
-    </div>
-    
-      <div class="recent-post-item">
-          <div class="post-title ">
-            <a href="/2020/08/02/hello-world/">Hello World</a>
-          </div>
-          <div class="post-meta">
-            
-            
-              <div class="post-meta-item date">
-                <span title="Created 2020.08.02"><i class="far fa-calendar-alt"></i> 2020.08.02</span>
-              </div>
-              <div class="post-meta-item updated">
-                <span title="Updated 2020.08.02"><i class="far fa-calendar-check"></i> 2020.08.02</span>
-              </div>
-             
-             
-            
-             <div class="post-meta-item wordcount">
-                
-                  <i class="fas fa-pencil-alt"></i> <span class="post-count">75 words</span>
-                   
-                
-                  <i class="far fa-clock"></i> <span class="post-count">1 min</span>
-                                       
-              </div>
-             
-        </div>
-          <div class="content">
-            
-                  <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-             
-          </div>
-      </div>
-      <div class="post-footer">
-        
-    </div>
-    
-  </div>
-
-
-
-<nav class="paginator">
-      
-            
-</nav>
-
-    
-<a id="gotop" href="javascript:" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
-<script>
-    window.onscroll = function() {scrollFunction()};
-    function scrollFunction() {console.log(121);
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            document.getElementById("gotop").style.display = "block";
-        } else {
-            document.getElementById("gotop").style.display = "none";
-        }
-    }
-    function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-    }
-</script>
-    
-
-
-
-
-
-
-    
-<div id="bottom-outer">
-    <div id="bottom-inner">
-        © 2020 <i class="fa fa-heart" id="heart"></i> John Doe 
-        <br>
-        Powered by 
-        <a target="_blank" rel="noopener" href="http://hexo.io">hexo</a> | Theme is <a target="_blank" rel="noopener" href="https://github.com/a2396837/hexo-theme-blank/">blank</a>
-        
-          <div class="icp-info">
-            
-          <a href="" target="_blank"> </a>
-        </div>
-        
-    </div>  
-  </div>
-
-
-<script src="https://www.layuicdn.com/layui-v2.5.6/layui.js"></script>
-
-
-  
-    <script src="/js/script.js"></script>
-  
-    <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
-  
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.3/build/highlight.min.js"></script>
-  
-    <script src="https://cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.7.0/dist/highlightjs-line-numbers.min.js"></script>
-  
-
-
 
   <script>
-      window.lazyLoadOptions = {
-        elements_selector: 'img',
-        threshold: 0
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      fancybox: true,
+      pjax: false,
+      lazyload: {
+        enable: true,
+        loadingImage: '/images/theme/loading.gif',
+      },
+      donate: {
+        enable: true,
+        alipay: '/images/theme/zhifubao.jpg',
+        wechat: '/images/theme/weixin.jpg'
+      },
+      motto: {
+        api: '',
+        default: 'I love you more than three thousands years'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        alwaysShow: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: true
       }
+    }
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script>
 
-
-
-  <script>
-    var images = $('img').not('.nav-logo img').not('.card img').not($('a>img')).not('.reward-content img')
-    images.each(function (i, o) {
-      var lazyloadSrc = $(o).attr('data-src') ? $(o).attr('data-src') : $(o).attr('src')
-      $(o).wrap(`<a href="${lazyloadSrc}" data-fancybox="group" data-caption="${$(o).attr('alt')}" class="fancybox"></a>`)
-    })
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script>
-  <script>
-        $().fancybox({
-      selector: '[data-fancybox]',
-      loop: true,
-      transitionEffect: 'slide',
-      protect: true,
-      buttons: ['slideShow', 'fullScreen', 'thumbs', 'close']
-    })
-  </script>
   
+
+  
+<meta name="generator" content="Hexo 5.0.0"></head>
+<body class="lock-screen">
+  <div class="loading"></div>
+  
+
+
+  <nav class="menu">
+  <div class="menu-wrap">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content">
+      
+      
+      
+      
+      <li class="menu-item"><a href="/ " class="underline"> 首页</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/galleries " class="underline"> 摄影</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/archives " class="underline"> 归档</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/tags " class="underline"> 标签</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/categories " class="underline"> 分类</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/about " class="underline"> 关于</a></li>
+      
+    </ul>
+    <div class="menu-copyright"><p>Copyright© 2019-2020 | <a target="_blank" href="https://www.001f3.cn">平常心</a> .AllRightsReserved</p></div>
+  </div>
+</nav>
+  <main id="main">
+  
+    <div class="preview">
+  <div class="preview-image">
+    <h2 class="preview-motto" id="motto"></h2>
+    <!-- <span class="preview-cursor">|</span> -->
+    
+    <div class="preview-overlay">
+      <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="preview-parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+          <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+          <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+          <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+        </g>
+      </svg>
+    </div>
+    
+  </div>
+  <div class="preview-scroll">
+    <a href="#container" class="smooth-scroll"><i class="iconfont iconMouse"></i></a>
+  </div>
+</div>
+  
+  <div class="container" id="container">
+    <section class="row post">
+  
+  <div class="col-lg-4 col-md-6 col-sm-12 post-item">
+  <div class="post-wrap">
+    
+    <a href="/2020/09/07/%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B7%B1%E6%8B%B7%E8%B4%9D/" class="post-image">
+      <img   class="lazyload" data-original="/image/2.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+    </a>
+    <div class="post-content">
+      <h3 class="post-title"><a href="/2020/09/07/%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B7%B1%E6%8B%B7%E8%B4%9D/">浅拷贝和深拷贝</a></h3>
+      
+      
+      
+      <div class="post-excerpt">
+        <p class="substr-3">首先定义两个对象
+12345678910data: &#123;      // 对象一      obj1:&#123;        name:&#x27;pingchangxin&#x27...</p>
+      </div>
+      <div class="post-info">
+        <span class="post-info-item"><i class="iconfont iconcalendar"></i>Sep 07, 2020</span
+          class="post-info-item">
+        
+        <span class="post-info-item"><i class="iconfont iconfont-size"></i>2538</span>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <div class="col-lg-4 col-md-6 col-sm-12 post-item">
+  <div class="post-wrap">
+    
+    <a href="/2020/09/07/vue%E4%BA%8B%E4%BB%B6%E4%BF%AE%E9%A5%B0%E7%AC%A6/" class="post-image">
+      <img   class="lazyload" data-original="/image/7.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+    </a>
+    <div class="post-content">
+      <h3 class="post-title"><a href="/2020/09/07/vue%E4%BA%8B%E4%BB%B6%E4%BF%AE%E9%A5%B0%E7%AC%A6/">Vue双向绑定数组</a></h3>
+      
+      
+      
+      <div class="post-excerpt">
+        <p class="substr-3">定义两个函数:12345678methods:&#123;      father()&#123;        console.log(&#x27;i am father&#x27;)    ...</p>
+      </div>
+      <div class="post-info">
+        <span class="post-info-item"><i class="iconfont iconcalendar"></i>Sep 07, 2020</span
+          class="post-info-item">
+        
+        <span class="post-info-item"><i class="iconfont iconfont-size"></i>1976</span>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <div class="col-lg-4 col-md-6 col-sm-12 post-item">
+  <div class="post-wrap">
+    
+    <a href="/2020/09/07/http%E5%8D%8F%E8%AE%AE/" class="post-image">
+      <img   class="lazyload" data-original="/image/4.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+    </a>
+    <div class="post-content">
+      <h3 class="post-title"><a href="/2020/09/07/http%E5%8D%8F%E8%AE%AE/">http协议</a></h3>
+      
+      
+      
+      <div class="post-excerpt">
+        <p class="substr-3">http协议(超文本传输协议)作用：用于从万维网服务器传输超文本到本地浏览器的传送协议
+定义:http协议是基于TCP的应用层协议，它不关心数据传输的细节，主要是用来规定客户端和服务端的数据传输...</p>
+      </div>
+      <div class="post-info">
+        <span class="post-info-item"><i class="iconfont iconcalendar"></i>Sep 07, 2020</span
+          class="post-info-item">
+        
+        <span class="post-info-item"><i class="iconfont iconfont-size"></i>2323</span>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <div class="col-lg-4 col-md-6 col-sm-12 post-item">
+  <div class="post-wrap">
+    
+    <a href="/2020/08/16/vue%E6%8F%92%E6%A7%BD/" class="post-image">
+      <img   class="lazyload" data-original="/image/1.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+    </a>
+    <div class="post-content">
+      <h3 class="post-title"><a href="/2020/08/16/vue%E6%8F%92%E6%A7%BD/">Vue插槽</a></h3>
+      
+      
+      
+      <div class="post-excerpt">
+        <p class="substr-3">vue中&lt;slot&gt;&lt;/slot&gt;标签代表插槽
+一、内容插槽顾名思义，插槽的作用就是存放内容
+html代码如下：
+12345&lt;test-man&gt;      &...</p>
+      </div>
+      <div class="post-info">
+        <span class="post-info-item"><i class="iconfont iconcalendar"></i>Aug 16, 2020</span
+          class="post-info-item">
+        
+        <span class="post-info-item"><i class="iconfont iconfont-size"></i>2506</span>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <div class="col-lg-4 col-md-6 col-sm-12 post-item">
+  <div class="post-wrap">
+    
+    <a href="/2020/08/08/js%E4%B8%AD%E7%9A%84%E5%B8%B8%E7%94%A8%E5%A5%97%E8%B7%AF1/" class="post-image">
+      <img   class="lazyload" data-original="/image/6.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+    </a>
+    <div class="post-content">
+      <h3 class="post-title"><a href="/2020/08/08/js%E4%B8%AD%E7%9A%84%E5%B8%B8%E7%94%A8%E5%A5%97%E8%B7%AF1/">JS中的常用套路</a></h3>
+      
+      
+      
+      <div class="post-excerpt">
+        <p class="substr-3">一、接收图片资源123if(result.resultid == 0)&#123;    var a = result &amp;&amp; result.name &amp;&amp; res...</p>
+      </div>
+      <div class="post-info">
+        <span class="post-info-item"><i class="iconfont iconcalendar"></i>Aug 08, 2020</span
+          class="post-info-item">
+        
+        <span class="post-info-item"><i class="iconfont iconfont-size"></i>2602</span>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <div class="col-lg-4 col-md-6 col-sm-12 post-item">
+  <div class="post-wrap">
+    
+    <a href="/2020/08/08/vue%E7%BB%84%E4%BB%B6%E4%B8%8E%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E4%BC%A0%E5%80%BC/" class="post-image">
+      <img   class="lazyload" data-original="/image/8.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+    </a>
+    <div class="post-content">
+      <h3 class="post-title"><a href="/2020/08/08/vue%E7%BB%84%E4%BB%B6%E4%B8%8E%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E4%BC%A0%E5%80%BC/">Vue组件之间传值</a></h3>
+      
+      
+      
+      <div class="post-excerpt">
+        <p class="substr-3">目录一、父组件向子组件传值二、子组件向父组件传值三、兄弟组件之间的传值
+如上图所示，2是1的子组件，1是3的父组件，2和3是兄弟组件
+一、父组件向子组件传值：html代码:
+123456&lt;...</p>
+      </div>
+      <div class="post-info">
+        <span class="post-info-item"><i class="iconfont iconcalendar"></i>Aug 08, 2020</span
+          class="post-info-item">
+        
+        <span class="post-info-item"><i class="iconfont iconfont-size"></i>5499</span>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <div class="col-lg-4 col-md-6 col-sm-12 post-item">
+  <div class="post-wrap">
+    
+    <a href="/2020/08/08/vue+vuetify%E5%AE%9E%E7%8E%B0%E5%8F%AF%E7%BC%96%E8%BE%91%E8%A1%A8%E6%A0%BC/" class="post-image">
+      <img   class="lazyload" data-original="/image/9.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+    </a>
+    <div class="post-content">
+      <h3 class="post-title"><a href="/2020/08/08/vue+vuetify%E5%AE%9E%E7%8E%B0%E5%8F%AF%E7%BC%96%E8%BE%91%E8%A1%A8%E6%A0%BC/">可编辑表格</a></h3>
+      
+      
+      
+      <div class="post-excerpt">
+        <p class="substr-3">我查遍整个vuetify官网，里面只有弹出对话框的可编辑表格，并没有这种在表格内就可编辑的功能，所以写了这篇文章，以便大家备一手，学会这招你可以秒天秒地秒空气，防老师防领导防项目经理。
+HTML...</p>
+      </div>
+      <div class="post-info">
+        <span class="post-info-item"><i class="iconfont iconcalendar"></i>Aug 08, 2020</span
+          class="post-info-item">
+        
+        <span class="post-info-item"><i class="iconfont iconfont-size"></i>6493</span>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <div class="col-lg-4 col-md-6 col-sm-12 post-item">
+  <div class="post-wrap">
+    
+    <a href="/2020/08/02/vue%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E6%95%B0%E7%BB%84/" class="post-image">
+      <img   class="lazyload" data-original="/image/3.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+    </a>
+    <div class="post-content">
+      <h3 class="post-title"><a href="/2020/08/02/vue%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E6%95%B0%E7%BB%84/">Vue双向绑定数组</a></h3>
+      
+      
+      
+      <div class="post-excerpt">
+        <p class="substr-3">众所周知,vue中v-model 会忽略所有表单元素的 value、checked、selected attribute 的初始值而总是将 Vue 实例的数据作为数据来源。
+大部分情况,v-mo...</p>
+      </div>
+      <div class="post-info">
+        <span class="post-info-item"><i class="iconfont iconcalendar"></i>Aug 02, 2020</span
+          class="post-info-item">
+        
+        <span class="post-info-item"><i class="iconfont iconfont-size"></i>2015</span>
+      </div>
+    </div>
+  </div>
+</div>
+  
+</section>
+    <section class="paginator">
+  
+</section>
+  </div>
+</main>
+  <footer class="footer">
+  <div class="footer-social">
+    
+    
+    
+    
+    
+    <a href="tencent://message/?Menu=yes&uin=969122484 " target="_blank" onMouseOver="this.style.color= '#12B7F5'"
+      onMouseOut="this.style.color='#33333D'">
+      <i class="iconfont footer-social-item  iconQQ "></i>
+    </a>
+    
+    
+    
+    
+    
+    <a href="javascript:; " target="_blank" onMouseOver="this.style.color= '#09BB07'"
+      onMouseOut="this.style.color='#33333D'">
+      <i class="iconfont footer-social-item  iconwechat-fill "></i>
+    </a>
+    
+    
+    
+    
+    
+    <a href="https://github.com/ImDaret " target="_blank" onMouseOver="this.style.color= '#24292E'"
+      onMouseOut="this.style.color='#33333D'">
+      <i class="iconfont footer-social-item  icongithub-fill "></i>
+    </a>
+    
+    
+    
+    
+    
+    <a href="ling_jintao@163.com " target="_blank" onMouseOver="this.style.color='#FFBE5B'"
+      onMouseOut="this.style.color='#33333D'">
+      <i class="iconfont footer-social-item  iconmail"></i>
+    </a>
+    
+  </div>
+  <div class="footer-copyright"><p>Copyright© 2019-2020 | <a target="_blank" href="https://www.001f3.cn">平常心</a> .AllRightsReserved</p></div>
+</footer>
+  
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
+  
+  <div class="fab fab-daovoice">
+    <i class="iconfont iconcomment"></i>
+  </div>
+  
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+  
+</body>
+
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/justifiedGallery/3.7.0/js/jquery.justifiedGallery.min.js"></script>
+
+
+
+
+
+
+<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/modules.js"></script>
+<script src="/js/zui.js"></script>
+<script src="/js/script.js"></script>
+
+
 
 
 
 <script>
-  var btntop = $('#gotop');
-  btntop.on('click', function (e) {
-    e.preventDefault();
-    $('html, body').animate({ scrollTop: 0 }, '300');
+  (function (i, s, o, g, r, a, m) {
+    i["DaoVoiceObject"] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    a.charset = "utf-8";
+    m.parentNode.insertBefore(a, m)
+  })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
+    "//widget.daovoice.io/widget/0f81ff2f.js", "daovoice")
+  daovoice('init', {
+    app_id: "abcdefg"
+  }, {
+    launcher: {
+      disableLauncherIcon: true,
+    },
   });
+  daovoice('update');
 </script>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/mermaid@8.6.3/dist/mermaid.min.js"></script>
-  <script>mermaid.initialize({startOnLoad:true});</script>
-  <script>
-    $(document).ready(function () {
-      $('code.hljs').each(function (i, block) {
-        if ($.inArray(block.className, ['mermaid']) < 0) {
-          hljs.lineNumbersBlock(block);
-        }
-      });
-    });
-    </script>
-  
-
 
 
 
 <script>
-  var $table = $('.content table').not($('figure.highlight > table'))
-  $table.each(function () {
-    $(this).wrap('<div class="table-wrap"></div>')
-  })
+  (function () {
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
 </script>
+
+
+<script>
+  var _hmt = _hmt || [];
+  (function () {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?4c204d8bc027a0455b5fc642ac334ca8";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+
+
+
+
 
 
 
