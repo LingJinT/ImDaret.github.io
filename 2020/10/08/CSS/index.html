@@ -1,0 +1,466 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> - pingchangxin&#39;Blog</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+
+  
+  
+  <meta name="description" content="
+title：【学习笔记】CSS篇一、position..."> 
+  
+  <meta name="author" content="pingchangxin"> 
+
+  
+    <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  
+  
+    <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  
+  
+    <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  
+  
+    <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+  
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1445822_hhodbqn7tit.css">
+
+  
+
+  
+  
+  
+<link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+  
+  
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css">
+
+  
+
+  
+  
+  
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/justifiedGallery/3.7.0/css/justifiedGallery.min.css">
+
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      fancybox: true,
+      pjax: false,
+      lazyload: {
+        enable: true,
+        loadingImage: '/images/theme/loading.gif',
+      },
+      donate: {
+        enable: true,
+        alipay: '/images/theme/zhifubao.jpg',
+        wechat: '/images/theme/weixin.jpg'
+      },
+      motto: {
+        api: '',
+        default: '祝你万事胜意'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        alwaysShow: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: true
+      }
+    }
+  </script>
+
+  
+
+  
+<meta name="generator" content="Hexo 5.0.0"></head>
+<body class="lock-screen">
+  <div class="loading"></div>
+  
+
+
+  <nav class="menu">
+  <div class="menu-wrap">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content">
+      
+      
+      
+      
+      <li class="menu-item"><a href="/ " class="underline"> 首页</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/galleries " class="underline"> 摄影</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/archives " class="underline"> 归档</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/tags " class="underline"> 标签</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/categories " class="underline"> 分类</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/about " class="underline"> 关于</a></li>
+      
+    </ul>
+    <div class="menu-copyright"><p>Copyright© 2019-2020 | <a target="_blank" href="https://www.001f3.cn">平常心</a> .AllRightsReserved</p></div>
+  </div>
+</nav>
+  <main id="main">
+  <div class="container" id="container">
+    <article class="article">
+  <section class="head">
+  <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title"></h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>Oct 08, 2020</span
+        class="post-info-item">
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>5082</span>
+    </div>
+  </div>
+</section>
+  <section class="main">
+    <section class="content">
+      <hr>
+<h2 id="title：【学习笔记】CSS篇"><a href="#title：【学习笔记】CSS篇" class="headerlink" title="title：【学习笔记】CSS篇"></a>title：【学习笔记】CSS篇</h2><h1 id="一、position："><a href="#一、position：" class="headerlink" title="一、position："></a>一、position：</h1><p>1.static:默认情况</p>
+<p>2.relative：相对的，与正常位置对比</p>
+<p>3.absolute：绝对的，与父元素位置对比</p>
+<p>4.fixed：相对于浏览器窗口固定</p>
+<p>5.sticky:粘性的，滚动后超出区域就粘在目标位置</p>
+<h1 id="二、盒子模型"><a href="#二、盒子模型" class="headerlink" title="二、盒子模型"></a>二、盒子模型</h1><p>1.margin：外边距</p>
+<p>2.border：边框</p>
+<p>3.padding：内边距</p>
+<p>4.content：内容</p>
+<h1 id="三、伪类，伪元素"><a href="#三、伪类，伪元素" class="headerlink" title="三、伪类，伪元素"></a>三、伪类，伪元素</h1><p>1.<code>a:link</code>:未访问的链接</p>
+<p>2.<code>a:visited</code>：访问过的链接</p>
+<p>3.<code>a:active</code>：活动时的链接</p>
+<p>4.<code>a:hover</code>：悬浮时的链接</p>
+<p>5.<code>p:before</code>：在<code>&lt;p&gt;</code>标签之前插入内容</p>
+<p>6.<code>p:after</code>：在<code>&lt;p&gt;</code>标签之后插入内容</p>
+<p>两者的区别：</p>
+<ol>
+<li>伪类用<code>:</code>分割，伪元素用<code>::</code>分割</li>
+<li>伪类是一种额外的样式，伪元素是一种虚拟元素</li>
+</ol>
+<h1 id="四、Flex布局"><a href="#四、Flex布局" class="headerlink" title="四、Flex布局"></a>四、Flex布局</h1><p>容器上的属性：</p>
+<p>1.flex-direction：决定主轴的方向</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.container</span> &#123;<br>    <span class="hljs-attribute">flex-direction</span>: <span class="hljs-built_in">row</span>(水平，起点在左) | row-reverse（水平，起点在右） | column（垂直，起点在上） | column-reverse（垂直，起点在下）;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>2.flex-wrap：决定是否可以换行</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.container</span> &#123;<br>    <span class="hljs-attribute">flex-wrap</span>: <span class="hljs-built_in">nowrap</span>(不换行) | wrap（在主轴上超出则换行，第一行在上方）| wrap-reverse（在主轴上超出则换行，第一行在下方）;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>3.flex-flow：flex-direction和flex-flow的简写形式</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.container</span> &#123;<br>    <span class="hljs-attribute">flex-flow</span>: &lt;flex-direction&gt; || &lt;flex-wrap&gt;;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>4.justify-content：决定在主轴上的对齐方式</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.container</span> &#123;<br>    <span class="hljs-attribute">justify-content</span>: <span class="hljs-built_in">flex-start</span>(主轴起点对齐) | flex-end（终点对齐） | center（居中） | space-between（两端对齐） | space-around（每个项目间隔相等）;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>5.align-items：决定交叉轴上的对齐方式</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.container</span> &#123;<br>    <span class="hljs-attribute">align-items</span>: <span class="hljs-built_in">flex-start</span>(交叉轴起点对齐) | flex-end（终点对齐） | center（居中） | baseline（第一行文字基线对齐） | stretch（默认，占满整个容器高度）;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>6.align-content：定义多根轴线的对齐方式，如果只有一根则不起作用</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.container</span> &#123;<br>    <span class="hljs-attribute">align-content</span>: <span class="hljs-built_in">flex-start</span>(交叉轴起点对齐) | flex-end（交叉轴终点对齐） | center（交叉轴中点对齐） | space-between（两端对齐） | space-around（间隔相等对齐） | stretch（默认，占满整个容器高度）;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>项目上的属性</p>
+<p>1.order：排列顺序，数值越小越靠前，默认值为0</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.item</span> &#123;<br>    <span class="hljs-attribute">order</span>: &lt;integer&gt;;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>2.flex-basis：计算主轴是否还有多余空间</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.item</span> &#123;<br>    <span class="hljs-attribute">flex-basis</span>: &lt;length&gt; | auto;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>3.flex-grow:如果有多余空间则根据比例放大，默认值为0，不放大，全部值为1时等分，某个值为2，其他值为1时，前者占据剩余空间是其他的两倍</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.item</span> &#123;<br>    <span class="hljs-attribute">flex-grow</span>: &lt;number&gt;;<br>&#125;<br>``` <br>4<span class="hljs-selector-class">.flex-shrink</span>:如果空间不足就缩小，默认值为0，不缩小，全部值为1时等缩小<br></code></pre></td></tr></table></figure>
+<p>.item {<br>    flex-shrink: <number>;<br>}</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs scss">5<span class="hljs-selector-class">.flex</span>：<span class="hljs-attribute">flex-grow</span>,<span class="hljs-attribute">flex-shrink</span>,<span class="hljs-attribute">flex-basis</span>的缩写<br></code></pre></td></tr></table></figure>
+<p>.item{<br>    flex: none | [ &lt;’flex-grow’&gt; &lt;’flex-shrink’&gt;? || &lt;’flex-basis’&gt; ]<br>}<br>//举个例子：<br>.item {<br>    flex-grow: 1;<br>    flex-shrink: 1;<br>    flex-basis: 0%;<br>}</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs angelscript"><span class="hljs-number">6.</span>align-self：单个项目的对齐方式<br></code></pre></td></tr></table></figure>
+<p>.item {<br>     align-self: auto(默认，继承父元素的align，如果没有则等同于stretch) | flex-start（交叉轴起点对齐） | flex-end（交叉轴终点对齐） | center（交叉轴中点对齐） | baseline（第一行文字对齐） | stretch（占满整个容器高度）;<br>}</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs vim"># 五、垂直居中的方式<br><span class="hljs-number">1</span>.flex：`align-item<span class="hljs-variable">s:center</span>`<br><br><span class="hljs-number">2</span>.<span class="hljs-built_in">line</span>-heigh<span class="hljs-variable">t:</span>`<span class="hljs-built_in">line</span>-heigh<span class="hljs-variable">t:xxxpx</span>(xxx与父元素的高度一样)`<br><br><span class="hljs-number">3</span>.`<span class="hljs-keyword">vertical</span>-align:middle`前提是<span class="hljs-keyword">display</span>为inline-block<br><br><span class="hljs-number">4</span>.已知父元素高度,给子元素设置：<br></code></pre></td></tr></table></figure>
+<p>position:relative<br>top:50%<br>transform:translateY(-50%)</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs angelscript"><br># 六、解决<span class="hljs-number">1</span>px<br>## 为什么会无法产生<span class="hljs-number">1</span>px？<br>现在的移动主流屏DPR（像素比）一般为<span class="hljs-number">2</span>或者<span class="hljs-number">3</span>，比如要展示<span class="hljs-number">1</span>px，那么实际应该写<span class="hljs-number">0.5</span>px。这在ios中是支持的，但是安卓不支持、<br><br>## 如何解决？<br><span class="hljs-number">1.</span>使用伪元素：<br></code></pre></td></tr></table></figure>
+<p>.div::after {<br>    content: ‘’;<br>    width: 200%;<br>    height: 200%;<br>    position: absolute;<br>    top: 0;<br>    left: 0;<br>    border: 1px solid #bfbfbf;<br>    border-radius: 4px;<br>    -webkit-transform: scale(0.5,0.5);<br>    transform: scale(0.5,0.5);<br>    -webkit-transform-origin: top left;<br>}</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">优缺点：可以圆角，但是会影响清除浮动<br><br><span class="hljs-number">2.</span>设置viewport的scale值+rem<br><br><span class="hljs-number">1.</span>当DPR=<span class="hljs-number">2</span>时<br></code></pre></td></tr></table></figure>
+<meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no">
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs angelscript"><span class="hljs-number">2.</span>当DPR=<span class="hljs-number">3</span>时<br></code></pre></td></tr></table></figure>
+<meta name="viewport" content="initial-scale=0.3333333333333333, maximum-scale=0.3333333333333333, minimum-scale=0.3333333333333333, user-scalable=no">
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs n1ql">3.<br>rem是根据html标签的font-size来计算的，比如html&#123;font-size:16px&#125;,div&#123;width:2rem&#125;,其实width=32px<br><br>em是根据父元素的font-size来计算的，比如span是div的子元素，html&#123;font-size:16px&#125;,div&#123;width:2rem；<br>font-size:10px&#125;,span&#123;font-size:2em&#125;,其实span的font-size=20px<br><br>优缺点：这种方法适合新项目，老项目修改太大<br><br># 七、层叠上下文 Z-<span class="hljs-keyword">index</span><br>层叠上下文：某些元素因为某些原因层叠到了一起<br><br>层叠顺序：正Z-<span class="hljs-keyword">index</span> &gt; Z-<span class="hljs-keyword">index</span>=<span class="hljs-number">0</span> &gt; <span class="hljs-keyword">inline</span>或者inlineblock盒子 &gt; 浮动盒子 &gt; block盒子 &gt; 负Z-<span class="hljs-keyword">index</span> &gt; 层叠上下文(background/border)<br><br>黄金法则：<br><span class="hljs-number">1.</span> 谁大谁上，看层叠水平Z-<span class="hljs-keyword">index</span>，谁大谁在上面<br><span class="hljs-number">2.</span> 后来居上，当层叠水平和层叠顺序一样时，后面的元素覆盖前面的元素<br><br># 八、CSS3新特性<br><span class="hljs-number">1.</span> 边框：<span class="hljs-symbol">`border-radius:10px`</span>设置圆角，<span class="hljs-symbol">`border-shadow:10px(右) 10px(下) 5px(阴影大小) #888888`</span>设置阴影<br><span class="hljs-number">2.</span> 背景：<span class="hljs-symbol">`background-image`</span>、<span class="hljs-symbol">`background-size`</span><br><span class="hljs-number">3.</span> 渐变：线性渐变<span class="hljs-symbol">`background-image:linear-gradient（xxx）`</span>，径向渐变：<span class="hljs-symbol">`background-image:radial-gradient（xxx）`</span><br><span class="hljs-number">4.</span> 文本效果：<br><br><span class="hljs-symbol">`text-shoadow`</span>:文本阴影效果<br><br><span class="hljs-symbol">`box-shadow`</span>：盒子阴影效果<br><br><span class="hljs-symbol">`text-overflow`</span>：文本溢出效果<br><br><span class="hljs-symbol">`word-wrap`</span>：允许换行<br><br><span class="hljs-symbol">`word-break`</span>：换行方式，keep-<span class="hljs-keyword">all</span>(词之间换行),<span class="hljs-keyword">break</span>-<span class="hljs-keyword">all</span>(词内部换行)<br><br><span class="hljs-number">5.</span> <span class="hljs-number">2</span>D转换：<br></code></pre></td></tr></table></figure>
+translate(50px,100px)//从左边移动50px，从顶部移动200px
+rotate(30deg)//正值顺时针旋转，负值逆时针旋转
+scale(2，3)//宽度变为原来的两倍，高度变为原来的三倍
+skew(30deg,20deg)//向x轴倾斜20度，向y轴倾斜30度
+<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey"><span class="hljs-number">6</span>. <span class="hljs-number">3</span>D转换：`rotateX(deg)`,`rotateY(deg)`<br><span class="hljs-number">7</span>. 过渡：<br></code></pre></td></tr></table></figure>
+transition-property: width;(规定过渡的属性名称)
+transition-duration: 1s;（过渡持续时间）
+transition-timing-function: linear;（过渡效果方式）
+transition-delay: 2s;（从何时开始）
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs angelscript"><span class="hljs-number">8.</span> 动画：<br></code></pre></td></tr></table></figure>
+animation-name: myfirst;(动画名称)
+animation-duration: 5s;（持续时间）
+animation-timing-function: linear;（效果方式）
+animation-delay: 2s;（何时开始）
+animation-iteration-count: infinite;（播放次数）
+animation-direction: alternate;（是否在下一周期逆向播放）
+animation-play-state: running;（是否正在运行）
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs css">```<br><span class="hljs-keyword">@keyframes</span> myfirst（规则）<br>&#123;<br>    0%   &#123;<span class="hljs-attribute">background</span>: red;&#125;<br>    25%  &#123;<span class="hljs-attribute">background</span>: yellow;&#125;<br>    50%  &#123;<span class="hljs-attribute">background</span>: blue;&#125;<br>    100% &#123;<span class="hljs-attribute">background</span>: green;&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+9. 弹性盒子(Flex)：上面说过了，不多说了
+10. 边框：`box-sizing: border-box`将padding内边距和border边框包含在width和height中
+11. 多媒体查询：当宽度小于xx时，将其xxxx
+
+<h1 id="九、三列布局"><a href="#九、三列布局" class="headerlink" title="九、三列布局"></a>九、三列布局</h1><h2 id="圣杯布局"><a href="#圣杯布局" class="headerlink" title="圣杯布局"></a>圣杯布局</h2><p>两边固定宽度，中间自适应，即将中间子元素的宽度设置为 100%，左边和右边的子元素设置为固定的宽度(负margin保持在同一行)</p>
+<p>弊端：当浏览器无线变窄，「圣杯」将会「破碎」掉</p>
+<h1 id="双飞翼布局"><a href="#双飞翼布局" class="headerlink" title="双飞翼布局"></a>双飞翼布局</h1><p>出发点：为了解决上面的弊端</p>
+<p>为了中间div内容不被遮挡，直接在中间div内部创建子div用于放置内容，在该子div里用margin-left和margin-right为左右两栏div留出位置</p>
+<h1 id="十、BFC"><a href="#十、BFC" class="headerlink" title="十、BFC"></a>十、BFC</h1><h2 id="定义："><a href="#定义：" class="headerlink" title="定义："></a>定义：</h2><p>也叫块级格式化上下文，用于布局块级盒子的一块渲染区域，有一套渲染规则，决定其子元素如何布局以及和其他元素之间的关系和作用</p>
+<h2 id="触发条件："><a href="#触发条件：" class="headerlink" title="触发条件："></a>触发条件：</h2><ol>
+<li>根元素，即HTML元素</li>
+<li>float的值不为none</li>
+<li>overflow的值不为visible</li>
+<li>display的值为inline-block,table-cell,table-caption</li>
+<li>position的值为absolute，fixed<h2 id="作用："><a href="#作用：" class="headerlink" title="作用："></a>作用：</h2></li>
+<li>组织元素被浮动元素覆盖</li>
+<li>可以包含浮动元素</li>
+<li>阻止margin重叠</li>
+</ol>
+
+    </section>
+    <section class="extra">
+      
+        <ul class="copyright">
+  
+  <li><strong>版权声明：</strong>本博客所有文章均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"
+      rel="external nofollow" target="_blank"> BY-NC-SA </a>许可协议，转载请注明出处！</li>
+  
+</ul>
+      
+      
+        <section class="donate">
+  <div class="qrcode">
+    <img   class="lazyload" data-original="/images/theme/zhifubao.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
+  </div>
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
+</section>
+      
+      
+      
+<nav class="nav">
+  
+    <a href="/2020/10/08/HTML/"><i class="iconfont iconleft"></i></a>
+  
+  
+    <a href="/2020/10/08/%E6%B7%98%E5%AE%9D%E9%A6%96%E9%A1%B5/">【学习笔记】HTML+CSS模仿静态淘宝首页<i class="iconfont iconright"></i></a>
+  
+</nav>
+
+    </section>
+    
+      <section class="comments">
+        
+          <div class="btn" id="comments-btn">查看评论</div>
+        
+        
+      </section>
+    
+  </section>
+</article>
+  </div>
+</main>
+  <footer class="footer">
+  <div class="footer-social">
+    
+    
+    
+    
+    
+    <a href="tencent://message/?Menu=yes&uin=969122484 " target="_blank" onMouseOver="this.style.color= '#12B7F5'"
+      onMouseOut="this.style.color='#33333D'">
+      <i class="iconfont footer-social-item  iconQQ "></i>
+    </a>
+    
+    
+    
+    
+    
+    <a href="javascript:; " target="_blank" onMouseOver="this.style.color= '#09BB07'"
+      onMouseOut="this.style.color='#33333D'">
+      <i class="iconfont footer-social-item  iconwechat-fill "></i>
+    </a>
+    
+    
+    
+    
+    
+    <a href="https://github.com/ImDaret " target="_blank" onMouseOver="this.style.color= '#24292E'"
+      onMouseOut="this.style.color='#33333D'">
+      <i class="iconfont footer-social-item  icongithub-fill "></i>
+    </a>
+    
+    
+    
+    
+    
+    <a href="ling_jintao@163.com " target="_blank" onMouseOver="this.style.color='#FFBE5B'"
+      onMouseOut="this.style.color='#33333D'">
+      <i class="iconfont footer-social-item  iconmail"></i>
+    </a>
+    
+  </div>
+  <div class="footer-copyright"><p>Copyright© 2019-2020 | <a target="_blank" href="https://www.001f3.cn">平常心</a> .AllRightsReserved</p></div>
+</footer>
+  
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
+  
+  <div class="fab fab-daovoice">
+    <i class="iconfont iconcomment"></i>
+  </div>
+  
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+  
+</body>
+
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/justifiedGallery/3.7.0/js/jquery.justifiedGallery.min.js"></script>
+
+
+
+
+
+
+<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/modules.js"></script>
+<script src="/js/zui.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i["DaoVoiceObject"] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    a.charset = "utf-8";
+    m.parentNode.insertBefore(a, m)
+  })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
+    "//widget.daovoice.io/widget/0f81ff2f.js", "daovoice")
+  daovoice('init', {
+    app_id: "abcdefg"
+  }, {
+    launcher: {
+      disableLauncherIcon: true,
+    },
+  });
+  daovoice('update');
+</script>
+
+
+
+<script>
+  (function () {
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+<script>
+  var _hmt = _hmt || [];
+  (function () {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?4c204d8bc027a0455b5fc642ac334ca8";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+
+
+
+
+
+
+
+
+
+</html>
