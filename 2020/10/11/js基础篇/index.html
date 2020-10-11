@@ -1,0 +1,567 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>【学习笔记】JavaScript基础篇 - pingchangxin&#39;Blog</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+
+  
+  
+  <meta name="description" content="一、数据类型
+基本类型：string、number、b..."> 
+  
+  <meta name="author" content="pingchangxin"> 
+
+  
+    <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  
+  
+    <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  
+  
+    <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  
+  
+    <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+  
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1445822_hhodbqn7tit.css">
+
+  
+
+  
+  
+  
+<link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+  
+  
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css">
+
+  
+
+  
+  
+  
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/justifiedGallery/3.7.0/css/justifiedGallery.min.css">
+
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      fancybox: true,
+      pjax: false,
+      lazyload: {
+        enable: true,
+        loadingImage: '/images/theme/loading.gif',
+      },
+      donate: {
+        enable: true,
+        alipay: '/images/theme/zhifubao.jpg',
+        wechat: '/images/theme/weixin.jpg'
+      },
+      motto: {
+        api: '',
+        default: '祝你万事胜意'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        alwaysShow: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: true
+      }
+    }
+  </script>
+
+  
+
+  
+<meta name="generator" content="Hexo 5.0.0"></head>
+<body class="lock-screen">
+  <div class="loading"></div>
+  
+
+
+<nav class="navbar">
+  <div class="left"></div>
+  <div class="center">【学习笔记】JavaScript基础篇</div>
+  <div class="right">
+    <i class="iconfont iconmenu j-navbar-menu"></i>
+  </div>
+</nav>
+
+  <nav class="menu">
+  <div class="menu-wrap">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content">
+      
+      
+      
+      
+      <li class="menu-item"><a href="/ " class="underline"> 首页</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/galleries " class="underline"> 摄影</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/archives " class="underline"> 归档</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/tags " class="underline"> 标签</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/categories " class="underline"> 分类</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/about " class="underline"> 关于</a></li>
+      
+    </ul>
+    <div class="menu-copyright"><p>Copyright© 2019-2020 | <a target="_blank" href="https://www.001f3.cn">平常心</a> .AllRightsReserved</p></div>
+  </div>
+</nav>
+  <main id="main">
+  <div class="container" id="container">
+    <article class="article">
+  <section class="head">
+  <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">【学习笔记】JavaScript基础篇</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>Oct 11, 2020</span
+        class="post-info-item">
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>10815</span>
+    </div>
+  </div>
+</section>
+  <section class="main">
+    <section class="content">
+      <h1 id="一、数据类型"><a href="#一、数据类型" class="headerlink" title="一、数据类型"></a>一、数据类型</h1><ol>
+<li>基本类型：string、number、boolean、null、undefined、symbol</li>
+<li>引用数据类型 :object、array、function<br>其中基本类型存储在栈中，引用数据类型存储在堆中，在栈中存储一个堆的引用</li>
+</ol>
+<h1 id="二、执行上下文"><a href="#二、执行上下文" class="headerlink" title="二、执行上下文"></a>二、执行上下文</h1><h2 id="变量提升"><a href="#变量提升" class="headerlink" title="变量提升"></a>变量提升</h2><p>变量可以提前被访问</p>
+<ol>
+<li>var 声明的变量</li>
+<li>函数声明提升，function声明的函数,等于直接提到最顶端<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-built_in">console</span>.log(f)<span class="hljs-comment">//undefined</span><br><span class="hljs-keyword">var</span> f = <span class="hljs-number">5</span><br><span class="hljs-built_in">console</span>.log(af) <span class="hljs-comment">//[Function: af]</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">af</span>(<span class="hljs-params"></span>)</span>&#123;<br><span class="hljs-keyword">return</span> <span class="hljs-number">123</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="执行上下文的方法"><a href="#执行上下文的方法" class="headerlink" title="执行上下文的方法"></a>执行上下文的方法</h2><ol>
+<li>全局执行上下文</li>
+<li>函数执行上下文</li>
+<li>eval函数执行上下文</li>
+</ol>
+<h2 id="执行上下文栈"><a href="#执行上下文栈" class="headerlink" title="执行上下文栈"></a>执行上下文栈</h2><p>JS代码首次运行都会先创建一个全局执行上下文栈，之后每当有函数被调用时，就把该函数执行上下文压入栈内，调用完再弹出</p>
+<h2 id="执行上下文你的创建阶段"><a href="#执行上下文你的创建阶段" class="headerlink" title="执行上下文你的创建阶段"></a>执行上下文你的创建阶段</h2><ol>
+<li>this绑定</li>
+<li>确定词法环境：通过let const创建的</li>
+<li>确定变量环境：通过var，function创建的</li>
+<li>建立作用域链</li>
+</ol>
+<h1 id="三、作用域链"><a href="#三、作用域链" class="headerlink" title="三、作用域链"></a>三、作用域链</h1><p>当我们使用一个变量的时候，Javascript引擎 会通过变量名在当前作用域查找，若没有查找到，会一直沿着作用域链一直向上查找，直到 global 全局作用域。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> x0 = <span class="hljs-number">0</span>;<br>(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">f1</span>(<span class="hljs-params"></span>)</span>&#123;<br> <span class="hljs-keyword">let</span> x1 = <span class="hljs-number">1</span>;<br>  <br> (<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">f2</span>(<span class="hljs-params"></span>)</span>&#123;<br>   <span class="hljs-keyword">let</span> x2 = <span class="hljs-number">2</span>;<br>  <br>   (<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">f3</span>(<span class="hljs-params"></span>)</span>&#123;<br>     <span class="hljs-keyword">let</span> x3 = <span class="hljs-number">3</span>;<br>      <br>     <span class="hljs-built_in">console</span>.log(x0 + <span class="hljs-string">&quot; &quot;</span> + x1 + <span class="hljs-string">&quot; &quot;</span> + x2 + <span class="hljs-string">&quot; &quot;</span> + x3);<span class="hljs-comment">//0 1 2 3</span><br>    &#125;)();<br>  &#125;)();<br>&#125;)();<br></code></pre></td></tr></table></figure>
+
+<h1 id="四、闭包"><a href="#四、闭包" class="headerlink" title="四、闭包"></a>四、闭包</h1><ol>
+<li>定义：闭包是一个可以访问外部作用域的内部函数，即使这个外部作用域已经执行结束</li>
+<li>作用：当外部作用域执行完毕后，内部函数还存活（仍在其他地方被引用）时，闭包才真正发挥其作用，被闭包引用的那个变量将延长生命周期</li>
+<li>场景：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 定时器闭包</span><br>(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">autorun</span>(<span class="hljs-params"></span>)</span>&#123;<br>  <span class="hljs-keyword">let</span> x = <span class="hljs-number">1</span>;<br>  <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">log</span>(<span class="hljs-params"></span>)</span>&#123;<br>    <span class="hljs-built_in">console</span>.log(x);<br>  &#125;, <span class="hljs-number">10000</span>);<br>&#125;)();<br><span class="hljs-comment">// 事件闭包</span><br>(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">autorun</span>(<span class="hljs-params"></span>)</span>&#123;<br>  <span class="hljs-keyword">let</span> x = <span class="hljs-number">1</span>;<br>  $(<span class="hljs-string">&quot;#btn&quot;</span>).on(<span class="hljs-string">&quot;click&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">log</span>(<span class="hljs-params"></span>)</span>&#123;<br>    <span class="hljs-built_in">console</span>.log(x);<br>  &#125;);<br>&#125;)();<br><span class="hljs-comment">// ajax闭包</span><br>(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">autorun</span>(<span class="hljs-params"></span>)</span>&#123;<br>  <span class="hljs-keyword">let</span> x = <span class="hljs-number">1</span>;<br>  fetch(<span class="hljs-string">&quot;http://&quot;</span>).then(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">log</span>(<span class="hljs-params"></span>)</span>&#123;<br>    <span class="hljs-built_in">console</span>.log(x);<br>  &#125;);<br>&#125;)();<br></code></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h1 id="五、原型，原型链"><a href="#五、原型，原型链" class="headerlink" title="五、原型，原型链"></a>五、原型，原型链</h1><ol>
+<li>一个对象的__proto__属性的值就是它所对应的原型对象</li>
+<li>函数有prototype属性</li>
+<li>一个对象的__protp__属性的__proto__属性…直到Object的__proto__属性指向null<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Person</span>(<span class="hljs-params">name,age</span>) </span>&#123;<br>  <span class="hljs-built_in">this</span>.name = name<br>  <span class="hljs-built_in">this</span>.age = age<br>  <span class="hljs-built_in">this</span>.say = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.name + <span class="hljs-string">&#x27;is&#x27;</span> + <span class="hljs-built_in">this</span>.age + <span class="hljs-string">&#x27;years old&#x27;</span>)<br>  &#125;<br>&#125;<br><span class="hljs-keyword">var</span> P1 = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">&#x27;小明&#x27;</span>,<span class="hljs-number">16</span>)<br>P1.say()<br><span class="hljs-built_in">console</span>.log(P1.__proto__) <span class="hljs-comment">//Person &#123;&#125;</span><br><span class="hljs-built_in">console</span>.log(P1.__proto__.__proto__) <span class="hljs-comment">//&#123;&#125;</span><br><span class="hljs-built_in">console</span>.log(P1.__proto__.__proto__.__proto__) <span class="hljs-comment">//null</span><br><span class="hljs-built_in">console</span>.log(Person.__proto__) <span class="hljs-comment">//Function</span><br><span class="hljs-built_in">console</span>.log(Person.__proto__.__proto__) <span class="hljs-comment">//&#123;&#125;</span><br><span class="hljs-built_in">console</span>.log(Person.__proto__.__proto__.__proto__) <span class="hljs-comment">//null</span><br><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Function</span>.__proto__) <span class="hljs-comment">//Function</span><br><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Function</span>.__proto__.__proto__) <span class="hljs-comment">//&#123;&#125;</span><br><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Function</span>.__proto__.__proto__.__proto__) <span class="hljs-comment">//null</span><br><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.__proto__) <span class="hljs-comment">//Function</span><br><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.__proto__.__proto__) <span class="hljs-comment">//&#123;&#125;</span><br><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.__proto__.__proto__.__proto__) <span class="hljs-comment">//null</span><br><span class="hljs-built_in">console</span>.log(P1 <span class="hljs-keyword">instanceof</span> Person) <span class="hljs-comment">//true</span><br><span class="hljs-built_in">console</span>.log(P1 <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Function</span>) <span class="hljs-comment">//false，看上面P1的原型链</span><br><span class="hljs-built_in">console</span>.log(P1 <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Object</span>) <span class="hljs-comment">//true</span><br><span class="hljs-built_in">console</span>.log(Person <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Function</span>) <span class="hljs-comment">//true</span><br><span class="hljs-built_in">console</span>.log(Person <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Object</span>) <span class="hljs-comment">//true</span><br><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Function</span> <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Object</span>) <span class="hljs-comment">//true</span><br><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span> <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Function</span>) <span class="hljs-comment">//true</span><br><span class="hljs-built_in">console</span>.log(Person.prototype) <span class="hljs-comment">//Person &#123;&#125;</span><br><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Function</span>.prototype) <span class="hljs-comment">//Function</span><br><span class="hljs-built_in">console</span>.log(Person.constructor) <span class="hljs-comment">//[Function:Function]</span><br><span class="hljs-built_in">console</span>.log(P1.constructor)<span class="hljs-comment">// [Function:Person]</span><br></code></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h1 id="六、继承"><a href="#六、继承" class="headerlink" title="六、继承"></a>六、继承</h1><h2 id="父类"><a href="#父类" class="headerlink" title="父类"></a>父类</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Person</span>(<span class="hljs-params">name</span>)</span>&#123;<br>  <span class="hljs-built_in">this</span>.name = name<br>  <span class="hljs-built_in">this</span>.say = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.name)<br>  &#125;<br>&#125;<br>Person.prototype.age = <span class="hljs-number">10</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="原型继承"><a href="#原型继承" class="headerlink" title="原型继承"></a>原型继承</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Per</span>(<span class="hljs-params"></span>)</span>&#123;<br>  <span class="hljs-built_in">this</span>.name = <span class="hljs-string">&#x27;zhangsan&#x27;</span><br>&#125;<br>Per.prototype = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">&#x27;lisi&#x27;</span>)<br><span class="hljs-keyword">var</span> P1 = <span class="hljs-keyword">new</span> Per()<br><span class="hljs-keyword">var</span> P2 = <span class="hljs-keyword">new</span> Per()<br><span class="hljs-built_in">console</span>.log(P1.age)<span class="hljs-comment">//10</span><br><span class="hljs-built_in">console</span>.log(P2.age)<span class="hljs-comment">//10</span><br>P2.__proto__.age = <span class="hljs-number">12</span><br><span class="hljs-built_in">console</span>.log(P1.age)<span class="hljs-comment">//12</span><br><span class="hljs-built_in">console</span>.log(P2.age)<span class="hljs-comment">//12</span><br><span class="hljs-built_in">console</span>.log(P1.name)<span class="hljs-comment">//zhangsan</span><br><span class="hljs-comment">// 无法继承父类实例的属性</span><br><span class="hljs-comment">// 所有新实例共享父类实例的属性（浅拷贝）</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="构造函数继承"><a href="#构造函数继承" class="headerlink" title="构造函数继承"></a>构造函数继承</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Con</span>(<span class="hljs-params"></span>)</span>&#123;<br>  Person.call(<span class="hljs-built_in">this</span>,<span class="hljs-string">&#x27;lisi&#x27;</span>)<br>  <span class="hljs-built_in">this</span>.age = <span class="hljs-number">14</span><br>&#125;<br><span class="hljs-keyword">var</span> C1 = <span class="hljs-keyword">new</span> Con()<br><span class="hljs-built_in">console</span>.log(C1.name)<span class="hljs-comment">//lisi</span><br><span class="hljs-built_in">console</span>.log(C1.age)<span class="hljs-comment">//14</span><br><span class="hljs-comment">// 无法继承父类原型上的属性</span><br><span class="hljs-comment">// 可以向父类传参</span><br></code></pre></td></tr></table></figure>
+<h2 id="组合继承"><a href="#组合继承" class="headerlink" title="组合继承"></a>组合继承</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">makeUp</span>(<span class="hljs-params">name</span>)</span>&#123;<br>  Person.call(<span class="hljs-built_in">this</span>,name)<br>&#125;<br>makeUp.prototype = <span class="hljs-keyword">new</span> Person()<br><span class="hljs-keyword">var</span> M1 = <span class="hljs-keyword">new</span> makeUp(<span class="hljs-string">&#x27;lisi&#x27;</span>)<br><span class="hljs-built_in">console</span>.log(M1.name)<span class="hljs-comment">//lisi</span><br><span class="hljs-built_in">console</span>.log(M1.age)<span class="hljs-comment">//10</span><br><span class="hljs-comment">// 调用两次构造函数，耗内存</span><br></code></pre></td></tr></table></figure>
+<h2 id="原型式继承"><a href="#原型式继承" class="headerlink" title="原型式继承"></a>原型式继承</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Proto</span>(<span class="hljs-params">obj</span>)</span>&#123;<br>  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">F</span>(<span class="hljs-params"></span>)</span>&#123;&#125;<br>  F.prototype = obj<br>  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> F()<br>&#125;<br><span class="hljs-keyword">var</span> P2 = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">&#x27;wangwu&#x27;</span>)<br>Pr1 = Proto(P2)<br>Pr2 = Proto(P2)<br><span class="hljs-built_in">console</span>.log(Pr1.name)<span class="hljs-comment">//wangwu</span><br><span class="hljs-built_in">console</span>.log(Pr1.age)<span class="hljs-comment">//10</span><br>Pr2.__proto__.age = <span class="hljs-number">12</span><br>Pr2.name = <span class="hljs-string">&#x27;laoliu&#x27;</span><br><span class="hljs-built_in">console</span>.log(Pr1.name)<span class="hljs-comment">//wangwu</span><br><span class="hljs-built_in">console</span>.log(Pr1.age)<span class="hljs-comment">//12</span><br><span class="hljs-comment">// 所有实例共享原型链上的属性（浅拷贝）</span><br></code></pre></td></tr></table></figure>
+<h2 id="寄生式继承"><a href="#寄生式继承" class="headerlink" title="寄生式继承"></a>寄生式继承</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Proto</span>(<span class="hljs-params">obj</span>)</span>&#123;<br>  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">F</span>(<span class="hljs-params"></span>)</span>&#123;&#125;<br>  F.prototype = obj<br>  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> F()<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">subProto</span>(<span class="hljs-params">obj</span>)</span>&#123;<br>  <span class="hljs-keyword">var</span> s1 = Proto(obj)<br>  s1.name = <span class="hljs-string">&#x27;laoqi&#x27;</span><br>  <span class="hljs-keyword">return</span> s1;<br>&#125;<br><span class="hljs-keyword">var</span> P3 = <span class="hljs-keyword">new</span> Person()<br><span class="hljs-keyword">var</span> sub = subProto(P3)<br><span class="hljs-built_in">console</span>.log(sub.name)<span class="hljs-comment">//laoqi</span><br><span class="hljs-built_in">console</span>.log(sub.age)<span class="hljs-comment">//10</span><br><span class="hljs-comment">// 不能复用</span><br></code></pre></td></tr></table></figure>
+<h2 id="寄生组合继承"><a href="#寄生组合继承" class="headerlink" title="寄生组合继承"></a>寄生组合继承</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">proto</span>(<span class="hljs-params">obj</span>)</span>&#123;<br>  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">F</span>(<span class="hljs-params"></span>)</span>&#123;&#125;<br>  F.prototype = obj<br>  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> F()<br>&#125;<br><br><span class="hljs-keyword">var</span> P = proto(Person.prototype)<br><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Sub</span>(<span class="hljs-params">name</span>)</span>&#123;<br>  Person.call(<span class="hljs-built_in">this</span>,name)<br>&#125;<br><br>Sub.prototype = P<br>P.constructor = Sub<br><span class="hljs-keyword">var</span> sub1 = <span class="hljs-keyword">new</span> Sub(<span class="hljs-string">&#x27;laoba&#x27;</span>)<br><span class="hljs-built_in">console</span>.log(sub1.name)<br><span class="hljs-built_in">console</span>.log(sub1.age)<br><span class="hljs-comment">// 有点复杂</span><br></code></pre></td></tr></table></figure>
+
+<h1 id="七、this关键字"><a href="#七、this关键字" class="headerlink" title="七、this关键字"></a>七、this关键字</h1><ol>
+<li>在方法中，this指向所有者的对象</li>
+<li>单独情况下，指向全局对象</li>
+<li>在函数中，this指向全局对象</li>
+<li>严格模式下，在函数中，this是undefined</li>
+<li>在事件中，this指接收事件的元素</li>
+<li>call，apply，bind等可以随意改变this指向</li>
+</ol>
+<h1 id="八、new关键字"><a href="#八、new关键字" class="headerlink" title="八、new关键字"></a>八、new关键字</h1><ol>
+<li>创建一个新的对象</li>
+<li>将构造函数的this指向这个新的对象</li>
+<li>指向构造函数的代码，为这个对象添加属性，方法等</li>
+<li>返回新的对象</li>
+</ol>
+<h1 id="九、类型判断"><a href="#九、类型判断" class="headerlink" title="九、类型判断"></a>九、类型判断</h1><ol>
+<li><code>typeof</code>:只能判断除了Null以外的原始数据类型，不能判断对象等</li>
+<li><code>instance</code>:通过原型链判断，返回true or false，所以只能用来判断两个对象是否属于实例关系</li>
+<li><code>constructor</code>:不能判断Null，undefined，不稳定，因为重写了prototype之后，原有的constructor引用会丢失</li>
+<li><code>toString</code>:这是一个Object的原型方法，建议使用</li>
+</ol>
+<h1 id="十、隐式转换"><a href="#十、隐式转换" class="headerlink" title="十、隐式转换"></a>十、隐式转换</h1><h2 id="转换规则"><a href="#转换规则" class="headerlink" title="转换规则"></a>转换规则</h2><ol>
+<li>toString<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-built_in">String</span>(<span class="hljs-literal">null</span>) <span class="hljs-comment">// &#x27;null&#x27;</span><br><span class="hljs-built_in">String</span>(<span class="hljs-literal">undefined</span>) <span class="hljs-comment">// &#x27;undefined&#x27;</span><br><span class="hljs-built_in">String</span>(<span class="hljs-literal">true</span>) <span class="hljs-comment">// &#x27;true&#x27;</span><br><span class="hljs-built_in">String</span>(<span class="hljs-number">10</span>) <span class="hljs-comment">// &#x27;10&#x27;</span><br><span class="hljs-built_in">String</span>(<span class="hljs-number">1e21</span>) <span class="hljs-comment">// &#x27;1e+21&#x27;</span><br><span class="hljs-built_in">String</span>([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]) <span class="hljs-comment">// &#x27;1,2,3&#x27;</span><br><span class="hljs-built_in">String</span>([]) <span class="hljs-comment">// &#x27;&#x27;</span><br><span class="hljs-built_in">String</span>([<span class="hljs-literal">null</span>]) <span class="hljs-comment">// &#x27;&#x27;</span><br><span class="hljs-built_in">String</span>([<span class="hljs-number">1</span>, <span class="hljs-literal">undefined</span>, <span class="hljs-number">3</span>]) <span class="hljs-comment">// &#x27;1,,3&#x27;</span><br><span class="hljs-built_in">String</span>(&#123;&#125;) <span class="hljs-comment">// &#x27;[object Object]&#x27;</span><br></code></pre></td></tr></table></figure></li>
+<li>toNumber<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-built_in">Number</span>(<span class="hljs-literal">null</span>) <span class="hljs-comment">// 0</span><br><span class="hljs-built_in">Number</span>(<span class="hljs-literal">undefined</span>) <span class="hljs-comment">// NaN</span><br><span class="hljs-built_in">Number</span>(<span class="hljs-string">&#x27;10&#x27;</span>) <span class="hljs-comment">// 10</span><br><span class="hljs-built_in">Number</span>(<span class="hljs-string">&#x27;10a&#x27;</span>) <span class="hljs-comment">// NaN</span><br><span class="hljs-built_in">Number</span>(<span class="hljs-string">&#x27;&#x27;</span>) <span class="hljs-comment">// 0 </span><br><span class="hljs-built_in">Number</span>(<span class="hljs-literal">true</span>) <span class="hljs-comment">// 1</span><br><span class="hljs-built_in">Number</span>(<span class="hljs-literal">false</span>) <span class="hljs-comment">// 0</span><br><span class="hljs-built_in">Number</span>([]) <span class="hljs-comment">// 0</span><br><span class="hljs-built_in">Number</span>([<span class="hljs-string">&#x27;1&#x27;</span>]) <span class="hljs-comment">// 1</span><br><span class="hljs-built_in">Number</span>(&#123;&#125;) <span class="hljs-comment">// NaN</span><br></code></pre></td></tr></table></figure></li>
+<li>toBoolean<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-built_in">Boolean</span>(<span class="hljs-literal">null</span>) <span class="hljs-comment">// false</span><br><span class="hljs-built_in">Boolean</span>(<span class="hljs-literal">undefined</span>) <span class="hljs-comment">// false</span><br><span class="hljs-built_in">Boolean</span>(<span class="hljs-string">&#x27;&#x27;</span>) <span class="hljs-comment">// flase</span><br><span class="hljs-built_in">Boolean</span>(<span class="hljs-literal">NaN</span>) <span class="hljs-comment">// flase</span><br><span class="hljs-built_in">Boolean</span>(<span class="hljs-number">0</span>) <span class="hljs-comment">// flase</span><br><span class="hljs-built_in">Boolean</span>([]) <span class="hljs-comment">// true</span><br><span class="hljs-built_in">Boolean</span>(&#123;&#125;) <span class="hljs-comment">// true</span><br><span class="hljs-built_in">Boolean</span>(<span class="hljs-literal">Infinity</span>) <span class="hljs-comment">// true</span><br></code></pre></td></tr></table></figure></li>
+<li>toPrimitive<br>一般先看valueOf有没有返回原始数据类型，如果没有则看toString有没有返回原始数据类型的值,都没有则抛出异常<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-built_in">Number</span>([]) <span class="hljs-comment">// 0</span><br>  <span class="hljs-built_in">Number</span>([<span class="hljs-string">&#x27;10&#x27;</span>]) <span class="hljs-comment">//10</span><br><br>  <span class="hljs-keyword">const</span> obj1 = &#123;<br>    valueOf () &#123;<br>      <span class="hljs-keyword">return</span> <span class="hljs-number">100</span><br>    &#125;,<br>    toString () &#123;<br>      <span class="hljs-keyword">return</span> <span class="hljs-number">101</span><br>    &#125;<br>  &#125;<br>  <span class="hljs-built_in">Number</span>(obj1) <span class="hljs-comment">// 100</span><br><br>  <span class="hljs-keyword">const</span> obj2 = &#123;<br>    toString () &#123;<br>      <span class="hljs-keyword">return</span> <span class="hljs-number">102</span><br>    &#125;<br>  &#125;<br>  <span class="hljs-built_in">Number</span>(obj2) <span class="hljs-comment">// 102</span><br><br>  <span class="hljs-keyword">const</span> obj3 = &#123;<br>    toString () &#123;<br>      <span class="hljs-keyword">return</span> &#123;&#125;<br>    &#125;<br>  &#125;<br>  <span class="hljs-built_in">Number</span>(obj3) <span class="hljs-comment">// TypeError</span><br></code></pre></td></tr></table></figure>
+对象类型在toNumber时会先进行toPrimitive，再根据返回的原始数据类型toNumber<h2 id="和-的区别"><a href="#和-的区别" class="headerlink" title="== 和 ===的区别"></a>== 和 ===的区别</h2>==是宽松相等，===是严格相等，宽松相等会在比较的时候进行隐式转换<h2 id="比较规则"><a href="#比较规则" class="headerlink" title="比较规则"></a>比较规则</h2></li>
+<li>布尔类型和其他类型比较：先将布尔类型转换成数字类型</li>
+<li>数组类型和字符串类型比较：字符串类型会被转换成数字类型</li>
+<li>对象类型和原始类型比较：对象类型会依照toPrimitive规则转换成原始类型</li>
+<li>null、undefined和其他类型比较：null和undefined之间互相宽松相等，和其他所有值都不相等，比如下面的代码<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">null</span> == <span class="hljs-literal">false</span>//<span class="hljs-literal">false</span><br><span class="hljs-attr">undefined</span> == <span class="hljs-literal">false</span>//<span class="hljs-literal">false</span><br></code></pre></td></tr></table></figure>
+<h2 id="最后再来看一组代码，加深理解"><a href="#最后再来看一组代码，加深理解" class="headerlink" title="最后再来看一组代码，加深理解"></a>最后再来看一组代码，加深理解</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs javascript">[] == ![] <span class="hljs-comment">// true</span><br><br>[] == <span class="hljs-number">0</span> <span class="hljs-comment">// true</span><br><br>[<span class="hljs-number">2</span>] == <span class="hljs-number">2</span> <span class="hljs-comment">// true</span><br><br>[<span class="hljs-string">&#x27;0&#x27;</span>] == <span class="hljs-literal">false</span> <span class="hljs-comment">// true</span><br><br><span class="hljs-string">&#x27;0&#x27;</span> == <span class="hljs-literal">false</span> <span class="hljs-comment">// true</span><br><br>[] == <span class="hljs-literal">false</span> <span class="hljs-comment">// true</span><br><br>[<span class="hljs-literal">null</span>] == <span class="hljs-number">0</span> <span class="hljs-comment">// true</span><br><br><span class="hljs-literal">null</span> == <span class="hljs-number">0</span> <span class="hljs-comment">// false</span><br><br>[<span class="hljs-literal">null</span>] == <span class="hljs-literal">false</span> <span class="hljs-comment">// true</span><br><br><span class="hljs-literal">null</span> == <span class="hljs-literal">false</span> <span class="hljs-comment">// false</span><br><br>[<span class="hljs-literal">undefined</span>] == <span class="hljs-literal">false</span> <span class="hljs-comment">// true</span><br><br><span class="hljs-literal">undefined</span> == <span class="hljs-literal">false</span> <span class="hljs-comment">// false</span><br></code></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h1 id="十一、深浅拷贝"><a href="#十一、深浅拷贝" class="headerlink" title="十一、深浅拷贝"></a>十一、深浅拷贝</h1><h2 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h2><p>只是复制引用，修改一个变量，其他变量跟着变<br>简单看两个浅拷贝</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> obj1 = &#123;<br>  a: <span class="hljs-number">1</span>,<br>  b: <span class="hljs-number">2</span><br>&#125;<br><span class="hljs-keyword">var</span> obj2 = obj1<br>obj2.a = <span class="hljs-number">3</span><br><span class="hljs-built_in">console</span>.log(obj1.a)<span class="hljs-comment">//3</span><br><br><span class="hljs-keyword">var</span> obj3 = &#123;<br>  a:<span class="hljs-number">1</span>,<br>  b:&#123;<br>    c:<span class="hljs-number">2</span>,<br>    d:<span class="hljs-number">3</span><br>  &#125;<br>&#125;<br><span class="hljs-keyword">var</span> obj4 = <span class="hljs-built_in">Object</span>.assign(obj3)<br>obj4.b.d = <span class="hljs-number">4</span><br><span class="hljs-built_in">console</span>.log(obj3.b.d)<span class="hljs-comment">//4</span><br></code></pre></td></tr></table></figure>
+<h2 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h2><p>是对目标的完全拷贝，谁也不会影响谁<br>1.JSON.parse()和JSON.stringify()</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> obj3 = &#123;<br>  a:<span class="hljs-number">1</span>,<br>  b:&#123;<br>    c:<span class="hljs-number">2</span>,<br>    d:<span class="hljs-number">3</span><br>  &#125;<br>&#125;<br><span class="hljs-keyword">var</span> obj4 = <span class="hljs-built_in">JSON</span>.parse(<span class="hljs-built_in">JSON</span>.stringify(obj3))<br>obj4.b.d = <span class="hljs-number">4</span><br><span class="hljs-built_in">console</span>.log(obj3.b.d)<span class="hljs-comment">//3</span><br></code></pre></td></tr></table></figure>
+<p>2.利用递归实现每一层的拷贝</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">deepClone</span>(<span class="hljs-params">obj</span>)</span>&#123;<br>  <span class="hljs-keyword">let</span> obj1 = obj.constructor == <span class="hljs-built_in">Array</span>? []:&#123;&#125;;<br>  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> keys <span class="hljs-keyword">in</span> obj)&#123;<br>      <span class="hljs-keyword">if</span>(obj[keys] &amp;&amp; <span class="hljs-keyword">typeof</span> obj[keys] === <span class="hljs-string">&#x27;object&#x27;</span>)&#123;<br>        obj1[keys] = deepClone(obj[keys])<br>      &#125;<br>      <span class="hljs-keyword">else</span>&#123;<br>        obj1[keys] = obj[keys]<br>      &#125;<br>  &#125;<br><span class="hljs-keyword">return</span> obj1<br>&#125;<br><span class="hljs-keyword">var</span> obj3 = &#123;<br>  a:<span class="hljs-number">1</span>,<br>  b:&#123;<br>    c:<span class="hljs-number">2</span>,<br>    d:<span class="hljs-number">3</span><br>  &#125;<br>&#125;<br><span class="hljs-keyword">var</span> obj4 = deepClone(obj3)<br>obj4.b.d = <span class="hljs-number">5</span><br><span class="hljs-built_in">console</span>.log(obj3.b.d)<span class="hljs-comment">//3</span><br></code></pre></td></tr></table></figure>
+
+<h1 id="十二、字符串方法"><a href="#十二、字符串方法" class="headerlink" title="十二、字符串方法"></a>十二、字符串方法</h1><p>这里列举一些常用的方法：</p>
+<ol>
+<li>concat():连接两个或多个字符串，返回连接后的字符串</li>
+<li>indexOf():返回字符串中检索指定字符第一次出现的位置</li>
+<li>lastIndexOf():返回字符串中检索指定字符最后一次出现的位置</li>
+<li>slice(start, end):截取部分字符串，包左不包右</li>
+<li>substr(start, length):截取部分字符串，第二个参数可以规定截取的长度</li>
+<li>replace():字符安川替换，返回的是新的字符串，默认只替换首个匹配而且堆大小写敏感，可以添加正则表达式，/i,/g等让他对大小写不敏感以及全局替换等</li>
+<li>tpUpperCase():把字符串转换为大写</li>
+<li>toLowerCase():把字符串转换为小写</li>
+<li>trim():删除字符串两端的空白</li>
+<li>charAt(index):返回字符串下标位置的字符</li>
+<li>split(分割符):将字符串分割成数组</li>
+</ol>
+<h1 id="十三、Event-loop"><a href="#十三、Event-loop" class="headerlink" title="十三、Event loop"></a>十三、Event loop</h1><p>执行栈在执行完同步任务之后，查看执行栈是否为空，如果为空则去检查微任务队列是否为空，如果微任务队列为空，则执行宏任务，每执行完一次宏任务都会去检查一下微任务队列，有则依次执行完所有微任务，如此循环</p>
+<h1 id="十四、函数式编程"><a href="#十四、函数式编程" class="headerlink" title="十四、函数式编程"></a>十四、函数式编程</h1><h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ol>
+<li>函数是一等一的公民：就是说可以像变量一样作为其他函数的输入输出</li>
+<li>不可变量：就是说不能用var 和 let</li>
+<li>纯函数：就是没有副作用的函数，不能修改函数外部的变量</li>
+<li>引用透明：同样的输入必须是同样的输出，不依赖外部的状态</li>
+</ol>
+<h2 id="函数柯里化"><a href="#函数柯里化" class="headerlink" title="函数柯里化"></a>函数柯里化</h2><p>函数柯里化就是将一个多元函数转换成一个依次调用的单元函数<br><code>f(a,b,c)-&gt;f(a)(b)(c)</code><br>比如一个curry版本的add函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">x</span>)</span>&#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">y</span>)</span>&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">z</span>)</span>&#123;<br>      <span class="hljs-keyword">return</span> x+y+z<br>    &#125;<br>  &#125;<br>&#125;<br><span class="hljs-keyword">var</span> a = add(<span class="hljs-number">1</span>)<br><span class="hljs-built_in">console</span>.log(a(<span class="hljs-number">2</span>)(<span class="hljs-number">3</span>))<span class="hljs-comment">//6</span><br></code></pre></td></tr></table></figure>
+
+<h1 id="十五、数组和伪数组"><a href="#十五、数组和伪数组" class="headerlink" title="十五、数组和伪数组"></a>十五、数组和伪数组</h1><h2 id="数组的方法"><a href="#数组的方法" class="headerlink" title="数组的方法"></a>数组的方法</h2><ol>
+<li>jion():将数组元素结合为一个字符串</li>
+<li>pop():删除最后一个元素</li>
+<li>push():向数组末尾添加一个新的元素</li>
+<li>shift():删除首个数组元素，并且更新索引，返回删除的元素</li>
+<li>unshift():向数组开头添加新的元素，并且更新索引,返回新数组的长度</li>
+<li>delete():删除元素，会在数组中留下空洞,不建议</li>
+<li>splice(2,0,’zhangsan’):向数组中第二个位置添加新的元素,第一个数字代表起始位置，第二个数字代表要删除元素的个数，剩余为添加的元素，所以splice方法既可以用于添加元素也可以用于删除元素，并且不留空洞</li>
+<li>concat():连接数组，返回一个新的数组</li>
+<li>slice(1，3):切出新数组，返回新数组，第一个数字是起始位置，第二个数字是截止位置，包左不包右,如果没有第二个数字，默认切出剩余部分</li>
+<li>sort():用于对数组进行排序</li>
+<li>reverse():用于数组元素反转</li>
+<li>Math.max.apply():用于查找数组中最高值</li>
+<li>Math.min.apply():用于查找数组中最低值</li>
+</ol>
+<h1 id="十六、严格模式"><a href="#十六、严格模式" class="headerlink" title="十六、严格模式"></a>十六、严格模式</h1><ol>
+<li>消除js不合理，不严谨的地方，减少怪异行为</li>
+<li>消除代码运行的不安全之处</li>
+<li>提高编译器的效率，增加运行速度</li>
+<li>为未来的js版本做铺垫</li>
+</ol>
+<h1 id="十七、call、apply、bind"><a href="#十七、call、apply、bind" class="headerlink" title="十七、call、apply、bind"></a>十七、call、apply、bind</h1><p>这三者都用于改变this指向</p>
+<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><ol>
+<li>call和bind的参数是一个列表，需要将每个参数一一列出</li>
+<li>apply的参数是一个数组，将每个参数放到一个数组中</li>
+<li>bind绑定一个函数可以稍后执行，call和apply是立即调用</li>
+</ol>
+<h1 id="十八、循环"><a href="#十八、循环" class="headerlink" title="十八、循环"></a>十八、循环</h1><p>效率问题：for &gt; forEach &gt; map</p>
+<ol>
+<li>map:将数组按照某种规则映射为另一个数组</li>
+<li>forEach:进行简单的遍历</li>
+<li>for of:对迭代器进行遍历</li>
+</ol>
+<h1 id="十九、Web-worker"><a href="#十九、Web-worker" class="headerlink" title="十九、Web worker"></a>十九、Web worker</h1><h2 id="作用："><a href="#作用：" class="headerlink" title="作用："></a>作用：</h2><p>可以加载一个JS进行大量的复杂计算而不挂起主进程，并通过postMessage，onmessage进行通信，解决了大量计算对UI渲染的阻塞问题。</p>
+<h2 id="应用场景："><a href="#应用场景：" class="headerlink" title="应用场景："></a>应用场景：</h2><ol>
+<li>数学运算</li>
+<li>图像处理</li>
+<li>大数据处理</li>
+</ol>
+<h1 id="二十、Service-Worker"><a href="#二十、Service-Worker" class="headerlink" title="二十、Service Worker"></a>二十、Service Worker</h1><h2 id="Service-Worker是什么"><a href="#Service-Worker是什么" class="headerlink" title="Service Worker是什么"></a>Service Worker是什么</h2><p>这是一个再浏览器背后运行的脚本，独立于web页面，有自己单独的线程，最重要是它允许你支持离线体验,本质上是一个代理服务器</p>
+<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><ol>
+<li>下载（注册）</li>
+<li>安装</li>
+<li>激活<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2></li>
+<li>推送通知，通过用户订阅，发布消息</li>
+<li>后台同步，通过http请求拦截</li>
+<li>定期同步</li>
+</ol>
+<h1 id="二十一、PWA"><a href="#二十一、PWA" class="headerlink" title="二十一、PWA"></a>二十一、PWA</h1><p>PWA解决了哪些问题</p>
+<ol>
+<li>可以让Web的快捷方式添加至主屏幕(Mainfest)</li>
+<li>实现离线缓存功能(Service Worker)</li>
+<li>实现消息推送(Service Worker)</li>
+</ol>
+<h1 id="二十二、正则表达式"><a href="#二十二、正则表达式" class="headerlink" title="二十二、正则表达式"></a>二十二、正则表达式</h1><h2 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h2><ol>
+<li>i：对大小写不敏感</li>
+<li>g：全局匹配</li>
+<li>m：多行匹配<h2 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h2></li>
+<li>[abc]:查找方括号之间的任何字符</li>
+<li>[0-9]:查找0-9之间的数字</li>
+<li>(x|y):查找任何以|分隔的选项<h2 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h2></li>
+<li>\d:查找数字</li>
+<li>\s:查找空白字符</li>
+<li>\b:匹配单词边界</li>
+<li>\uxxxx:查找十六进制xxxx规定的Unicode字符<h2 id="量词"><a href="#量词" class="headerlink" title="量词"></a>量词</h2></li>
+<li>n+:匹配任何至少包含一个n的字符串</li>
+<li>n*:匹配任何包含零个或者多个n的字符串</li>
+<li>n?:匹配任何包含零个或一个n的字符串<h2 id="test"><a href="#test" class="headerlink" title="test()"></a>test()</h2>用于检测是否符合某个规则，返回true or false<h2 id="exec"><a href="#exec" class="headerlink" title="exec()"></a>exec()</h2>返回一个数组，其中存放返回结果,如果没找到，就返回null<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><code>^</code>和<code>$</code>同时使用表示精准匹配</li>
+<li>是否带有小数: <code>/^\d+\.\d+$/.test()</code></li>
+<li>是否中文名称组成: <code>/^[\u4E00-\u9FA5]&#123;2,4&#125;$/.test()</code></li>
+<li>检查电话号码格式: <code>/^((0\d&#123;2,3&#125;-\d&#123;7,8&#125;)|(1[3584]\d&#123;9&#125;))$/.test()</code></li>
+<li>检查邮箱地址格式: <code>/^\w+@[a-zA-Z0-9]&#123;2,10&#125;(?:\.[a-z]&#123;2,4&#125;)&#123;1,3&#125;$/.test()</code></li>
+<li>检查密码格式(包含字母和数字且至少八位):<code>/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]&#123;8,&#125;$/.test()</code></li>
+</ol>
+
+    </section>
+    <section class="extra">
+      
+        <ul class="copyright">
+  
+  <li><strong>版权声明：</strong>本博客所有文章均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"
+      rel="external nofollow" target="_blank"> BY-NC-SA </a>许可协议，转载请注明出处！</li>
+  
+</ul>
+      
+      
+        <section class="donate">
+  <div class="qrcode">
+    <img   class="lazyload" data-original="/images/theme/zhifubao.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
+  </div>
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
+</section>
+      
+      
+      
+<nav class="nav">
+  
+  
+    <a href="/2020/10/09/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">【学习笔记】回顾数据结构与算法<i class="iconfont iconright"></i></a>
+  
+</nav>
+
+    </section>
+    
+      <section class="comments">
+        
+          <div class="btn" id="comments-btn">查看评论</div>
+        
+        
+      </section>
+    
+  </section>
+</article>
+  </div>
+</main>
+  <footer class="footer">
+  <div class="footer-social">
+    
+    
+    
+    
+    
+    <a href="tencent://message/?Menu=yes&uin=969122484 " target="_blank" onMouseOver="this.style.color= '#12B7F5'"
+      onMouseOut="this.style.color='#33333D'">
+      <i class="iconfont footer-social-item  iconQQ "></i>
+    </a>
+    
+    
+    
+    
+    
+    <a href="javascript:; " target="_blank" onMouseOver="this.style.color= '#09BB07'"
+      onMouseOut="this.style.color='#33333D'">
+      <i class="iconfont footer-social-item  iconwechat-fill "></i>
+    </a>
+    
+    
+    
+    
+    
+    <a href="https://github.com/ImDaret " target="_blank" onMouseOver="this.style.color= '#24292E'"
+      onMouseOut="this.style.color='#33333D'">
+      <i class="iconfont footer-social-item  icongithub-fill "></i>
+    </a>
+    
+    
+    
+    
+    
+    <a href="ling_jintao@163.com " target="_blank" onMouseOver="this.style.color='#FFBE5B'"
+      onMouseOut="this.style.color='#33333D'">
+      <i class="iconfont footer-social-item  iconmail"></i>
+    </a>
+    
+  </div>
+  <div class="footer-copyright"><p>Copyright© 2019-2020 | <a target="_blank" href="https://www.001f3.cn">平常心</a> .AllRightsReserved</p></div>
+</footer>
+  
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
+  
+  <div class="fab fab-daovoice">
+    <i class="iconfont iconcomment"></i>
+  </div>
+  
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+  
+</body>
+
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/justifiedGallery/3.7.0/js/jquery.justifiedGallery.min.js"></script>
+
+
+
+
+
+
+<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/modules.js"></script>
+<script src="/js/zui.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i["DaoVoiceObject"] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    a.charset = "utf-8";
+    m.parentNode.insertBefore(a, m)
+  })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
+    "//widget.daovoice.io/widget/0f81ff2f.js", "daovoice")
+  daovoice('init', {
+    app_id: "abcdefg"
+  }, {
+    launcher: {
+      disableLauncherIcon: true,
+    },
+  });
+  daovoice('update');
+</script>
+
+
+
+<script>
+  (function () {
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+<script>
+  var _hmt = _hmt || [];
+  (function () {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?4c204d8bc027a0455b5fc642ac334ca8";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+
+
+
+
+
+
+
+
+
+</html>
