@@ -1,0 +1,462 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>【学习笔记】NodeJS篇 - pingchangxin&#39;Blog</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+
+  
+  
+  <meta name="description" content="一、简介node也是一个JS引擎，通过node可以使j..."> 
+  
+  <meta name="author" content="pingchangxin"> 
+
+  
+    <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  
+  
+    <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  
+  
+    <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  
+  
+    <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+  
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1445822_hhodbqn7tit.css">
+
+  
+
+  
+  
+  
+<link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+  
+  
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css">
+
+  
+
+  
+  
+  
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/justifiedGallery/3.7.0/css/justifiedGallery.min.css">
+
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      fancybox: true,
+      pjax: false,
+      lazyload: {
+        enable: true,
+        loadingImage: '/images/theme/loading.gif',
+      },
+      donate: {
+        enable: true,
+        alipay: '/images/theme/zhifubao.jpg',
+        wechat: '/images/theme/weixin.jpg'
+      },
+      motto: {
+        api: '',
+        default: '祝你万事胜意'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        alwaysShow: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: true
+      }
+    }
+  </script>
+
+  
+
+  
+<meta name="generator" content="Hexo 5.0.0"></head>
+<body class="lock-screen">
+  <div class="loading"></div>
+  
+
+
+<nav class="navbar">
+  <div class="left"></div>
+  <div class="center">【学习笔记】NodeJS篇</div>
+  <div class="right">
+    <i class="iconfont iconmenu j-navbar-menu"></i>
+  </div>
+</nav>
+
+  <nav class="menu">
+  <div class="menu-wrap">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content">
+      
+      
+      
+      
+      <li class="menu-item"><a href="/ " class="underline"> 首页</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/galleries " class="underline"> 摄影</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/archives " class="underline"> 归档</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/tags " class="underline"> 标签</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/categories " class="underline"> 分类</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/about " class="underline"> 关于</a></li>
+      
+    </ul>
+    <div class="menu-copyright"><p>Copyright© 2019-2020 | <a target="_blank" href="https://www.001f3.cn">平常心</a> .AllRightsReserved</p></div>
+  </div>
+</nav>
+  <main id="main">
+  <div class="container" id="container">
+    <article class="article">
+  <section class="head">
+  <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">【学习笔记】NodeJS篇</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>Oct 14, 2020</span
+        class="post-info-item">
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>2031</span>
+    </div>
+  </div>
+</section>
+  <section class="main">
+    <section class="content">
+      <h1 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h1><p>node也是一个JS引擎，通过node可以使js代码在服务端执行，但是它不包含DOM和BOM，node的服务器是单线程的，但是后台拥有一个I/O池，node的底层是C++编写的</p>
+<h2 id="node的特点"><a href="#node的特点" class="headerlink" title="node的特点"></a>node的特点</h2><ol>
+<li>非阻塞，异步的I/O</li>
+<li>事件和回调函数</li>
+<li>单线程</li>
+<li>跨平台</li>
+</ol>
+<h1 id="二、CMD命令"><a href="#二、CMD命令" class="headerlink" title="二、CMD命令"></a>二、CMD命令</h1><ol>
+<li>dir：列出当前目录下的所有文件</li>
+<li>cd 目录名：进入到指定的目录</li>
+<li>md 目录名：创建一个文件夹</li>
+<li>rd 目录名：删除一个文件夹</li>
+<li>.表示当前目录</li>
+<li>..表示上级目录</li>
+<li>当我们用命令窗口打开一个文件或者调用一个程序的时候系统会首先在当前目录下寻找文件程序，如果找到了就直接打开，如果没有找到则会依次到环境变量path的路径中寻找，直到找到</li>
+</ol>
+<h1 id="三、模块化"><a href="#三、模块化" class="headerlink" title="三、模块化"></a>三、模块化</h1><h2 id="模块的引用"><a href="#模块的引用" class="headerlink" title="模块的引用"></a>模块的引用</h2><ol>
+<li>使用require(‘模块的表示’)来引入一个模块</li>
+</ol>
+<h2 id="模块的定义"><a href="#模块的定义" class="headerlink" title="模块的定义"></a>模块的定义</h2><ol>
+<li>module.exports.属性 = 属性值</li>
+<li>module.exports.方法 = 函数</li>
+<li>module.exports = {};</li>
+</ol>
+<h2 id="模块的标识"><a href="#模块的标识" class="headerlink" title="模块的标识"></a>模块的标识</h2><ol>
+<li>对于核心模块，直接使用模块的名字对其引入</li>
+<li>对于自定义的文件模块，需要通过文件的路径对模块进行引入，路径可以是绝对的也可以是相对的，但是必须以./或者../开头</li>
+</ol>
+<h1 id="四、npm命令"><a href="#四、npm命令" class="headerlink" title="四、npm命令"></a>四、npm命令</h1><ol>
+<li>npm -v，查看npm版本</li>
+<li>npm version，查看所有模块的版本</li>
+<li>npm search 包名，搜索包</li>
+<li>npm install/r 包名, 安装包</li>
+<li>npm remove/r 包名，删除包</li>
+<li>npm install 包名 –save 安装包并添加到依赖</li>
+<li>npm install 下载当前项目所依赖的包</li>
+<li>npm install 包名 -g 全局安装的包（一般都是些工具）</li>
+</ol>
+<h1 id="五、package包"><a href="#五、package包" class="headerlink" title="五、package包"></a>五、package包</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>将多个模块组合成一个完整的功能，就是一个包</p>
+<h2 id="包结构"><a href="#包结构" class="headerlink" title="包结构"></a>包结构</h2><ol>
+<li>bin：二进制的可执行文件，一般在工具包中有</li>
+<li>lib：js文件</li>
+<li>doc：文档</li>
+<li>test：测试代码</li>
+<li>package.json:包的描述文件<h2 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h2>它里面保存了包各种相关的信息</li>
+<li>name：包名</li>
+<li>version:版本</li>
+<li>dependencies:依赖</li>
+<li>main:包的主要文件</li>
+<li>bin：可执行文件</li>
+</ol>
+<h1 id="六、缓冲区"><a href="#六、缓冲区" class="headerlink" title="六、缓冲区"></a>六、缓冲区</h1><p>Buffer和数组的结构非常类似，Buffer是用来存储二进制数据的</p>
+<ol>
+<li>Buffer.from(字符串)：将一个字符串内容保存到一个Buffer中</li>
+<li>Buffer.toString():将一个BUffer转换为字符串</li>
+<li>Buffer.alloc(size):创建一个指定大小的Buffer对象</li>
+<li>Buffer.allocUnsafe(size):创建一个指定大小的Buffer对象，可以包含敏感数据</li>
+</ol>
+<h1 id="七、fs模块"><a href="#七、fs模块" class="headerlink" title="七、fs模块"></a>七、fs模块</h1><p><code>var fs = require(&#39;fs&#39;)</code></p>
+<ol>
+<li>path：文件的路径</li>
+<li>flag：文件打开的行为</li>
+<li>mode：文件的权限</li>
+<li>callback：回调函数，一般带有两个参数err，data</li>
+<li>fd:写入文件的数据</li>
+<li>optitons:该参数是一个对象，包含{encoding,mode,flag}</li>
+<li>buffer:数据写入缓冲区</li>
+<li>offset：写入偏移量</li>
+<li>length:要读取的字节数</li>
+<li>position：文件图区的起始位置<h2 id="打开文件"><a href="#打开文件" class="headerlink" title="打开文件"></a>打开文件</h2></li>
+<li>异步：fs.open(path,flags[,mode],callback),这里的callback一般带有两个参数err，data</li>
+<li>同步：fs.openSync(path,flags[,mode])<h2 id="写入文件"><a href="#写入文件" class="headerlink" title="写入文件"></a>写入文件</h2></li>
+<li>异步：fs.write(fd, string[, position[, encoding]], callback),这里的callback只包含err一个参数</li>
+<li>同步：fs.writeSync(fd, string[, position[, encoding]])<h2 id="读取文件"><a href="#读取文件" class="headerlink" title="读取文件"></a>读取文件</h2></li>
+<li>异步：fs.read(fd, buffer, offset, length, position, callback)这里的callback包含err,bytesRead(字节数),buffer</li>
+<li>同步：fs.readSync(fd, buffer, offset, length, position)<h2 id="关闭文件"><a href="#关闭文件" class="headerlink" title="关闭文件"></a>关闭文件</h2></li>
+<li>异步：fs.close(fd,callback)这里的callback没有参数</li>
+<li>同步：fs.closeSync(fd);<h2 id="简单文件的读取和写入"><a href="#简单文件的读取和写入" class="headerlink" title="简单文件的读取和写入"></a>简单文件的读取和写入</h2></li>
+<li>fs.writeFile(file, data[, options], callback)</li>
+<li>fs.writeFileSync(file, data[, options])</li>
+<li>fs.readFile(path[, options], callback)</li>
+<li>fs.readFileSync(path[, options])<h2 id="流式文件的读取和写入-针对大文件"><a href="#流式文件的读取和写入-针对大文件" class="headerlink" title="流式文件的读取和写入(针对大文件)"></a>流式文件的读取和写入(针对大文件)</h2></li>
+<li>fs.createWriteStream(path[, options])</li>
+<li>fs.createReadStream(path[, options])</li>
+</ol>
+
+    </section>
+    <section class="extra">
+      
+        <ul class="copyright">
+  
+  <li><strong>版权声明：</strong>本博客所有文章均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"
+      rel="external nofollow" target="_blank"> BY-NC-SA </a>许可协议，转载请注明出处！</li>
+  
+</ul>
+      
+      
+        <section class="donate">
+  <div class="qrcode">
+    <img   class="lazyload" data-original="/images/theme/zhifubao.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
+  </div>
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
+</section>
+      
+      
+      
+<nav class="nav">
+  
+  
+    <a href="/2020/10/13/es6/">【学习笔记】ES6篇<i class="iconfont iconright"></i></a>
+  
+</nav>
+
+    </section>
+    
+      <section class="comments">
+        
+          <div class="btn" id="comments-btn">查看评论</div>
+        
+        
+      </section>
+    
+  </section>
+</article>
+  </div>
+</main>
+  <footer class="footer">
+  <div class="footer-social">
+    
+    
+    
+    
+    
+    <a href="tencent://message/?Menu=yes&uin=969122484 " target="_blank" onMouseOver="this.style.color= '#12B7F5'"
+      onMouseOut="this.style.color='#33333D'">
+      <i class="iconfont footer-social-item  iconQQ "></i>
+    </a>
+    
+    
+    
+    
+    
+    <a href="javascript:; " target="_blank" onMouseOver="this.style.color= '#09BB07'"
+      onMouseOut="this.style.color='#33333D'">
+      <i class="iconfont footer-social-item  iconwechat-fill "></i>
+    </a>
+    
+    
+    
+    
+    
+    <a href="https://github.com/ImDaret " target="_blank" onMouseOver="this.style.color= '#24292E'"
+      onMouseOut="this.style.color='#33333D'">
+      <i class="iconfont footer-social-item  icongithub-fill "></i>
+    </a>
+    
+    
+    
+    
+    
+    <a href="ling_jintao@163.com " target="_blank" onMouseOver="this.style.color='#FFBE5B'"
+      onMouseOut="this.style.color='#33333D'">
+      <i class="iconfont footer-social-item  iconmail"></i>
+    </a>
+    
+  </div>
+  <div class="footer-copyright"><p>Copyright© 2019-2020 | <a target="_blank" href="https://www.001f3.cn">平常心</a> .AllRightsReserved</p></div>
+</footer>
+  
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
+  
+  <div class="fab fab-daovoice">
+    <i class="iconfont iconcomment"></i>
+  </div>
+  
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+  
+</body>
+
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/justifiedGallery/3.7.0/js/jquery.justifiedGallery.min.js"></script>
+
+
+
+
+
+
+<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/modules.js"></script>
+<script src="/js/zui.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i["DaoVoiceObject"] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    a.charset = "utf-8";
+    m.parentNode.insertBefore(a, m)
+  })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
+    "//widget.daovoice.io/widget/0f81ff2f.js", "daovoice")
+  daovoice('init', {
+    app_id: "abcdefg"
+  }, {
+    launcher: {
+      disableLauncherIcon: true,
+    },
+  });
+  daovoice('update');
+</script>
+
+
+
+<script>
+  (function () {
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+<script>
+  var _hmt = _hmt || [];
+  (function () {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?4c204d8bc027a0455b5fc642ac334ca8";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+
+
+
+
+
+
+
+
+
+</html>
