@@ -1,0 +1,538 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>【学习笔记】浏览器篇 - pingchangxin&#39;Blog</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+
+  
+  
+  <meta name="description" content="一、多进程架构
+浏览器进程:负责界面展示，用户交互，子..."> 
+  
+  <meta name="author" content="pingchangxin"> 
+
+  
+    <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  
+  
+    <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  
+  
+    <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  
+  
+    <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+  
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1445822_hhodbqn7tit.css">
+
+  
+
+  
+  
+  
+<link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+  
+  
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css">
+
+  
+
+  
+  
+  
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/justifiedGallery/3.7.0/css/justifiedGallery.min.css">
+
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      fancybox: true,
+      pjax: false,
+      lazyload: {
+        enable: true,
+        loadingImage: '/images/theme/loading.gif',
+      },
+      donate: {
+        enable: true,
+        alipay: '/images/theme/zhifubao.jpg',
+        wechat: '/images/theme/weixin.jpg'
+      },
+      motto: {
+        api: '',
+        default: '祝你万事胜意'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        alwaysShow: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: true
+      }
+    }
+  </script>
+
+  
+
+  
+<meta name="generator" content="Hexo 5.0.0"></head>
+<body class="lock-screen">
+  <div class="loading"></div>
+  
+
+
+<nav class="navbar">
+  <div class="left"></div>
+  <div class="center">【学习笔记】浏览器篇</div>
+  <div class="right">
+    <i class="iconfont iconmenu j-navbar-menu"></i>
+  </div>
+</nav>
+
+  <nav class="menu">
+  <div class="menu-wrap">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content">
+      
+      
+      
+      
+      <li class="menu-item"><a href="/ " class="underline"> 首页</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/galleries " class="underline"> 摄影</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/archives " class="underline"> 归档</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/tags " class="underline"> 标签</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/categories " class="underline"> 分类</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/about " class="underline"> 关于</a></li>
+      
+    </ul>
+    <div class="menu-copyright"><p>Copyright© 2019-2020 | <a target="_blank" href="https://www.001f3.cn">平常心</a> .AllRightsReserved</p></div>
+  </div>
+</nav>
+  <main id="main">
+  <div class="container" id="container">
+    <article class="article">
+  <section class="head">
+  <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">【学习笔记】浏览器篇</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>Oct 21, 2020</span
+        class="post-info-item">
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>3291</span>
+    </div>
+  </div>
+</section>
+  <section class="main">
+    <section class="content">
+      <h1 id="一、多进程架构"><a href="#一、多进程架构" class="headerlink" title="一、多进程架构"></a>一、多进程架构</h1><ol>
+<li>浏览器进程:负责界面展示，用户交互，子进程管理，提供存储功能</li>
+<li>渲染进程：将html，css，js解析，出于安全，渲染进程运行在沙箱之下</li>
+<li>GPU进程：为了实现3D CSS效果，</li>
+<li>网络进程：负责页面网络资源的加载</li>
+<li>插件进程：负责插件的运行，保证插件的奔溃不会对浏览器和页面造成影响</li>
+</ol>
+<h1 id="二、TCP协议"><a href="#二、TCP协议" class="headerlink" title="二、TCP协议"></a>二、TCP协议</h1><h2 id="TCP的生命周期"><a href="#TCP的生命周期" class="headerlink" title="TCP的生命周期"></a>TCP的生命周期</h2><ol>
+<li>三次握手建立连接</li>
+<li>传输数据阶段</li>
+<li>四次挥手断开连接</li>
+</ol>
+<h2 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h2><ol>
+<li>客户端向服务端发送SYN，同时带上序列号ISN</li>
+<li>服务端返回ACK（序号为ISN+1），同时向客户端发送SYN</li>
+<li>客户端向服务端发送ACK确认收到（序列号为服务端序列号+1）</li>
+</ol>
+<h2 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h2><ol>
+<li>主动关闭的一方发送FIN，表示要单方面关闭数据的传输</li>
+<li>被动的一方收到FIN后，发送一个ACK确认（序列号为收到的序列号+1）</li>
+<li>等数据传输完毕，被动的一方再发送一个FIN标识，表示关闭这个方向的数据传输</li>
+<li>主动方回复ACK确认回复</li>
+</ol>
+<h1 id="三、HTTP协议"><a href="#三、HTTP协议" class="headerlink" title="三、HTTP协议"></a>三、HTTP协议</h1><h2 id="浏览器端发起HTTP请求的流程"><a href="#浏览器端发起HTTP请求的流程" class="headerlink" title="浏览器端发起HTTP请求的流程"></a>浏览器端发起HTTP请求的流程</h2><ol>
+<li>构建请求：请求行信息</li>
+<li>查找缓存:如果有则直接返回副本，如果没有就去服务器重新下载</li>
+<li>等待TCP队列：一个域名最多建立6个TCP</li>
+<li>建立TCP连接：三次握手</li>
+<li>发起HTTP请求：见下面</li>
+<li>服务器处理请求：处理请求过程</li>
+<li>服务器响应请求：见下面</li>
+<li>渲染进程开始工作</li>
+<li>断开TCP连接：四次挥手</li>
+</ol>
+<h2 id="客户端发起HTTP请求"><a href="#客户端发起HTTP请求" class="headerlink" title="客户端发起HTTP请求"></a>客户端发起HTTP请求</h2><ol>
+<li>请求行：请求方法，请求URL，HTTP协议版本</li>
+<li>请求头：见下面</li>
+<li>请求体：携带的数据，一般get请求为空</li>
+</ol>
+<h2 id="服务端响应请求"><a href="#服务端响应请求" class="headerlink" title="服务端响应请求"></a>服务端响应请求</h2><ol>
+<li>响应行：HTTP协议版本,状态码</li>
+<li>响应头：见下面</li>
+<li>响应体：返回要请求的数据</li>
+</ol>
+<h2 id="常用通用头部字段"><a href="#常用通用头部字段" class="headerlink" title="常用通用头部字段"></a>常用通用头部字段</h2><ol>
+<li>cache-control:控制缓存的方式</li>
+<li>connection:优先使用的连接类型</li>
+<li>date：创建报文的时间</li>
+<li>transfer-encoding：传输的编码方式,chunked为分块传输</li>
+<li>content-encoding:内容的编码格式</li>
+<li>content-language:内容使用的语言</li>
+<li>content-location:返回数据的备用地址</li>
+<li>content-type：内容的媒体类型</li>
+<li>expires：内容的过期时间</li>
+</ol>
+<h2 id="常用请求头部字段"><a href="#常用请求头部字段" class="headerlink" title="常用请求头部字段"></a>常用请求头部字段</h2><ol>
+<li>accept:能正确接收的媒体类型</li>
+<li>accept-encoding:能正确接收的编码格式列表</li>
+<li>accept-language:能正确接收的语言列表</li>
+<li>authorization:客户端的认证信息，一般存token用</li>
+<li>cookie:发送给服务器的缓存信息</li>
+<li>host:服务器域名</li>
+<li>referer:请求发起页面的原始URL</li>
+</ol>
+<h2 id="常用响应头部字段"><a href="#常用响应头部字段" class="headerlink" title="常用响应头部字段"></a>常用响应头部字段</h2><ol>
+<li>accept-ranges:告知客户端服务器是否可以接受范围请求，是bytes,否none</li>
+<li>age:资源在代理缓存中存在的时间</li>
+<li>etag：资源标识，资源发生变化时标识也会发生变化</li>
+<li>location：客户端重定向到某个URL</li>
+<li>server：服务器的名字</li>
+<li>set-cookie：存给客户端的信息，一般用于识别用户身份</li>
+</ol>
+<h2 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h2><p>2xx代表成功，3xx代表重定向，4xx代表客户端错误，5xx代表服务器错误</p>
+<ol>
+<li>200:ok</li>
+<li>204:请求成功，但是响应报文没有主体部分</li>
+<li>206:进行范围请求成功</li>
+<li>301:永久性重定向</li>
+<li>302:临时重定向</li>
+<li>303:资源存在另一个URL，使用Get方法获取资源</li>
+<li>304：请求没有满足条件</li>
+<li>400:请求报文存在语法错误</li>
+<li>401:发送的请求需要有HTTP认证的信息</li>
+<li>403:请求资源的访问被服务器拒绝</li>
+<li>404:在服务器上没有找到请求资源</li>
+<li>500：服务端在执行请求是发生了错误</li>
+<li>501：服务器不支持当前请求所需要的某个功能</li>
+<li>503：服务器当前处于超负载或正在停机维护，无法处理请求</li>
+</ol>
+<h1 id="四、完整的渲染进程"><a href="#四、完整的渲染进程" class="headerlink" title="四、完整的渲染进程"></a>四、完整的渲染进程</h1><ol>
+<li>渲染进程将HTML内容转换为能够读懂的DOM树结构</li>
+<li>渲染引擎将CSS样式表转化为浏览器可以理解的styleSheets</li>
+<li>创建布局树，计算元素的布局信息</li>
+<li>对布局树进行分层，并生成分层树</li>
+<li>为每个图层绘制列表，提交到合成线程</li>
+<li>合成线程将图层分为图块，并在光栅化线程池中将图块转换为位图</li>
+<li>合成线程发送绘制图块命令DrawQuad给浏览器进程</li>
+<li>浏览器进程根据DrawQuad消息生成页面，并显示到显示器上</li>
+</ol>
+<h1 id="五、垃圾回收"><a href="#五、垃圾回收" class="headerlink" title="五、垃圾回收"></a>五、垃圾回收</h1><h2 id="栈中的数据是如何被回收的"><a href="#栈中的数据是如何被回收的" class="headerlink" title="栈中的数据是如何被回收的"></a>栈中的数据是如何被回收的</h2><p>当一个函数执行完毕之后，ESP指针下移来销毁该函数保存在栈中的执行上下文</p>
+<h2 id="堆中的数据是如何被回收的"><a href="#堆中的数据是如何被回收的" class="headerlink" title="堆中的数据是如何被回收的"></a>堆中的数据是如何被回收的</h2><ol>
+<li>首先将堆空间分为新生区（副垃圾回收器控制）和老生区（主垃圾回收器控制）</li>
+<li>再把新生区分为对象区域和空闲区域</li>
+<li>新加入的对象会进入对象区域，当对象区域快写满时，需要执行一次垃圾清理</li>
+<li>先对对象区域的中的垃圾做个标记，副垃圾回收器将对象区域的存活对象复制进空闲区域并进行有序排列（相当于整理）</li>
+<li>完成复制后，将对象区域和空闲区域进行翻转</li>
+<li>如果翻转依然还存活的对象就进入老生区</li>
+<li>老生区有两种对象，一种是新生区过来的，另一种是自身很大，会被直接分配到老生区</li>
+<li>主垃圾回收器采取标记-清除，清除之后会产生大量的不连续的内存碎片</li>
+<li>所以后面采取标记-整理，让所有存存活对象都向一端移动</li>
+</ol>
+<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><p>因为JS是单线程的，所以一旦执行垃圾回收算法就会导致其他脚本暂停，称之为全停顿</p>
+<h2 id="改进"><a href="#改进" class="headerlink" title="改进"></a>改进</h2><p>采用增量标记算法，把一个完整的垃圾回收任务分为很多小的任务，穿插在其他JavaScript任务中间执行</p>
+<h1 id="六、V8是如何执行JavaScript代码的"><a href="#六、V8是如何执行JavaScript代码的" class="headerlink" title="六、V8是如何执行JavaScript代码的"></a>六、V8是如何执行JavaScript代码的</h1><p>采用了“字节码+JIT”的技术</p>
+<ol>
+<li>将JS代码转换为字节码</li>
+<li>判断是否为热区代码</li>
+<li>如果不是就给Ignition解释器逐条解释执行输出结果</li>
+<li>如果是就给JIT编译器转换为机器码输出结果</li>
+</ol>
+<h1 id="七、HTTP1，HTTP2，HTTP3的过程"><a href="#七、HTTP1，HTTP2，HTTP3的过程" class="headerlink" title="七、HTTP1，HTTP2，HTTP3的过程"></a>七、HTTP1，HTTP2，HTTP3的过程</h1><h2 id="HTTP1"><a href="#HTTP1" class="headerlink" title="HTTP1"></a>HTTP1</h2><ol>
+<li>增加了持久连接</li>
+<li>每个域名最多同时维护6个TCP连接</li>
+<li>使用CDN实现域名分片机制<br>但是它也有缺点：TCP慢启动，多条TCP竞争带宽和队头阻塞</li>
+</ol>
+<h2 id="HTTP2"><a href="#HTTP2" class="headerlink" title="HTTP2"></a>HTTP2</h2><ol>
+<li>采用多路复用机制，通过设置二进制分帧层实现请求的优先级，服务器推送，头部压缩等<br>但是HTTP2用的还是TCP协议，所以还会存在队头阻塞问题</li>
+</ol>
+<h2 id="HTTP3"><a href="#HTTP3" class="headerlink" title="HTTP3"></a>HTTP3</h2><p>1.采用QUIC协议，集成了TCP+多路复用+TLS安全加密等功能，然后使用UDP协议提升传输速度，但是由于生态环境不好，对UDP的优化不行导致还有很长的路要走</p>
+<h1 id="八、XSS和CSRF攻击"><a href="#八、XSS和CSRF攻击" class="headerlink" title="八、XSS和CSRF攻击"></a>八、XSS和CSRF攻击</h1><h2 id="XSS攻击"><a href="#XSS攻击" class="headerlink" title="XSS攻击"></a>XSS攻击</h2><ol>
+<li>概念：XSS攻击是一种代码注入攻击，其本质是恶意代码未经过滤和网站正常的代码混在一起</li>
+<li>解决方案: 服务器对输入脚本进行过滤或者转码或者可以使用HTTPonly，只能HTTP请求获得cookie，JS获取不到</li>
+</ol>
+<h2 id="CSRF攻击"><a href="#CSRF攻击" class="headerlink" title="CSRF攻击"></a>CSRF攻击</h2><ol>
+<li>概念：CSRF攻击是一种跨站请求伪造的攻击，攻击者登录了存在CSRF漏洞的网站A，此时生成了cookie，然后再没有退出网站A的情况下，诱导其访问B网站，B携带着cookie背着受害者偷偷的发起一个请求</li>
+<li>解决方案：<br>利用samesite cookie属性，同站的cookie只能作为第一方的cookie不能作为第三方cookie</li>
+</ol>
+<p>判断来源，检测referer来判断请求的来源是否安全</p>
+<p>利用token，服务端给用户生成一个token，然后在提交请求的时候需要验证这个token是否正确</p>
+<h1 id="九、HTTPS"><a href="#九、HTTPS" class="headerlink" title="九、HTTPS"></a>九、HTTPS</h1><p>HTTPS在HTTP和TCP之间加了一个安全层</p>
+<h2 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h2><p>用同一个钥匙加密解密,速度快</p>
+<h2 id="非对称加密"><a href="#非对称加密" class="headerlink" title="非对称加密"></a>非对称加密</h2><p>利用公钥加密，私钥解密，有一定安全性</p>
+<h2 id="对称加密和非对称加密"><a href="#对称加密和非对称加密" class="headerlink" title="对称加密和非对称加密"></a>对称加密和非对称加密</h2><ol>
+<li>发送方利用对方的公钥进行加密处理得到“对称密钥”</li>
+<li>接收方利用自己的私钥进行处理得到（“对称密钥”）<br>3， 双方通过这个对称密钥进行通信</li>
+</ol>
+<h2 id="如何验证数字证书（解决报文可能被篡改的问题）"><a href="#如何验证数字证书（解决报文可能被篡改的问题）" class="headerlink" title="如何验证数字证书（解决报文可能被篡改的问题）"></a>如何验证数字证书（解决报文可能被篡改的问题）</h2><ol>
+<li>报文通过Hash函数得到信息摘要，再用CA私钥加密得到数字签名</li>
+<li>直接利用Hash函数对报文处理得到信息摘要A</li>
+<li>再利用对应CA的公钥签名解密数字签名，得到信息摘要B</li>
+<li>如果信息A和信息B一致，那就确认证书是合法的</li>
+</ol>
+<h2 id="HTTPS和HTTP的区别"><a href="#HTTPS和HTTP的区别" class="headerlink" title="HTTPS和HTTP的区别"></a>HTTPS和HTTP的区别</h2><ol>
+<li>HTTPS更加安全</li>
+<li>HTTP需要用到SSL证书</li>
+<li>HTTPS的标准端口是443，HTTP的标准端口是80</li>
+<li>HTTPS基于传输层，HTTP基于应用层</li>
+</ol>
+
+    </section>
+    <section class="extra">
+      
+        <ul class="copyright">
+  
+  <li><strong>版权声明：</strong>本博客所有文章均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"
+      rel="external nofollow" target="_blank"> BY-NC-SA </a>许可协议，转载请注明出处！</li>
+  
+</ul>
+      
+      
+        <section class="donate">
+  <div class="qrcode">
+    <img   class="lazyload" data-original="/images/theme/zhifubao.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
+  </div>
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
+</section>
+      
+      
+      
+<nav class="nav">
+  
+    <a href="/2020/10/21/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E7%AF%87/"><i class="iconfont iconleft"></i>【学习笔记】性能优化篇</a>
+  
+  
+    <a href="/2020/10/21/%E6%89%8B%E6%92%95JS/">【学习笔记】手撕JS<i class="iconfont iconright"></i></a>
+  
+</nav>
+
+    </section>
+    
+      <section class="comments">
+        
+          <div class="btn" id="comments-btn">查看评论</div>
+        
+        
+      </section>
+    
+  </section>
+</article>
+  </div>
+</main>
+  <footer class="footer">
+  <div class="footer-social">
+    
+    
+    
+    
+    
+    <a href="tencent://message/?Menu=yes&uin=969122484 " target="_blank" onMouseOver="this.style.color= '#12B7F5'"
+      onMouseOut="this.style.color='#33333D'">
+      <i class="iconfont footer-social-item  iconQQ "></i>
+    </a>
+    
+    
+    
+    
+    
+    <a href="javascript:; " target="_blank" onMouseOver="this.style.color= '#09BB07'"
+      onMouseOut="this.style.color='#33333D'">
+      <i class="iconfont footer-social-item  iconwechat-fill "></i>
+    </a>
+    
+    
+    
+    
+    
+    <a href="https://github.com/ImDaret " target="_blank" onMouseOver="this.style.color= '#24292E'"
+      onMouseOut="this.style.color='#33333D'">
+      <i class="iconfont footer-social-item  icongithub-fill "></i>
+    </a>
+    
+    
+    
+    
+    
+    <a href="ling_jintao@163.com " target="_blank" onMouseOver="this.style.color='#FFBE5B'"
+      onMouseOut="this.style.color='#33333D'">
+      <i class="iconfont footer-social-item  iconmail"></i>
+    </a>
+    
+  </div>
+  <div class="footer-copyright"><p>Copyright© 2019-2020 | <a target="_blank" href="https://www.001f3.cn">平常心</a> .AllRightsReserved</p></div>
+</footer>
+  
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
+  
+  <div class="fab fab-daovoice">
+    <i class="iconfont iconcomment"></i>
+  </div>
+  
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+  
+</body>
+
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/justifiedGallery/3.7.0/js/jquery.justifiedGallery.min.js"></script>
+
+
+
+
+
+
+<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/modules.js"></script>
+<script src="/js/zui.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i["DaoVoiceObject"] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    a.charset = "utf-8";
+    m.parentNode.insertBefore(a, m)
+  })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
+    "//widget.daovoice.io/widget/0f81ff2f.js", "daovoice")
+  daovoice('init', {
+    app_id: "abcdefg"
+  }, {
+    launcher: {
+      disableLauncherIcon: true,
+    },
+  });
+  daovoice('update');
+</script>
+
+
+
+<script>
+  (function () {
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+<script>
+  var _hmt = _hmt || [];
+  (function () {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?4c204d8bc027a0455b5fc642ac334ca8";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+
+
+
+
+
+
+
+
+
+</html>
