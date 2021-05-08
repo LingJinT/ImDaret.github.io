@@ -1,0 +1,394 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Redux-saga - pingchangxin&#39;Blog</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+
+  
+  
+  <meta name="description" content="Redux-sagaredux-saga 是一个用于管..."> 
+  
+  <meta name="author" content="pingchangxin"> 
+
+  
+    <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  
+  
+    <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  
+  
+    <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  
+  
+    <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+  
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1445822_hhodbqn7tit.css">
+
+  
+
+  
+  
+  
+<link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+  
+  
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css">
+
+  
+
+  
+  
+  
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/justifiedGallery/3.7.0/css/justifiedGallery.min.css">
+
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      fancybox: true,
+      pjax: false,
+      lazyload: {
+        enable: true,
+        loadingImage: '/images/theme/loading.gif',
+      },
+      donate: {
+        enable: true,
+        alipay: '/images/theme/zhifubao.jpg',
+        wechat: '/images/theme/weixin.jpg'
+      },
+      motto: {
+        api: '',
+        default: '祝你万事胜意'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        alwaysShow: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: true
+      }
+    }
+  </script>
+
+  
+
+  
+<meta name="generator" content="Hexo 5.0.0"></head>
+<body class="lock-screen">
+  <div class="loading"></div>
+  
+
+
+<nav class="navbar">
+  <div class="left"></div>
+  <div class="center">Redux-saga</div>
+  <div class="right">
+    <i class="iconfont iconmenu j-navbar-menu"></i>
+  </div>
+</nav>
+
+  <nav class="menu">
+  <div class="menu-wrap">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content">
+      
+      
+      
+      
+      <li class="menu-item"><a href="/ " class="underline"> 首页</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/galleries " class="underline"> 摄影</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/archives " class="underline"> 归档</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/tags " class="underline"> 标签</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/categories " class="underline"> 分类</a></li>
+      
+      
+      
+      
+      <li class="menu-item"><a href="/about " class="underline"> 关于</a></li>
+      
+    </ul>
+    <div class="menu-copyright"><p>Copyright© 2019-2020 | <a target="_blank" href="https://www.001f3.cn">平常心</a> .AllRightsReserved</p></div>
+  </div>
+</nav>
+  <main id="main">
+  <div class="container" id="container">
+    <article class="article">
+  <section class="head">
+  <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">Redux-saga</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>May 08, 2021</span
+        class="post-info-item">
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>2515</span>
+    </div>
+  </div>
+</section>
+  <section class="main">
+    <section class="content">
+      <h1 id="Redux-saga"><a href="#Redux-saga" class="headerlink" title="Redux-saga"></a>Redux-saga</h1><p><code>redux-saga</code> 是一个用于管理应用程序 Side Effect（副作用，例如异步获取数据，访问浏览器缓存等）的 library，它的目标是让副作用管理更容易，执行更高效，测试更简单，在处理故障时更容易。</p>
+<p>可以想像为，一个 saga 就像是应用程序中一个单独的线程，它独自负责处理副作用。 <code>redux-saga</code> 是一个 redux 中间件，意味着这个线程可以通过正常的 redux action 从主应用程序启动，暂停和取消，它能访问完整的 redux state，也可以 dispatch redux action</p>
+<h2 id="takeEvery"><a href="#takeEvery" class="headerlink" title="takeEvery"></a>takeEvery</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">import</span> &#123; call, put &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;redux-saga/effects&quot;</span>;<br><br><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">fetchData</span>(<span class="hljs-params">action</span>) </span>&#123;<br>  <span class="hljs-keyword">try</span> &#123;<br>    <span class="hljs-keyword">const</span> data = <span class="hljs-keyword">yield</span> call(Api.fetchUser, action.payload.url);<br>    <span class="hljs-keyword">yield</span> put(&#123; <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;FETCH_SUCCEEDED&quot;</span>, data &#125;);<br>  &#125; <span class="hljs-keyword">catch</span> (error) &#123;<br>    <span class="hljs-keyword">yield</span> put(&#123; <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;FETCH_FAILED&quot;</span>, error &#125;);<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">import</span> &#123; takeEvery &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;redux-saga&quot;</span>;<br><br><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">watchFetchData</span>(<span class="hljs-params"></span>) </span>&#123;<br>  <span class="hljs-keyword">yield</span>* takeEvery(<span class="hljs-string">&quot;FETCH_REQUESTED&quot;</span>, fetchData);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>在上面的例子中，<code>takeEvery</code> 允许多个 <code>fetchData</code> 实例同时启动。在某个特定时刻，尽管之前还有一个或多个 <code>fetchData</code> 尚未结束，我们还是可以启动一个新的 <code>fetchData</code> 任务</p>
+<h2 id="声明式-Effects"><a href="#声明式-Effects" class="headerlink" title="声明式 Effects"></a>声明式 Effects</h2><p>在 redux-saga 的世界里，Sagas 都用 Generator 函数实现。我们从 Generator 里 yield 纯 JavaScript 对象以表达 Saga 逻辑。 我们称呼那些对象为 Effect。Effect 是一个简单的对象，这个对象包含了一些给 middleware 解释执行的信息。 你可以把 Effect 看作是发送给 middleware 的指令以执行某些操作（调用某些异步函数，发起一个 action 到 store，等等）。</p>
+<p>Sagas 可以多种形式 yield Effect。最简单的方式是 yield 一个 Promise</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">import</span> &#123; takeEvery &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;redux-saga/effects&quot;</span>;<br><span class="hljs-keyword">import</span> Api <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./path/to/api&quot;</span>;<br><br><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">watchFetchProducts</span>(<span class="hljs-params"></span>) </span>&#123;<br>  <span class="hljs-keyword">yield</span> takeEvery(<span class="hljs-string">&quot;PRODUCTS_REQUESTED&quot;</span>, fetchProducts);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">fetchProducts</span>(<span class="hljs-params"></span>) </span>&#123;<br>  <span class="hljs-keyword">const</span> products = <span class="hljs-keyword">yield</span> Api.fetch(<span class="hljs-string">&quot;/products&quot;</span>);<br>  <span class="hljs-built_in">console</span>.log(products);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="发起-action-到-store"><a href="#发起-action-到-store" class="headerlink" title="发起 action 到 store"></a>发起 action 到 store</h2><p>redux-saga 为此提供了另外一个函数 put，这个函数用于创建 dispatch Effect</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">import</span> &#123; call, put &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;redux-saga/effects&quot;</span>;<br><span class="hljs-comment">//...</span><br><br><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">fetchProducts</span>(<span class="hljs-params"></span>) </span>&#123;<br>  <span class="hljs-keyword">const</span> products = <span class="hljs-keyword">yield</span> call(Api.fetch, <span class="hljs-string">&quot;/products&quot;</span>);<br>  <span class="hljs-comment">// 创建并 yield 一个 dispatch Effect</span><br>  <span class="hljs-keyword">yield</span> put(&#123; <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;PRODUCTS_RECEIVED&quot;</span>, products &#125;);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">import</span> Api <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./path/to/api&#x27;</span><br><span class="hljs-keyword">import</span> &#123; call, put &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;redux-saga/effects&#x27;</span><br><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fetchProductsApi</span>(<span class="hljs-params"></span>) </span>&#123;<br>  <span class="hljs-keyword">return</span> Api.fetch(<span class="hljs-string">&#x27;/products&#x27;</span>)<br>    .then(<span class="hljs-function"><span class="hljs-params">response</span> =&gt;</span> (&#123; response &#125;))<br>    .catch(<span class="hljs-function"><span class="hljs-params">error</span> =&gt;</span> (&#123; error &#125;))<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">fetchProducts</span>(<span class="hljs-params"></span>) </span>&#123;<br>  <span class="hljs-keyword">const</span> &#123; response, error &#125; = <span class="hljs-keyword">yield</span> call(fetchProductsApi)<br>  <span class="hljs-keyword">if</span> (response)<br>    <span class="hljs-keyword">yield</span> put(&#123; <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;PRODUCTS_RECEIVED&#x27;</span>, <span class="hljs-attr">products</span>: response &#125;)<br>  <span class="hljs-keyword">else</span><br>    <span class="hljs-keyword">yield</span> put(&#123; <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;PRODUCTS_REQUEST_FAILED&#x27;</span>, error &#125;)<br></code></pre></td></tr></table></figure>
+
+    </section>
+    <section class="extra">
+      
+        <ul class="copyright">
+  
+  <li><strong>版权声明：</strong>本博客所有文章均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"
+      rel="external nofollow" target="_blank"> BY-NC-SA </a>许可协议，转载请注明出处！</li>
+  
+</ul>
+      
+      
+        <section class="donate">
+  <div class="qrcode">
+    <img   class="lazyload" data-original="/images/theme/zhifubao.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
+  </div>
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
+</section>
+      
+      
+      
+<nav class="nav">
+  
+    <a href="/2021/05/08/Dva/"><i class="iconfont iconleft"></i>Dva</a>
+  
+  
+    <a href="/2021/05/08/Redux/">Redux<i class="iconfont iconright"></i></a>
+  
+</nav>
+
+    </section>
+    
+      <section class="comments">
+        
+          <div class="btn" id="comments-btn">查看评论</div>
+        
+        
+      </section>
+    
+  </section>
+</article>
+  </div>
+</main>
+  <footer class="footer">
+  <div class="footer-social">
+    
+    
+    
+    
+    
+    <a href="tencent://message/?Menu=yes&uin=969122484 " target="_blank" onMouseOver="this.style.color= '#12B7F5'"
+      onMouseOut="this.style.color='#33333D'">
+      <i class="iconfont footer-social-item  iconQQ "></i>
+    </a>
+    
+    
+    
+    
+    
+    <a href="javascript:; " target="_blank" onMouseOver="this.style.color= '#09BB07'"
+      onMouseOut="this.style.color='#33333D'">
+      <i class="iconfont footer-social-item  iconwechat-fill "></i>
+    </a>
+    
+    
+    
+    
+    
+    <a href="https://github.com/ImDaret " target="_blank" onMouseOver="this.style.color= '#24292E'"
+      onMouseOut="this.style.color='#33333D'">
+      <i class="iconfont footer-social-item  icongithub-fill "></i>
+    </a>
+    
+    
+    
+    
+    
+    <a href="ling_jintao@163.com " target="_blank" onMouseOver="this.style.color='#FFBE5B'"
+      onMouseOut="this.style.color='#33333D'">
+      <i class="iconfont footer-social-item  iconmail"></i>
+    </a>
+    
+  </div>
+  <div class="footer-copyright"><p>Copyright© 2019-2020 | <a target="_blank" href="https://www.001f3.cn">平常心</a> .AllRightsReserved</p></div>
+</footer>
+  
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
+  
+  <div class="fab fab-daovoice">
+    <i class="iconfont iconcomment"></i>
+  </div>
+  
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+  
+</body>
+
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/justifiedGallery/3.7.0/js/jquery.justifiedGallery.min.js"></script>
+
+
+
+
+
+
+<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/modules.js"></script>
+<script src="/js/zui.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i["DaoVoiceObject"] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    a.charset = "utf-8";
+    m.parentNode.insertBefore(a, m)
+  })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
+    "//widget.daovoice.io/widget/0f81ff2f.js", "daovoice")
+  daovoice('init', {
+    app_id: "abcdefg"
+  }, {
+    launcher: {
+      disableLauncherIcon: true,
+    },
+  });
+  daovoice('update');
+</script>
+
+
+
+<script>
+  (function () {
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+<script>
+  var _hmt = _hmt || [];
+  (function () {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?4c204d8bc027a0455b5fc642ac334ca8";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+
+
+
+
+
+
+
+
+
+</html>
